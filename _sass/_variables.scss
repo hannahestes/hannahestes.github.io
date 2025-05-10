@@ -6,6 +6,7 @@
 @use "sass:color";
 
 // Colors
+$accent-color-dark:  #577f57;
 $red-color: #ff3636 !default;
 $red-color-dark: #b71c1c !default;
 $orange-color: #f29105 !default;
@@ -34,7 +35,7 @@ $black-color: #000000 !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
+$code-bg-color-light: rgba($accent-color-dark, 0.05);
 $code-bg-color-dark: #2c3237 !default;
 
 // Font awesome location

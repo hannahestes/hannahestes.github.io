@@ -11,7 +11,14 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
+      <!-- Social -->
+      {% if page.social %}
+        <div class="social">
+          <div class="contact-icons">{% include social.liquid %}</div>
+        </div>
+      {% endif %}
     <p class="desc">{{ page.subtitle }}</p>
+
   </header>
 
   <article>
@@ -41,9 +48,10 @@ layout: default
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
+    <br/>
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">announcements</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -62,19 +70,6 @@ layout: default
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
       </h2>
       {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
     {% endif %}
   </article>
 </div>
