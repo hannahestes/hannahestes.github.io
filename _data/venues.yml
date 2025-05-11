@@ -1,9 +1,11 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"FSE":
+  url: https://www.esec-fse.org/
+  color: "#14618E"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICSE":
+  url: https://www.icse-conferences.org/
+  color: "#FE8000"
 
-"Vision":
-  color: "#009f36"
+"FSE-SEET":
+  url: https://conf.researchr.org/track/fse-2025/fse-2025-software-engineering-education
+  # color: "#337AB7"
