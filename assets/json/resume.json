@@ -30,7 +30,11 @@
       "startDate": "2022-08-19",
       "endDate": "current",
       "score": "10",
-      "courses": ["Wolfpack Innovations in Software Engineering Research (WISER) Lab", "Advisor: Kathryn T. Stolee", "Software Engineering, Human-Computer Interaction, Algorithms, Automated Learning and Data Analysis"]
+      "courses": [
+        "Wolfpack Innovations in Software Engineering Research (WISER) Lab",
+        "Advisor: Kathryn T. Stolee",
+        "Software Engineering, Human-Computer Interaction, Algorithms, Automated Learning and Data Analysis"
+      ]
     },
     {
       "institution": "North Carolina State University",
@@ -51,20 +55,27 @@
       "url": "https://doi.org/10.1145/3696630.3727256"
     }
   ],
-    "work": [
+  "work": [
     {
       "name": "Protiviti",
       "position": "Technology Security & Privacy Consulting Intern",
       "startDate": "2023-06-01",
       "endDate": "2023-08-01",
-      "highlights": ["Developed an interactive mock online order page utilizing Microsoft Power Apps and Power Pages, showcasing the practical application of digital twins and order management solutions for prospective clients", "Created automation to track deliverables for a Cloud Security project to support the client’s virtualization process devices"]
+      "highlights": [
+        "Developed an interactive mock online order page utilizing Microsoft Power Apps and Power Pages, showcasing the practical application of digital twins and order management solutions for prospective clients",
+        "Created automation to track deliverables for a Cloud Security project to support the client’s virtualization process devices"
+      ]
     },
     {
       "name": "Pearson",
       "position": "Software Engineering Intern",
       "startDate": "2024-06-01",
       "endDate": "2024-08-01",
-      "highlights": ["Aimed to consolidate identities and create a seamless ID verification process for in-person and online users", "Developed a system that allows users to digitally scan and verify ID documents for future use in Pearson products", "Developed magic link and authentication session transfer capabilities for document verification across multiple devices"]
+      "highlights": [
+        "Aimed to consolidate identities and create a seamless ID verification process for in-person and online users",
+        "Developed a system that allows users to digitally scan and verify ID documents for future use in Pearson products",
+        "Developed magic link and authentication session transfer capabilities for document verification across multiple devices"
+      ]
     },
     {
       "name": "CSC 408: Software Product Management",
@@ -102,7 +113,12 @@
     {
       "name": "Software Product Management Research",
       "summary": "Research Assistant",
-      "highlights": ["designed and organized the distribution of a survey to over 130 respondents within the software industry", "coordinated efforts to understand the questions product managers answer and software engineers' and product managers' differing views about the product management role", "mentored four undergraduate students through the research process to identify product management competencies for computer science education", "led efforts for qualitative data analysis of over 700 data points"],
+      "highlights": [
+        "designed and organized the distribution of a survey to over 130 respondents within the software industry",
+        "coordinated efforts to understand the questions product managers answer and software engineers' and product managers' differing views about the product management role",
+        "mentored four undergraduate students through the research process to identify product management competencies for computer science education",
+        "led efforts for qualitative data analysis of over 700 data points"
+      ],
       "startDate": "2023-11-02",
       "endDate": "current"
     }

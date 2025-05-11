@@ -7,11 +7,12 @@ subtitle: #<a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 profile:
   align: right
   image: Hannah_Portrait_Square.png
-  image_circular: false # crops the image to make it circular
+  image_circular:
+    false # crops the image to make it circular
     #   <p>555 your office number</p>
     # <p>123 your address street</p>
     # <p>Your City, State 12345</p>
-  more_info: > 
+  more_info: >
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -37,9 +38,9 @@ I’m a Ph.D. student in Computer Science at North Carolina State University, ad
 
 My research focuses on the evolving role of the software product manager (SPM) in the software industry. So far, I’ve identified:
 
-  1. 21 *competencies* to drive SPM curricula, 
-  2. 10 reasons *why* the role is valuable to software teams, 
-  3. 8 primary *responsibilties* of the role accompanied with 19 categories of *questions* that SPMs should be capable of answering, 
-  4. 8 typical *problems* when working with SPMs.
+1. 21 _competencies_ to drive SPM curricula,
+2. 10 reasons _why_ the role is valuable to software teams,
+3. 8 primary _responsibilties_ of the role accompanied with 19 categories of _questions_ that SPMs should be capable of answering,
+4. 8 typical _problems_ when working with SPMs.
 
 Got feedback, questions, or just want to chat? Please reach out!

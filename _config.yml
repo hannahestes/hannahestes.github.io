@@ -7,7 +7,7 @@ first_name: Hannah
 middle_name: M.
 last_name: Estes
 # contact_note: > Got feedback, questions, or just want to chat? Please reach out!
-  
+
 # description: > # the ">" symbol means to ignore newlines until "footer_text:"
 #   Hannah Estes' portfolio!
 footer_text: > # Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
@@ -135,9 +135,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 # newsletter:
-  # enabled: false
-  # endpoint: # your loops endpoint (e.g., https://app.loops.so/api/newsletter-form/YOUR-ENDPOINT)
-  # https://loops.so/docs/forms/custom-form
+# enabled: false
+# endpoint: # your loops endpoint (e.g., https://app.loops.so/api/newsletter-form/YOUR-ENDPOINT)
+# https://loops.so/docs/forms/custom-form
 
 # -----------------------------------------------------------------------------
 # Collections
