@@ -4,7 +4,9 @@
 
 @use "sass:color";
 
-$accent-color-dark: #577f57; //#66a366;
+$accent-color-dark: #66a366; //#577f57;
+$accent-color-darker: #577f57;
+$accent-color-darkest: #395439;
 $accent-color-light: #ac5b4d; //#66a366; #45523e; #ad5d50; #75362c
 
 // :root {
@@ -87,9 +89,9 @@ $accent-color-light: #ac5b4d; //#66a366; #45523e; #ad5d50; #75362c
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$accent-color-dark};
-  --global-hover-color: #{$accent-color-dark};
+  --global-hover-color: #{$accent-color-darker};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$accent-color-dark};
+  --global-footer-bg-color: #{$accent-color-darkest};
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$grey-color-light};
   --global-distill-app-color: #{$grey-color-light};

@@ -423,7 +423,7 @@ ul.task-list input[type="checkbox"] {
       }
 
       i::before {
-        color: var(--global-theme-color);
+        color: var(--global-hover-color);
         transition-property: all 0.2s ease-in-out;
       }
 
@@ -738,7 +738,7 @@ footer.sticky-bottom {
 
         abbr {
           display: inline-block;
-          background-color: var(--global-theme-color);
+          background-color: var(--global-footer-bg-color);
           margin-bottom: 0.5rem;
           color: var(--global-card-bg-color) !important;
 
