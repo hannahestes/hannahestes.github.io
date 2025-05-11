@@ -27,8 +27,19 @@ announcements:
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+
+I’m a Ph.D. student in Computer Science at North Carolina State University, advised by [Dr. Kathryn T. Stolee](https://kstolee.github.io/) in the [Wolfpack Innovations Software Engineering Research (WISER) Lab](https://ncsu.software/).
+
+My research focuses on the evolving role of the software product manager (SPM) in the software industry. So far, I’ve identified:
+
+  1. 21 *competencies* to drive SPM curricula, 
+  2. 10 reasons *why* the role is valuable to software teams, 
+  3. 8 primary *responsibilties* of the role accompanied with 19 categories of *questions* that SPMs should be capable of answering, 
+  4. 8 typical *problems* when working with SPMs.
+
+Got feedback, questions, or just want to chat? Please reach out!
