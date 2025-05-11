@@ -38,9 +38,9 @@ I’m a Ph.D. student in Computer Science at North Carolina State University, ad
 
 My research focuses on the evolving role of the software product manager (SPM) in the software industry. So far, I’ve identified:
 
-1. 21 _competencies_ to drive SPM curricula,
-2. 10 reasons _why_ the role is valuable to software teams,
+1. 21 _competencies_ to drive software product management curricula,
+2. 10 _reasons_ why the role is valuable to software teams,
 3. 8 primary _responsibilties_ of the role accompanied with 19 categories of _questions_ that SPMs should be capable of answering,
 4. 8 typical _problems_ when working with SPMs.
 
-Got feedback, questions, or just want to chat? Please reach out!
+Got feedback, questions, or just want to chat? [Please reach out!](mailto:hmestes@ncsu.edu)
