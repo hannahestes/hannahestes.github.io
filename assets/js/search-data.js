@@ -44,6 +44,9 @@ ninja.data = [{
           section: "News",},{id: "news-attended-the-computing-research-association-grad-cohort-workshop-in-denver-colorado",
           title: 'Attended the Computing Research Association Grad Cohort Workshop in Denver, Colorado!',
           description: "",
+          section: "News",},{id: "news-i-presented-advancing-software-product-management-education-insights-from-an-industry-survey-at-fse-in-trondheim-norway",
+          title: 'I presented “Advancing Software Product Management Education: Insights from an Industry Survey” at...',
+          description: "",
           section: "News",},{
         id: 'social-email',
         title: 'email',
