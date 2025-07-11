@@ -52,7 +52,7 @@ table.table a {
 .table-dark {
   background-color: transparent;
   &.table-bordered {
-    border: 1px solid var(--global-divider-color) !important;
+    border: 1px solid var(--global-text-color) !important;
   }
 }
 
