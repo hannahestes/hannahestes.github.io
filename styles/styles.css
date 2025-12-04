@@ -212,7 +212,7 @@ nav ul li {
     text-align: center;
 }
 nav ul li p {
-    color: #bd5d38;
+    color: var(--accent-light);
     display: block;
     padding: 10px 0px;
     font-size: medium;
@@ -222,11 +222,16 @@ nav ul li p {
 }
 nav ul li p span.text {
     text-decoration: underline;
-    color: #bd5d38;
+    color: var(--accent-light);
     cursor: pointer;
 }
 nav ul li p:hover span.text {
-    color: #824027;
+    color: var(--accent-light);
+    cursor: pointer;
+}
+
+.dark-theme nav ul li p:hover span.text {
+    color: var(--accent-dark-strong);
     cursor: pointer;
 }
 
