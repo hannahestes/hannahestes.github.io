@@ -19,7 +19,7 @@ projects: #show            # delete "show" or leave it blank to hide this icon
 location: https://maps.app.goo.gl/Pdk75JdnUGUdnWdP7
 codepen: 
 orcid: https://orcid.org/0009-0006-9893-286X
-contact: show            # delete "show" or leave it blank to hide this icon
+contact: #show            # delete "show" or leave it blank to hide this icon
 linkedin: https://www.linkedin.com/in/hannahestes6
 
 # information for contact card
