@@ -290,9 +290,12 @@ filterButtonsPicture.forEach(function(filterButtonPicture) {
             flrbtn.classList.remove('active');
         });
         this.classList.add('active');
-        if (this.textContent === "perception + manipulation") {
-            showSpeech('see pictures!');
-        } else {
+        if (this.textContent === "national parks") {
+            showSpeech('16 / 63 national parks visited!');  //TODO: make sure to update this!
+        } else if (this.textContent === "nc state parks") {
+            showSpeech('21 / 43 NC state parks visited!') //TODO: make sure to update this!
+        } 
+        else {
             showSpeech('see ' + this.textContent + ' pictures!');
         }
     });

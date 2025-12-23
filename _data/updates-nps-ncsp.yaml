@@ -1,0 +1,428 @@
+########################
+# National Parks List! #
+########################
+  - source: 
+    caption: Acadia National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: National Park of American Samoa
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Arches National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Badlands National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Big Bend National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Biscayne National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Black Canyon of the Gunnison National Park
+    year: 
+    category: nps
+  - source: 
+    caption: Bryce Canyon National Park
+    year: 
+    category: nps
+  - source: 
+    caption: Canyonlands National Park
+    year: 
+    category: nps
+  - source: 
+    caption: Capitol Reef National Park
+    year: 
+    category: nps
+  - source: 
+    caption: Carlsbad Caverns National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Channel Islands National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Congaree National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Crater Lake National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Cuyahoga Valley National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Death Valley National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Denali National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Dry Tortugas National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Everglades National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Gates of the Arctic National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Gateway Arch National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Glacier National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Glacier Bay National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Grand Canyon National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Grand Teton National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Great Basin National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Great Sand Dunes National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Great Smoky Mountains National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+    caption: Guadalupe Mountains National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Haleakalā National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Hawaiʻi Volcanoes National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Hot Springs National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Indiana Dunes National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Isle Royale National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Joshua Tree National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Katmai National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Kenai Fjords National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Kings Canyon National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Kobuk Valley National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Lake Clark National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Lassen Volcanic National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Mammoth Cave National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Mesa Verde National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Mount Rainier National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: New River Gorge National Park and Preserve
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: North Cascades National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Olympic National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Petrified Forest National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Pinnacles National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Redwood National and State Parks
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Rocky Mountain National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Saguaro National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Sequoia National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Shenandoah National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Theodore Roosevelt National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Virgin Islands National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Voyageurs National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: White Sands National Park
+    year: 
+    category: nps
+  # - source: 
+  #   caption: Wind Cave National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Wrangell-St. Elias National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Yellowstone National Park
+  #   year: 
+  #   category: nps
+  # - source: 
+  #   caption: Yosemite National Park
+  #   year: 
+  #   category: nps
+  - source: 
+    caption: Zion National Park
+    year: 
+    category: nps
+
+########################
+# NC State Parks List! #
+########################
+  - source: 
+    caption: Carolina Beach
+    year: 
+    category: ncsp
+  - source: 
+    caption: Chimney Rock
+    year: 
+    category: ncsp
+  - source: 
+    caption: Crowders Mountain
+    year: 
+    category: ncsp
+  - source: 
+    caption: Dismal Swamp
+    year: 
+    category: ncsp
+  - source: 
+    caption: Falls Lake
+    year: 
+    category: ncsp
+  - source: 
+    caption: Fort Fisher
+    year: 
+    category: ncsp
+  - source: 
+    caption: Grandfather Mountain
+    year: 
+    category: ncsp
+  - source: 
+    caption: Hanging Rock
+    year: 
+    category: ncsp
+  - source: 
+    caption: Haw River
+    year: 
+    category: ncsp
+  - source: 
+    caption: Jockeys Ridge
+    year: 
+    category: ncsp
+  - source: 
+    caption: Jordan Lake
+    year: 
+    category: ncsp
+  - source: 
+    caption: Lake Waccamaw
+    year: 
+    category: ncsp
+  - source: 
+    caption: Mayo River
+    year: 
+    category: ncsp
+  - source: 
+    caption: Morrow Mountain
+    year: 
+    category: ncsp
+  - source: 
+    caption: New River
+    year: 
+    category: ncsp
+  - source: 
+    caption: Occoneechee Mountain
+    year: 
+    category: ncsp
+  - source: 
+    caption: Pilot Mountain
+    year: 
+    category: ncsp
+  - source: 
+    caption: Raven Rock
+    year: 
+    category: ncsp
+  - source: 
+    caption: William B. Umstead
+    year: 
+    category: ncsp
+
+  # - source: 
+  #   caption: Carvers Creek
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Cliffs of the Neuse
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Elk Knob
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Eno River
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Fort Macon
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Goose Creek
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Gorges
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Hammocks Beach
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Jones Lake
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Kerr Lake
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Lake James
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Lake Norman
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Lumber River
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Medoc Mountain
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Merchants Millpond
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Mount Jefferson
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Mount Mitchell
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Pettigrew
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Rendezvous Mountain
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Singletary Lake
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: South Mountains
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Stone Mountain
+  #   year: 
+  #   category: ncsp
+  # - source: 
+  #   caption: Weymouth Woods
+  #   year: 
+  #   category: ncsp

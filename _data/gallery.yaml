@@ -1,16 +1,16 @@
 introduction: some happy moments!
 
 categories:
-  # - data-filter: nps
-  #   category-name: national parks
-  # - data-filter: ncsp
-  #   category-name: nc state parks
   - data-filter: lab
     category-name: lab fun
   # - data-filter: travel
   #   category-name: travel
   - data-filter: conference
     category-name: conference
+  # - data-filter: nps
+  #   category-name: national parks
+  # - data-filter: ncsp
+  #   category-name: nc state parks
   # - data-filter: other
   #   category-name: other
 
@@ -38,7 +38,7 @@ pictures:
 
   - source: assets/memo/fse_academic_family.png
     caption: FSE group
-    year: 20125
+    year: 2025
     category: conference
 
   - source: assets/memo/kuttal_potluck.png
@@ -46,15 +46,15 @@ pictures:
     year: 2025
     category: lab
 
-  # - source: assets/memo/lab_badges.png
-  #   caption: decorating the lab
-  #   year: 2025
-  #   category: lab
+  - source: assets/memo/lab_badges.png
+    caption: decorating the lab
+    year: 2025
+    category: lab
 
-  # - source: assets/memo/noryay.png
-  #   caption: '#noryay'
-  #   year: 2025
-  #   category: lab
+  - source: assets/memo/noryay.png
+    caption: '#noryay'
+    year: 2025
+    category: lab
 
   - source: assets/memo/vlhcc_group.png
     caption: VL/HCC fun
