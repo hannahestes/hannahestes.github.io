@@ -6,22 +6,22 @@ categories:
   #   category-name: other
 
 projects:
-  - title: 'An Empirical Study of the Alignment between Software Product Managers and Software Engineers'
+  - title: 'Many Hats, One Role: Disambiguating the Software Product Manager'
     system-name: 
     gif: assets/img/questions-graphic.png
-    conference: FSE (Montreal, Canada) 
-    conference-web: https://conf.researchr.org/home/fse-2026
+    conference: TOSEM 
+    conference-web: https://dl.acm.org/journal/tosem
     status: Currently Under Review
     authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn T. Stolee.
-    pdf: 
+    pdf: blank_notyet.pdf
     code: 
     demo: 
     slides:
     talk: 
     doi:
     poster: 
-    abstract-less: On a software team, a software product manager is the bridge between customers and software engineers. They seek to understand the customers' needs and work with the software team to deliver solutions. Thus, collaboration between software engineers and software product managers is important. However, effective collaboration can break down in the presence of mismatched expectations. To clarify software engineers' expectations and identify potential 
-    abstract-more: misalignment between software product managers and software engineers, we designed and deployed a survey targeting software professionals that asks about the questions product managers should answer. We received 278 questions from 40 software product managers and 33 software engineers representing 21 companies. We classified the set of questions revealing topics surrounding the <i>logistics, product</i>, and <i>users.</i> Our results reveal that software engineers more often want to ask software product managers about users' characteristics and user <i>feedback</i> about the product. Our discussion includes details on problematic experiences that have arisen when working with software product managers, demonstrating that the misunderstanding of the <i>product</i>, <i>customers</i>, <i>market</i>, and <i>technical feasibility</i> of designs can lead to frustration. Through this work, we identify what software engineers want to ask software product managers, how that aligns with questions software product managers answer, and outline future research directions in this space.
+    abstract-less: The role of the software product manager on a software team is often ambiguous and potentially contentious, with tensions arising between the software product manager and the software team. Given the negative impact of role ambiguity on team performance, the goal of this work is to uncover software product manager role expectations from three perspectives: their own, that of the software team, and that of the software companies. 
+    abstract-more: We designed and deployed a survey asking members of the software team about the software product manager role as well as the typical questions software product managers answer which provides a direct and indirect lens into what a software product manager does. We received responses from 45 product-focused roles and 35 engineering-focused roles representing over 22 different companies. Through qualitative analysis, we discovered that software product managers have three core roles that revolve around being a \textit{product expert}, \textit{user advocate}, and \textit{communication guru}. In alignment with the categories describing the role, the empirical classification of 81 descriptive questions, describing the 278 collected questions, provides insight into the type of questions a software product manager should be answering. From the companies' perspective, we analyzed 37 software product management job descriptions to verify and generalize our findings. We also identify the most frequent issues that arise when working with software product managers, demonstrating that the misunderstanding of the product, customers, market, and technical feasibility of designs can lead to team frustrations. Through this work, we provide clarity on the role of the software product manager directly through employees' and employers' perspectives, indirectly from the questions they should answer, and eight friction points when working with a software team. 
     tag: spm_questions
     category: spm
 
