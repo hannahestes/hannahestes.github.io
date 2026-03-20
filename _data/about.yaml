@@ -32,11 +32,22 @@ web-dns: hannahestes.github.com
 # linkedin: hannahestes6
 
 # about me
-first-paragraph: I am a research assistant at the <a href="https://ncsu.software/" target="_blank" rel="noopener">Wolfpack Innovations Software Engineering Research (WISER) Lab</a> affiliated with the <a href="https://csc.ncsu.edu/" target="_blank" rel="noopener">NC State</a> under the guidance of <a href="https://kstolee.github.io/" target="_blank" rel="noopener">Dr. Katie Stolee</a>.
+first-paragraph: >-
+  I am a research assistant at the <a href="https://ncsu.software/" target="_blank" rel="noopener">Wolfpack Innovations Software Engineering Research (WISER) Lab</a>
+  affiliated with the <a href="https://csc.ncsu.edu/" target="_blank" rel="noopener">NC State</a> under the guidance of
+  <a href="https://kstolee.github.io/" target="_blank" rel="noopener">Dr. Katie Stolee</a>.
 
-second-paragraph: Got feedback, questions, or just want to chat? <a href="mailto:hmestes@ncsu.edu">Please reach out!</a>
+second-paragraph: >-
+  Got feedback, questions, or just want to chat? <a href="mailto:hmestes@ncsu.edu">Please reach out!</a>
 
-research-introduction: I’m fascinated by the human and organizational factors that shape software development, especially how team communication and coordination impact the products we build. My research focuses on the interactions between software product managers (SPMs) and software engineers (SWEs), exploring where alignment succeeds and where misalignment creates friction. I also enjoy creating educational opportunities, like an undergraduate course, to help future SPMs develop both the technical and interpersonal skills they need to thrive in real software teams.
+research-introduction: >-
+  I’m fascinated by the human and organizational factors that shape software development,
+  especially how team communication and coordination impact the products we build. My
+  research focuses on the interactions between software product managers (SPMs) and software
+  engineers (SWEs), exploring where alignment succeeds and where misalignment creates friction.
+  I also enjoy creating educational opportunities, like an undergraduate course, to help
+  future SPMs develop both the technical and interpersonal skills they need to thrive in
+  real software teams.
 
 research-interests:
 

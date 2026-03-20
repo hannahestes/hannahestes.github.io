@@ -4,7 +4,7 @@
 </div> -->
 
 <div class="gallery-card" data-filter="{{ picture.category }}">
-    <img src="{{ picture.source }}" class="w-full rounded-lg" alt="{{ picture.caption }}">
+    <img src="{{ picture.source }}" class="w-full rounded-lg" alt="{{ picture.caption }}" loading="lazy" decoding="async" fetchpriority="low" sizes="(min-width: 1200px) 20vw, (min-width: 900px) 33vw, (min-width: 576px) 50vw, 100vw">
     <div class="overlay">
         <div class="gallery-desc">{{ picture.caption }}</div>
         <div class="gallery-time">{{ picture.year }}</div>

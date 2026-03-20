@@ -81,29 +81,52 @@ function scrollToTopDiv(divTag) {
 }
 
 
-// Button for toggle theme (dark/light)
-function toggleTheme() {
+// Theme state (single source of truth)
+const THEME_STORAGE_KEY = 'preferred-theme';
+
+function getCurrentTheme() {
+    return document.body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
+}
+
+function getPreferredTheme() {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === 'light-theme' || savedTheme === 'dark-theme') {
+        return savedTheme;
+    }
+
+    const currentHour = new Date().getHours();
+    return (currentHour > 19 || currentHour <= 7) ? 'dark-theme' : 'light-theme';
+}
+
+function applyTheme(theme) {
     const bodyEl = document.body;
     const buttonEl = document.querySelector('.toggle-theme-button');
-    const speechBalloon = document.querySelector('.speech-balloon');
-    // const clickSound = new Audio('assets/sounds/switch_sound.wav');
 
-    if (bodyEl.classList.contains('light-theme')) {
-        bodyEl.classList.remove('light-theme');
-        bodyEl.classList.add('dark-theme');
-        buttonEl.classList.remove('light-theme');
-        buttonEl.classList.add('dark-theme');
-        buttonEl.innerText = '☀️';
-        showSpeech('lights turned off!');
-        // clickSound.play();
-    } else {
-        bodyEl.classList.remove('dark-theme');
-        bodyEl.classList.add('light-theme');
-        buttonEl.classList.remove('dark-theme');
-        buttonEl.classList.add('light-theme');
-        buttonEl.innerText = '🌙';
+    bodyEl.classList.remove('light-theme', 'dark-theme');
+    bodyEl.classList.add(theme);
+
+    if (buttonEl) {
+        buttonEl.classList.remove('light-theme', 'dark-theme');
+        buttonEl.classList.add(theme);
+        buttonEl.innerText = theme === 'dark-theme' ? '☀️' : '🌙';
+    }
+
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+}
+
+function initializeTheme() {
+    applyTheme(getPreferredTheme());
+}
+
+function toggleTheme() {
+    const isDark = getCurrentTheme() === 'dark-theme';
+
+    if (isDark) {
+        applyTheme('light-theme');
         showSpeech('lights turned on!');
-        // clickSound.play();
+    } else {
+        applyTheme('dark-theme');
+        showSpeech('lights turned off!');
     }
 }
 
@@ -121,7 +144,7 @@ window.addEventListener('scroll', function() {
 
 // Owl carousel for updates
 function initializeOwlCarousel() {
-    $('.owl-carousel').owlCarousel({
+    const $carousel = $('.owl-carousel').owlCarousel({
         loop: false,
         rewind: false,
         margin: 10,
@@ -134,6 +157,49 @@ function initializeOwlCarousel() {
             600: {items: 3},
             900: {items: 5},
             1200: {items: 6}
+        }
+    });
+
+    // Keep carousel controls accessible even as Owl re-renders controls.
+    setTimeout(function() {
+        applyCarouselAccessibility();
+    }, 0);
+
+    $carousel.on('refreshed.owl.carousel initialized.owl.carousel', function() {
+        applyCarouselAccessibility();
+    });
+}
+
+function applyCarouselAccessibility() {
+    const carousel = document.querySelector('.owl-carousel');
+    if (!carousel) {
+        return;
+    }
+
+    carousel.setAttribute('role', 'region');
+    carousel.setAttribute('aria-label', 'Updates carousel');
+
+    const prevBtn = carousel.querySelector('.owl-prev');
+    const nextBtn = carousel.querySelector('.owl-next');
+
+    if (prevBtn) {
+        prevBtn.setAttribute('aria-label', 'Previous updates');
+        prevBtn.setAttribute('title', 'Previous updates');
+    }
+    if (nextBtn) {
+        nextBtn.setAttribute('aria-label', 'Next updates');
+        nextBtn.setAttribute('title', 'Next updates');
+    }
+}
+
+function applySidebarAccessibility() {
+    const navActions = document.querySelectorAll('nav ul li .nav-item-button, nav ul li .nav-item-link');
+
+    navActions.forEach(function(actionEl) {
+        const labelEl = actionEl.querySelector('.text');
+        const label = labelEl ? labelEl.textContent.trim() : actionEl.textContent.trim();
+        if (label) {
+            actionEl.setAttribute('aria-label', label);
         }
     });
 }
@@ -307,7 +373,12 @@ filterButtonsGithub.forEach(function(filterButtonGithub) {
             flrbtn.classList.remove('active');
         });
         this.classList.add('active');
-        showSpeech('see ' + this.textContent + ' repos!');
+        var selected = this.textContent.trim().toLowerCase();
+        if (selected === 'all') {
+            showSpeech('see all resources!');
+        } else {
+            showSpeech('see ' + selected + ' resources!');
+        }
     });
 });
 
@@ -498,9 +569,114 @@ $('.collapse').on('show.bs.collapse', function () {
 
 
 // Function load GitHub repositories
+let _resourceModalLastFocused = null;
+let _resourceModalActiveCard = null;
+
+function getResourceModalFocusableElements(modal) {
+    return Array.from(
+        modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ).filter(function(el) {
+        return !el.hasAttribute('disabled') && el.offsetParent !== null;
+    });
+}
+
+function onResourceModalKeydown(event) {
+    const modal = document.getElementById('resource-modal');
+    if (!modal || modal.getAttribute('aria-hidden') !== 'false') {
+        return;
+    }
+
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        closeResourceModal();
+        return;
+    }
+
+    if (event.key !== 'Tab') {
+        return;
+    }
+
+    const focusable = getResourceModalFocusableElements(modal);
+    if (focusable.length === 0) {
+        event.preventDefault();
+        return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+    }
+}
+
+function closeResourceModal() {
+    const modal = document.getElementById('resource-modal');
+    if (!modal) {
+        return;
+    }
+
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('hidden', 'hidden');
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-open');
+
+    document.removeEventListener('keydown', onResourceModalKeydown);
+
+    if (_resourceModalActiveCard) {
+        _resourceModalActiveCard.setAttribute('aria-expanded', 'false');
+    }
+
+    if (_resourceModalLastFocused && typeof _resourceModalLastFocused.focus === 'function') {
+        _resourceModalLastFocused.focus();
+    }
+
+    _resourceModalLastFocused = null;
+    _resourceModalActiveCard = null;
+}
+
+function openResourceModalFromCard(card) {
+    const modal = document.getElementById('resource-modal');
+    const modalTitle = document.getElementById('resource-modal-title');
+    const modalBody = document.getElementById('resource-modal-body');
+    const modalContent = modal ? modal.querySelector('.resource-modal-content') : null;
+
+    if (!modal || !modalTitle || !modalBody || !card || !modalContent) {
+        return;
+    }
+
+    const cardTitle = card.querySelector('.resource-entry-title');
+    const cardContent = card.querySelector('.resource-entry-content');
+
+    modalTitle.textContent = cardTitle ? cardTitle.textContent : 'Entry';
+    modalBody.innerHTML = cardContent ? cardContent.innerHTML : '';
+
+    _resourceModalLastFocused = document.activeElement;
+    _resourceModalActiveCard = card;
+    card.setAttribute('aria-expanded', 'true');
+
+    modal.removeAttribute('hidden');
+    modal.style.display = 'flex';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+
+    document.addEventListener('keydown', onResourceModalKeydown);
+    modalContent.focus();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const container = document.getElementById('github-cards');
+    if (!container) {
+        return;
+    }
     const repoElements = container.querySelectorAll('div[data-url]');
 
     repoElements.forEach(repoElement => {
@@ -539,6 +715,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error fetching repository data for', repoUrl, error);
             });
     });
+
+    const modalCloseBtn = document.getElementById('resource-modal-close');
+    const modal = document.getElementById('resource-modal');
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeResourceModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeResourceModal();
+            }
+        });
+    }
+
 });
 
 
@@ -814,23 +1006,9 @@ $(document).ready(function() {
 // (Old initializeIsotopeGallery removed; using project-style initializeIsotopePictures instead.)
 
 
-// Dark/Light theme based on predefined time
 document.addEventListener('DOMContentLoaded', function() {
-    const buttonEl = document.querySelector('.toggle-theme-button');
-    const speechBalloon = document.querySelector('.speech-balloon');
-    var currentHour = new Date().getHours();
-
-    // Dark theme is used between 7 PM of last day
-    // to 7 AM next day. Otherwise, use light theme
-    if (currentHour > 19 || currentHour <= 7) {
-        document.body.classList.add('dark-theme');
-        buttonEl.innerText = '☀️';
-        // keep theme selection but use a neutral default speech message
-    } else {
-        document.body.classList.add('light-theme');
-        buttonEl.innerText = '🌙';
-        // keep theme selection but use a neutral default speech message
-    }
+    initializeTheme();
+    applySidebarAccessibility();
 
     // Default assistant message on load
     showSpeech('hi!');

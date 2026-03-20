@@ -6,11 +6,11 @@ updates:
     time: June 2024
 
   - picture: 
-    desc: I will attend VL/HCC in <hightlight>Raleigh, North Carolina</hightlight>. 
+    desc: I will attend VL/HCC in <highlight>Raleigh, North Carolina</highlight>. 
     time: October 2025
 
   - picture: 
-    desc: I presented our paper in <hightlight>Trondheim, Norway</hightlight>!
+    desc: I presented our paper in <highlight>Trondheim, Norway</highlight>!
     time: June 20, 2025
 
   - picture: 
@@ -18,19 +18,20 @@ updates:
     time: April 2025
   
   - picture: 
-    desc: I passed my <hightlight>written prelim exam</hightlight>!
+    desc: I passed my <highlight>written prelim exam</highlight>!
     time: March 25, 2025
 
   - picture: 
-    desc: "My first paper was <hightlight>accepted</hightlight> to FSE-SEET in Norway! #noryay"
+    desc: >-
+      My first paper was <highlight>accepted</highlight> to FSE-SEET in Norway! #noryay
     time: March 25, 2025
 
   - picture: 
-    desc: Officially <hightlight>starting my PhD</hightlight> in the WISER lab with Dr. Katie Stolee!
+    desc: Officially <highlight>starting my PhD</highlight> in the WISER lab with Dr. Katie Stolee!
     time: August 2024
 
   - picture: 
-    desc: Interned at <hightlight>Pearson</hightlight> in Durham, North Carolina.
+    desc: Interned at <highlight>Pearson</highlight> in Durham, North Carolina.
     time: May 2024
 
   - picture: 
@@ -38,7 +39,7 @@ updates:
     time: May 2024
 
   - picture: 
-    desc: Starting my <hightlight>undergraduate research</hightlight> journey with Dr. Katie Stolee!
+    desc: Starting my <highlight>undergraduate research</highlight> journey with Dr. Katie Stolee!
     time: November 2023
   
   - picture: 
@@ -46,11 +47,11 @@ updates:
     time: September 2023
 
   - picture: 
-    desc: Nominated for the <hightlight>Faculty Senior Scholar</hightlight> award by the CS department.
+    desc: Nominated for the <highlight>Faculty Senior Scholar</highlight> award by the CS department.
     time: March 2023
 
   - picture: 
-    desc: Interned at <hightlight>Protiviti</hightlight> in Dallas, Texas.
+    desc: Interned at <highlight>Protiviti</highlight> in Dallas, Texas.
     time: May 2022
     
   - picture: 
@@ -58,17 +59,17 @@ updates:
     time: May 2022
 
   - picture: 
-    desc: I am an official NC State <hightlight>Computer Science ambassador</hightlight>.
+    desc: I am an official NC State <highlight>Computer Science ambassador</highlight>.
     time: August 2022
     
   - picture: 
-    desc: A semester abroad in the <hightlight>Czech Republic, Germany, and Austria</hightlight>!
+    desc: A semester abroad in the <highlight>Czech Republic, Germany, and Austria</highlight>!
     time: January 2022
 
   - picture: 
-    desc: I completed NC State's <hightlight>Developing Cultural Competence Certificate</hightlight>.
+    desc: I completed NC State's <highlight>Developing Cultural Competence Certificate</highlight>.
     time: August 2020
 
   - picture: 
-    desc: I start my undergrad at <hightlight>NC State</hightlight>.
+    desc: I start my undergrad at <highlight>NC State</highlight>.
     time: August 2020

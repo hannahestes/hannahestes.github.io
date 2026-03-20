@@ -1,10 +1,9 @@
 <!-- Resources section -->
 
-<!-- <hr>
+<hr>
 <div class="row" id="resources">
     <div class="col">
-        <h2 clss="mb-5">⛏️ resources</h2>
-        <p></p>
+        <h2 class="mb-1"><i class="fas fa-tools" aria-hidden="true"></i> resources &amp; random thoughts</h2>
         {{ site.data.resources.introduction }}
         <p></p>
         <div id="filters-resources">
@@ -19,6 +18,13 @@
                 {% include_relative _libs/resources_widget.html %}
             {% endfor %}
         </div>
+        <div id="resource-modal" class="resource-modal" aria-hidden="true" hidden style="display:none;">
+            <div class="resource-modal-content" role="dialog" aria-modal="true" aria-labelledby="resource-modal-title" aria-describedby="resource-modal-body" tabindex="-1">
+                <button type="button" id="resource-modal-close" class="resource-modal-close" aria-label="Close">&times;</button>
+                <h3 id="resource-modal-title"></h3>
+                <div id="resource-modal-body"></div>
+            </div>
+        </div>
         <p></p>
     </div>
-</div> -->
+</div>

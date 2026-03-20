@@ -1,44 +1,47 @@
-introduction: all software releases of the above projects can also be found here!
+introduction: coming soon! a short collection of blog-style entries. click any card to read the full post.
 
 categories:
 
   - data-filter: research
     category-name: research
-
-  - data-filter: outreach
-    category-name: outreach
   
   - data-filter: misc
     category-name: miscellaneous
 
 links:
 
-  - git-api: https://api.github.com/repos/mkhangg/refined_panoptic_mapping
-    category: research
+  # - title: Finding a Research Question That Sticks
+  #   summary: How I moved from broad interests to a question that was specific enough to study and meaningful enough to sustain.
+  #   content: >-
+  #     I started with ideas that were too broad to execute. What helped most was narrowing
+  #     the scope to a concrete user group, a single problem context, and a clear artifact
+  #     to evaluate. I now keep a running note of unanswered questions from papers and
+  #     meetings, and every week I turn one into a candidate study prompt.
+  #   category: research
 
-  - git-api: https://api.github.com/repos/mkhangg/v3d-slam
-    category: research
+  # - title: Writing Better Literature Notes
+  #   summary: A lightweight note structure that makes it easier to synthesize papers into related-work writing.
+  #   content: >-
+  #     For each paper, I now capture five things: problem, method, data, key finding, and
+  #     one limitation. The limitation is the most useful because it often points directly
+  #     to future experiments. This has made draft writing much faster because I already
+  #     have comparison points prepared.
+  #   category: research
 
-  - git-api: https://api.github.com/repos/mkhangg/semantic_scene_perception
-    category: research
-  
-  - git-api: https://api.github.com/repos/mkhangg/academic-website
-    category: misc
+  # - title: Presenting Work Without Overloading Slides
+  #   summary: A simple pattern for technical talks that keeps audiences focused on one idea at a time.
+  #   content: >-
+  #     I moved to a three-beat slide pattern: context, evidence, takeaway. Limiting each
+  #     slide to one core claim reduced confusion and gave me more room to discuss
+  #     interpretation. During Q and A, I keep backup slides for details so the main flow
+  #     stays clear.
+  #   category: research
 
-  - git-api: https://api.github.com/repos/mkhangg/deformable_cobot
-    category: research
-
-  - git-api: https://api.github.com/repos/mkhangg/calib_cobot
-    category: research
-
-  - git-api: https://api.github.com/repos/mkhangg/perception_framework
-    category: research
-
-  - git-api: https://api.github.com/repos/mkhangg/hackmit22
-    category: outreach
-
-  - git-api: https://api.github.com/repos/tuantdang/iotree
-    category: research
-
-  - git-api: https://api.github.com/repos/mkhangg/robotech22
-    category: outreach
+  # - title: Why I Rebuilt My Personal Website
+  #   summary: Reframing a static profile into a site that better documents progress over time.
+  #   content: >-
+  #     I wanted the site to work as a living lab notebook rather than a static resume. The
+  #     new structure highlights updates, resources, and milestones in a way that is easier
+  #     to maintain. Keeping content in YAML makes small updates quick and lowers friction
+  #     for regular posting.
+  #   category: misc

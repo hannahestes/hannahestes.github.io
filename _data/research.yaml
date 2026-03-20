@@ -20,8 +20,27 @@ projects:
     talk: 
     doi:
     poster: 
-    abstract-less: "The role of the software product manager is often ambiguous and potentially contentious, with tensions often arising between the software product manager and the software team. The goal of this work is to uncover software product manager role expectations from three perspectives: their own, that of the software team, and that of the software companies. We deployed a survey targeting"
-    abstract-more: software professionals (n=80, 22 companies) to uncover software product manager role expectations and the typical questions they answer, providing direct and indirect lenses into software product manager activities. Through qualitative analysis, we discovered that software product managers must be product experts, user advocates, and communication gurus. From the companies’ perspective, we analyzed 37 job descriptions to generalize our findings. We also identify that communication and competency issues lead to frequent team frustration. Our findings provide clarity on the software product manager role directly through employees’ and employers’ perspectives, indirectly from the questions they should answer, and through eight friction points when working with a software team. We synthesize these results across the software development lifecycle in the SENSE framework, providing acomprehensive view of software product manager role expectations and points of friction with software teams.
+    abstract-less: >-
+      The role of the software product manager is often ambiguous and potentially
+      contentious, with tensions often arising between the software product manager
+      and the software team. The goal of this work is to uncover software product
+      manager role expectations from three perspectives: their own, that of the
+      software team, and that of the software companies. We deployed a survey
+      targeting
+    abstract-more: >-
+      software professionals (n=80, 22 companies) to uncover software product manager
+      role expectations and the typical questions they answer, providing direct and
+      indirect lenses into software product manager activities. Through qualitative
+      analysis, we discovered that software product managers must be product experts,
+      user advocates, and communication gurus. From the companies’ perspective, we
+      analyzed 37 job descriptions to generalize our findings. We also identify that
+      communication and competency issues lead to frequent team frustration. Our
+      findings provide clarity on the software product manager role directly through
+      employees’ and employers’ perspectives, indirectly from the questions they
+      should answer, and through eight friction points when working with a software
+      team. We synthesize these results across the software development lifecycle in
+      the SENSE framework, providing a comprehensive view of software product manager
+      role expectations and points of friction with software teams.
     tag: spm_role_questions_jobs
     category: spm
 
@@ -39,7 +58,26 @@ projects:
     talk: 
     doi: https://doi.org/10.1145/3696630.3727256
     poster: 
-    abstract-less: Software product managers have become critical to a software product’s success. They act as a liaison among various stakeholders - software engineers, management, and customers - to ensure a product meets customer needs. Despite the role’s rise in popularity, research and related educational materials are just emerging. In this paper, we aim to understand the educational needs of software product managers, and why embedding them in a software
-    abstract-more: team is valuable. To do this, we collected survey responses from 59 software product managers and 63 software engineers, with responses from at least 24 companies, to identify the topics, skills, and abilities that software product managers find important for the role and the value they provide to software teams. Our results reveal that a software product manager’s value stems from their ability to provide the team with direction and a plan, give context for decision-making, and effectively communicate across stakeholders. To support this, someone new to the role must have competencies in technical and non-technical areas. A software product manager must excel at interpersonal communication, understanding the technical atmosphere, and deriving product sense from a vision and strategy. This paper provides the groundwork for future software product management curricula by identifying 21 key competencies and 10 factors to describe the role’s value in software teams.
+    abstract-less: >-
+      Software product managers have become critical to a software product’s success.
+      They act as a liaison among various stakeholders - software engineers,
+      management, and customers - to ensure a product meets customer needs. Despite
+      the role’s rise in popularity, research and related educational materials are
+      just emerging. In this paper, we aim to understand the educational needs of
+      software product managers, and why embedding them in a software
+    abstract-more: >-
+      team is valuable. To do this, we collected survey responses from 59 software
+      product managers and 63 software engineers, with responses from at least 24
+      companies, to identify the topics, skills, and abilities that software product
+      managers find important for the role and the value they provide to software
+      teams. Our results reveal that a software product manager’s value stems from
+      their ability to provide the team with direction and a plan, give context for
+      decision-making, and effectively communicate across stakeholders. To support
+      this, someone new to the role must have competencies in technical and
+      non-technical areas. A software product manager must excel at interpersonal
+      communication, understanding the technical atmosphere, and deriving product
+      sense from a vision and strategy. This paper provides the groundwork for future
+      software product management curricula by identifying 21 key competencies and 10
+      factors to describe the role’s value in software teams.
     tag: spm_edu
     category: spm
