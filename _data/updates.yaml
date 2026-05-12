@@ -1,6 +1,11 @@
 updates:
 # assets/img/updates_gan/spider_bot.jpg
 
+
+  - picture:
+    desc: Attended my first ICSE!
+    time: April 2026
+
   - picture: 
     desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
     time: June 2024

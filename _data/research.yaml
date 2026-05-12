@@ -2,10 +2,52 @@ categories:
 
   - data-filter: spm
     category-name: software product management
-  # - data-filter: other
-  #   category-name: other
+  - data-filter: other
+    category-name: other
 
 projects:
+  - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"
+    system-name: 
+    gif: assets/img/vda_vlhcc.png
+    conference: "VL/HCC" 
+    conference-web: https://conf.researchr.org/home/vlhcc-2026
+    status: Currently Under Review
+    authors: <b>Hannah Estes</b>, Kathryn T. Stolee.
+    pdf: assets/papers/blank_notyet.pdf
+    code: 
+    demo: 
+    slides:
+    talk: 
+    doi:
+    poster: 
+    abstract-less: >-
+      Large language models are pervasive in everyday writing tools, yet in most 
+      instances, the rhetorical elements of the writing are not considered. 
+      Using data from CoAuthor, an LLM writing assistant, we qualitatively coded 
+      20 argumentative writing sessions across three dimensions: when the LLM was
+      prompted, the rhetorical content of its suggestions, and the outcomes of those 
+      suggestions. We find a failure of negotiation where the LLMs often default to 
+    abstract-more: >-
+      generating facts and opinions 63% of the time, which writers often reject. More
+      critically, when writers do accept suggestions, 31% are later edited or reversed, 
+      revealing that the initial acceptance masks a deeper
+      misalignment. Through multiple correspondence analysis and
+      multinomial logistic regression, we find that who the writer is
+      explains significantly more variance in a suggestion’s outcome
+      rather than what the LLM suggests or where it is prompted. This
+      suggests that the solution is not to generate better suggestions
+      with higher acceptance rates, but build systems that learn and
+      adapt to each writer’s unique style and rhetorical trajectory.
+      When the LLM ignores the author’s characteristics and focuses
+      instead on opinions, it risks displacing the writer’s own voice,
+      underscoring the individuality and autonomy each writer brings
+      to the session. From this, we argue that LLM-in-the-loop writing
+      tools should adopt an iterative, writer-aware design inspired by
+      the DevOps cycle of plan, do, check, and act, to continuously
+      align suggestions to the writer’s context, rhetorical trajectory,
+      and personal style.
+    tag: vda_ai_writing_tools
+    category: other
   - title: "Expectations of Software Product Managers: An Empirical Evaluation of Software Professionals' Perspectives"
     system-name: 
     gif: assets/img/TOSEM_graphic.png
