@@ -1,5 +1,11 @@
-<div class="news-card">
-    {% if update.picture %} <img src="{{ update.picture }}" class="w-full rounded-lg"> {% endif %}
-    <div class="news-desc">{{ update.desc }}</div>
-    <div class="news-time">{{ update.time }}</div>
-</div>
+{% assign timeline_position = forloop.index0 | modulo: 2 %}
+<article class="updates-timeline-item {% if timeline_position == 0 %}updates-timeline-item--top{% else %}updates-timeline-item--bottom{% endif %}">
+    <div class="updates-timeline-marker" aria-hidden="true">
+        <span class="updates-timeline-dot"></span>
+    </div>
+    <div class="updates-timeline-card">
+        {% if update.picture %} <img src="{{ update.picture }}" alt="" class="updates-timeline-image"> {% endif %}
+        <div class="updates-timeline-time">{{ update.time }}</div>
+        <div class="updates-timeline-desc">{{ update.desc }}</div>
+    </div>
+</article>

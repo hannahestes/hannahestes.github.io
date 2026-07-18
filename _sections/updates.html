@@ -5,10 +5,12 @@
     <div class="col">
         <h2 class="mb-1"><i class="fas fa-edit" aria-hidden="true"></i> updates</h2>
         <p></p>
-        <div class="owl-carousel owl-theme">
-            {% for update in site.data.updates.updates %}
-                {% include_relative _libs/updates_widget.html %}
-            {% endfor %}
+        <div class="updates-timeline" aria-label="Updates timeline scroller">
+            <div class="updates-timeline-track">
+                {% for update in site.data.updates.updates %}
+                    {% include_relative _libs/updates_widget.html %}
+                {% endfor %}
+            </div>
         </div>
         <p></p>
     </div>

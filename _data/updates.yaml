@@ -21,12 +21,12 @@ updates:
     time: April 2026
 
   - picture: 
-    desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
-    time: June 2025
-
-  - picture: 
     desc: I will attend VL/HCC in <highlight>Raleigh, North Carolina</highlight>. 
     time: October 2025
+
+  - picture: 
+    desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
+    time: June 2025
 
   - picture: 
     desc: I presented our paper in <highlight>Trondheim, Norway</highlight>!
@@ -70,16 +70,16 @@ updates:
     time: March 2023
 
   - picture: 
+    desc: I am an official NC State <highlight>Computer Science ambassador</highlight>.
+    time: August 2022
+
+  - picture: 
     desc: Interned at <highlight>Protiviti</highlight> in Dallas, Texas.
     time: May 2022
     
   - picture: 
     desc: Nominated as the ambassador with most volunteer hours!
     time: May 2022
-
-  - picture: 
-    desc: I am an official NC State <highlight>Computer Science ambassador</highlight>.
-    time: August 2022
     
   - picture: 
     desc: A semester abroad in the <highlight>Czech Republic, Germany, and Austria</highlight>!
