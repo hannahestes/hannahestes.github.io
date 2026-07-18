@@ -761,6 +761,20 @@ var $pictures = $('#gallery-pictures').isotope({
     layoutMode: 'fitRows'
 });
 
+// Load real images for gallery cards on the current page/filter.
+// Called after each Isotope arrange so only visible items fetch their images.
+function loadVisibleGalleryImages() {
+    var selector = '.gallery-card';
+    if (currentFilterPictures !== '*') {
+        selector += '[' + filterAtributePictures + '="' + currentFilterPictures + '"]';
+    }
+    selector += '[' + pageAtributePictures + '="' + currentPagePictures + '"]';
+    $(selector).find('img[data-src]').each(function() {
+        this.src = this.dataset.src;
+        this.removeAttribute('data-src');
+    });
+}
+
 
 // Filter based on input category for pictures
 function filterCategoryPictures(category) {
@@ -847,11 +861,15 @@ function setPaginationPictures() {
 function initializeIsotopePictures() {
     // Set number of pages, return to first page,
     setPaginationPictures();
+
+    // Load images whenever Isotope finishes arranging (covers initial load, filter, and page changes)
+    $pictures.off('arrangeComplete.gallery').on('arrangeComplete.gallery', loadVisibleGalleryImages);
+
     showPagePictures(1);
 
 
-    // Filter pictures based on category, including change active buttons, filter pictures, 
-    // set the number of pages, return to the first page, and update the pager indicator 
+    // Filter pictures based on category, including change active buttons, filter pictures,
+    // set the number of pages, return to the first page, and update the pager indicator
     $('#filters-pictures .filter-button').off('click').on('click', function() {
         $('#filters-pictures .filter-button').removeClass('active');
         $(this).addClass('active');
@@ -975,7 +993,12 @@ function initializeIsotopeGithub() {
 // });
 // This version is faster --> re-layout when all the images are fully loaded not neccessarily all the gifs
 $(document).ready(function() {
-    var Images = $('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"]').get();
+    // Carousel has no images so initialize immediately, not after image load
+    initializeOwlCarousel();
+
+    // Exclude lazy-loaded images — they don't fire onload until scrolled into view,
+    // which would stall Promise.all and prevent Isotope layouts from initializing.
+    var Images = $('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"]').not('[loading="lazy"]').get();
     var imageLoadPromises = Images.map(function(img) {
         return new Promise(function(resolve) {
             if (img.complete) {
@@ -988,7 +1011,6 @@ $(document).ready(function() {
     });
 
     Promise.all(imageLoadPromises).then(function() {
-        initializeOwlCarousel();
         initializeIsotopeProjects();
         initializeIsotopeGithub();
         initializeIsotopePictures();

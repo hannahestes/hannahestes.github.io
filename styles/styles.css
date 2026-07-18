@@ -497,7 +497,12 @@ code {
     font-size: 1.5rem;
     margin-right: 0.25rem;
     padding-top: 4px;
+    text-decoration: none;
     transition: transform 0.3s;
+}
+.social-icons .social-icon:hover,
+.social-icons .social-icon:focus-visible {
+    text-decoration: none;
 }
 .social-icons .social-icon:hover {
     transform: scale(1.30);

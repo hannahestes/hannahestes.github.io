@@ -1,14 +1,28 @@
 updates:
 # assets/img/updates_gan/spider_bot.jpg
-
+  - picture:
+    desc: Selected as student volunteer for ACM AI Leadership Summit
+    time: July 2026
+  
+  - picture:
+    desc:  Who Shapes the Stance? was <highlight>accepted</highlight> to VL/HCC!
+    time: July 2026
 
   - picture:
-    desc: Attended my first ICSE!
+    desc: I was selected for a mentored teaching fellowship at NC State for Fall 2026.
+    time: June 2026
+
+  - picture:
+    desc: Sandia National Labs summer research internship starts!
+    time: May 2026
+    
+  - picture:
+    desc: I attended my first <a target="_blank" href="https://conf.researchr.org/home/icse-2026">ICSE</a> in Rio de Janeiro, Brazil!
     time: April 2026
 
   - picture: 
     desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
-    time: June 2024
+    time: June 2025
 
   - picture: 
     desc: I will attend VL/HCC in <highlight>Raleigh, North Carolina</highlight>. 
@@ -24,12 +38,12 @@ updates:
   
   - picture: 
     desc: I passed my <highlight>written prelim exam</highlight>!
-    time: March 25, 2025
+    time: March 25 2025
 
   - picture: 
     desc: >-
       My first paper was <highlight>accepted</highlight> to FSE-SEET in Norway! #noryay
-    time: March 25, 2025
+    time: March 25 2025
 
   - picture: 
     desc: Officially <highlight>starting my PhD</highlight> in the WISER lab with Dr. Katie Stolee!
