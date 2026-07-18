@@ -1281,8 +1281,36 @@ div.desc {
     line-height: 1.6;
 }
 
+#resource-modal-body p,
+#resource-modal-body ul,
+#resource-modal-body ol {
+    margin: 0 0 1em 0;
+}
+
+#resource-modal-body ul,
+#resource-modal-body ol {
+    padding-left: 1.5em;
+}
+
+#resource-modal-body li {
+    margin-bottom: 0.4em;
+}
+
+#resource-modal-body a {
+    color: var(--color-accent);
+    word-break: break-word;
+}
+
+#resource-modal-body :last-child {
+    margin-bottom: 0;
+}
+
 .dark-theme #resource-modal-body {
     color: #d7ddd8;
+}
+
+.dark-theme #resource-modal-body a {
+    color: var(--accent-dark);
 }
 
 body.modal-open {

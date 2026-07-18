@@ -1,47 +1,169 @@
-introduction: coming soon! a short collection of blog-style entries. click any card to read the full post.
+introduction: a short collection of helpful links and advice I have collected along the way. click any card to read more!
 
 categories:
 
   - data-filter: research
     category-name: research
-  
+
+  - data-filter: ncsu
+    category-name: nc state
+
   - data-filter: misc
-    category-name: miscellaneous
+    category-name: misc
+
+
 
 links:
+  - title: Everything PhD
+    summary: Useful list of blogs and resources about apply for, succeeding in, and graduating from your PhD!
+    content: |-
+      - Everything Phillip Guo!! (can't post the links but if you are interested reach out!)
+        - <https://www.youtube.com/watch?v=zdOLa7w9lnE>
+      - <https://matt.might.net/articles/> : Great blog about everything PhD
+        - some of my favorites:
+          - http://matt.might.net/articles/phd-school-in-pictures/> : Illustrated Guide to PhD
+          - <https://matt.might.net/articles/what-cs-majors-should-know/> : Every CS Major should know
+          - <https://matt.might.net/articles/grad-student-resolutions/> : 12 Resolutions for Grad Students
+          - <https://matt.might.net/articles/successful-phd-students/> : 3 qualities of successful PhD students
+      - <https://matt-welsh.blogspot.com/2012/03/do-you-need-phd.html> : Do you need a PhD?
+      - <https://homes.cs.washington.edu/~mernst/advice/> : Another Great Collection of Advice for Everything PhD
+      - <https://vijay03.github.io/asstprofbook/> : CS Assistant Professor Handbook (good for TA too!)
+      <https://github.com/poloclub/awesome-grad-school> : General Collection of Advice for all things PhD
+      - <https://parentheticallyspeaking.org/articles/us-cs-phd-faq/> : PhD application advice
+      - <https://clairelegoues.com/posts/clg-writing-rules.html> : writing advice
+      - <https://michaelnielsen.org/blog/principles-of-effective-research/> : Principles of Effective Research
+      - <https://scale.com/blog/irr> : Intro to Inter-rater reliability
+      - <https://www.daad.de/rise/en/rise-professional/find-an-internship/application-portal/> : Research Internships
+    category: research
 
-  # - title: Finding a Research Question That Sticks
-  #   summary: How I moved from broad interests to a question that was specific enough to study and meaningful enough to sustain.
-  #   content: >-
-  #     I started with ideas that were too broad to execute. What helped most was narrowing
-  #     the scope to a concrete user group, a single problem context, and a clear artifact
-  #     to evaluate. I now keep a running note of unanswered questions from papers and
-  #     meetings, and every week I turn one into a candidate study prompt.
-  #   category: research
+  - title: Presentation Help!
+    summary: Here are some helpful links (e.g., presentation layout, icons) for making presentations.
+    content: |-
+      1. Problem + Motivation (1-2 slides, what problem(s) do you address
+      with your work? Why is it important to solve this problem? If
+      reasonable, you should introduce a *running example* at this point)
 
-  # - title: Writing Better Literature Notes
-  #   summary: A lightweight note structure that makes it easier to synthesize papers into related-work writing.
-  #   content: >-
-  #     For each paper, I now capture five things: problem, method, data, key finding, and
-  #     one limitation. The limitation is the most useful because it often points directly
-  #     to future experiments. This has made draft writing much faster because I already
-  #     have comparison points prepared.
-  #   category: research
+      2. Solution Idea (1 slide, give a short overview about the approach
+      you are going to describe. At this point, I like to show the "Big
+      Picture" of my solution.)
+      
+      3. Outline of your talk (1 slide, if reasonable for your topic, you
+      should utilize the big picture and highlight different stages of it
+      during your talk)
+      
+      4. Details (but keep it simple and remember a talks purpose is to
+      raise interest for your paper. If you didn't introduce a running example in the motivation part, do it now und use it intensively in the
+      following slides)
+      
+      5. Conclusion + Future Work (1-2 slides, what are the main messages
+      of your talk? Mention some ideas for further improvements)
+      
+      6. Finally, show the big picture again extended with some additional
+      information from the "Details" section (on one slide!). This helps your
+      audience to ask questions.
+      
+      7. Prepare some backup slides for possible questions.
+      
+      - <https://users.ece.cmu.edu/~pueschel/teaching/guides/guide-presentations.pdf>
+      - <https://www.unomaha.edu/college-of-information-science-and-technology/_files/docs/round-tables/tips-for-academic-presentations-mdavidson.pdf>
+      - <https://medium.com/navigating-academia/the-last-slide-in-an-academic-conference-presentation-strategically-populate-the-last-slide-with-e89173eac2fa>
+    category: research
 
-  # - title: Presenting Work Without Overloading Slides
-  #   summary: A simple pattern for technical talks that keeps audiences focused on one idea at a time.
-  #   content: >-
-  #     I moved to a three-beat slide pattern: context, evidence, takeaway. Limiting each
-  #     slide to one core claim reduced confusion and gave me more room to discuss
-  #     interpretation. During Q and A, I keep backup slides for details so the main flow
-  #     stays clear.
-  #   category: research
+  - title: Developing Research Questions
+    summary: 3 Questions I Ask...
+    content: |-
+      - How to approximate it?
+      - How can we make it cheaper? (including time for other people and time for self)
+      - How would we actually a study this?
+    category: research
 
-  # - title: Why I Rebuilt My Personal Website
-  #   summary: Reframing a static profile into a site that better documents progress over time.
-  #   content: >-
-  #     I wanted the site to work as a living lab notebook rather than a static resume. The
-  #     new structure highlights updates, resources, and milestones in a way that is easier
-  #     to maintain. Keeping content in YAML makes small updates quick and lowers friction
-  #     for regular posting.
-  #   category: misc
+  - title: Inductive Writing All the Way!
+    summary: 
+    content: |-
+      Write inductively not deductively! The first sentence should say X and then follow up with how you got there. If you bolded the first sentence of each paragraph, does it summarize the rest?
+    category: research
+
+  - title: Conference Deadlines & SE/HCI Research Standards
+    summary: 
+    content: |-
+      - <https://hci-deadlines.github.io/> : HCI Conference Deadlines
+      - <https://se-deadlines.github.io/> : SE Conference Deadlines
+      - <https://cs-deadlines.cin.ufpe.br/> : CS Conference Deadlines
+
+      - <https://www2.sigsoft.org/EmpiricalStandards/> : Empirical Standards for Software Engineering
+      - <https://ixdf.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed> : Encyclopedia for HCI
+    category: research
+
+  - title: NC State Specific Resources
+    summary: Starting out at a new college (or new place) can be overwhelming with all of the resources, so here is a shortlist of my most used links
+    content: |-
+      - <https://residencync.cfnc.org/login> : check your residency status
+      - <https://grad.ncsu.edu/admissions/residency/> : residency information
+      - <https://my.csc.ncsu.edu/dgp/services-info-for-students/researchcredits/> : Enrollment for Research Credits
+      - <https://webappprd.acs.ncsu.edu/php/coursecat/index.php> : NC State Class Search
+      - <https://my.csc.ncsu.edu/dgp/services-info-for-students/procedure-for-seminar-attendance-credit/> : Seminar Attendance
+      - <https://www.wolftech.ncsu.edu/gradwatch/students/login.php#tab-courses-grades> : GradWatch
+      - <https://waitz.io/ncsu-wellness-and-rec-center> : see how busy the NC State gym is
+    category: ncsu
+
+  - title: Random Resources
+    summary: I have found some helpful links over the years and so here they are in no specific order!
+    content: |-
+     - <https://openalex.org/> : Alternative to Google Scholar (I like to look at specific researchers this way)
+     - <https://rxresu.me/dashboard/resumes> : Resume Creator that is Accessible for Job Application Screeners (I currently use an overleaf template: linked below)
+     - <https://www.bigocheatsheet.com/> : Big O complexity resource
+     - <https://automatetheboringstuff.com/3e/> : Python Tips and Tricks
+     - <https://roadmap.sh/> : Cool Developer Roadmaps to Learn New Things
+     - <https://based.cooking/> : tons of recipes for cooking and baking!
+     - <https://learngitbranching.js.org/> : learn more about git branching
+     - <https://fullstackopen.com/en/> : intro to web dev
+     - <https://r4ds.hadley.nz/> : intro to R 
+     - <https://www.connectedpapers.com/> : Visual Graph of Related Papers (or authors)
+     - <https://www-users.york.ac.uk/~mijp1/teaching/2nd_year_Comp_Lab/guides/grep_awk_sed.pdf> : intro to grep, awk, and sed
+     - <https://github.com/jlevy/the-art-of-command-line> : Intro to the command line
+
+     Vim
+     - <https://www.reddit.com/r/vim/comments/ulphgp/what_are_your_musthave_vimnvim_extensions/?solution=0e7ad075007d32570e7ad075007d3257&js_challenge=1&token=7afd7253fec22262ff1c52b1703fe9ec4a66a26a0a232f5231fcfbb642660335&jsc_orig_r=> : best vim extensions
+     - <https://vimawesome.com/> : more extensions
+    category: misc
+
+  - title: Software Engineering & Research Book Recommendations
+    summary: 
+    content: |-
+      - The inmates are running the asylum
+      - the mythical man month
+      - even a geek can speak
+      - the incomplete guide to the art of discovery
+    category: misc
+
+  - title: Threats to Validity Clarification
+    summary: Using a Target Analogy
+    content: |-
+      - **Statistical conclusion validity** ensures that your arrows are on the target at all. Without it, your arrows might not even reach the target.
+      - **Internal validity** ensures that your arrows consistently hit the same spot on the target.
+      If you don't hit the same spot every time, you can't be sure your
+      technique is responsible for the result.
+      - **Construct validity** checks that you hit the correct area of the target. You might be consistent, but are you measuring the right thing?
+      - **External validity** asks if you can hit the bullseye on different targets in different
+      locations and under different weather conditions. You can only attempt
+      this after you are confident in your aim at the first target.
+    category: research
+
+  - title: Great Portfolio/Website Templates
+    summary: Some great examples (I think
+    content: |-
+      - <https://tichung.com/teaching-statement/>
+      - <https://mkhangg.com/> (what I based mine on!)
+      - <https://www.joonsungpark.com/home_2020>
+      - <https://reginachangzhou.github.io/>
+      - <https://faculty.washington.edu/ajko/>
+    category: misc
+
+  - title: Outdoor Trackers
+    summary: My journey to explore all National Parks and North Carolina State Parks
+    content: |-
+      - <https://www.ncparks.gov/education/passport-program> : Collect Stamps at NC State parks
+      - <https://www.google.com/maps/d/u/1/edit?mid=1kV76D_3ywRGgLOjHYmw1c9l4jfPD9gE&ll=36.994613643429275%2C-78.776242578125&z=7> : my journey so far
+      - <https://www.google.com/maps/d/u/0/edit?mid=1pgVv4mBxWwyKOb3ocvttvOf2IYoyY-o&ll=19.91544129296435%2C-117.71674999999993&z=3> : National Parks version
+    category: misc
+

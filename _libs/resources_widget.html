@@ -1,5 +1,5 @@
 <div class="github-card resource-entry-card" data-filter="{{ link.category }}" tabindex="0" role="button" aria-label="Open {{ link.title }}" aria-haspopup="dialog" aria-controls="resource-modal" aria-expanded="false" onclick="openResourceModalFromCard(this)" onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault(); openResourceModalFromCard(this);}">
     <div class="resource-entry-title">{{ link.title }}</div>
     <div class="resource-entry-summary">{{ link.summary }}</div>
-    <div class="resource-entry-content" style="display:none;">{{ link.content }}</div>
+    <div class="resource-entry-content" style="display:none;">{{ link.content | markdownify }}</div>
 </div>
