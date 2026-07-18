@@ -192,6 +192,10 @@ function applyCarouselAccessibility() {
     }
 }
 
+function initializeUpdatesSection() {
+    initializeOwlCarousel();
+}
+
 function applySidebarAccessibility() {
     const navActions = document.querySelectorAll('nav ul li .nav-item-button, nav ul li .nav-item-link');
 
@@ -993,8 +997,8 @@ function initializeIsotopeGithub() {
 // });
 // This version is faster --> re-layout when all the images are fully loaded not neccessarily all the gifs
 $(document).ready(function() {
-    // Carousel has no images so initialize immediately, not after image load
-    initializeOwlCarousel();
+    // Initialize updates before the deferred gallery/photo layouts.
+    initializeUpdatesSection();
 
     // Exclude lazy-loaded images — they don't fire onload until scrolled into view,
     // which would stall Promise.all and prevent Isotope layouts from initializing.
