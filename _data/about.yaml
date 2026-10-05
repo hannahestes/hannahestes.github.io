@@ -3,12 +3,7 @@ name: Hannah Estes
 pronouns: <a href="https://pronouns.org/she-her" target="_blank" rel="noopener">she/her</a>
 profile-pic: assets/img/Hannah_Portrait_Square.jpg
 
-# emoji indicator
-emoji: 
-desc-emoji: hi!
-# emoji-img:  assets/img/comic_portrait_square.png # assets/img/emoji_icon.png    # optional: set a small image path to use instead of the emoji (leave blank to use emoji)
-
-# social links
+# social links (leave one blank to hide its icon)
 scholar: https://scholar.google.com/citations?user=IWVkTtEAAAAJ
 github: https://github.com/hannahestes
 youtube: 

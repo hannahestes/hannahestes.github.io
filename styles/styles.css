@@ -1,209 +1,296 @@
-/* Document body styles */
-/* Color variables: edit these to tweak themes quickly */
-:root {
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-bg-light: #ffffff;
-    --color-text-light: #333333;
-    --color-bg-dark: #333333;
-    --color-text-dark: #ffffff;
-    --color-accent: #A8B298; /* #bd5d38; /* primary accent */
-    --color-accent-strong: #777E6D; /*#824027; /* hover/darker accent */
-    --color-selection-light: #ffb699;
-    --color-selection-dark: #545454;
-    --color-surface: #f5f5f5; /* nav, surfaces */
-    --color-primary: #4c5157; /* used for emphasized text */
-    --color-muted-bg: #f1f1f1; /* code background, light surfaces */
-    --color-muted: #909090; /* subtle text */
-    --color-border-weak: #ccc;
-    --color-border-dark: #333333;
-    --color-emoji-bg: #efefef;
-    --color-emoji-bg-dark: #787878;
-    --color-muted-2: #586069; /* small metadata text */
-    --color-link: #0366d6;
-    --color-gold: #ffc107;
-    --color-backtotop: #9faba6;
-    --color-backtotop-hover: #767f7b;
-    --color-toggle-light: #919191;
-    --color-card-dark: #292929;
-    --color-muted-strong: #555;
-    --color-disabled: #cccccc;
-    --color-disabled-text: #666666;
-    --color-border-muted: #aaaaaa;
-    --overlay-grad: rgba(0,0,0,0.55);
-    --overlay-grad-start: rgba(0,0,0,0);
-    /* Palette tokens */
-    --palette-green-light: #bcdf86;
-    --palette-green-dark: #8dc048;
-    --palette-brown-light: #B36C56;
-    --palette-brown-dark: #9B5946;
-    /* theme accent placeholders (can be overridden per-theme) */
-    --accent-light: var(--palette-brown-light);
-    --accent-light-strong: var(--palette-brown-dark);
-    --accent-dark: var(--palette-green-light);
-    --accent-dark-strong: var(--palette-green-dark);
-
-    /* Card tokens: keep card styling compact and consistent */
-    --card-radius: 12px;
-    --card-border-width: 1px;
-    --card-border-light: #d9d9d9;
-    --card-border-dark: #4a4a4a;
-    --card-shadow-light: 0 2px 6px rgba(0, 0, 0, 0.08);
-    --card-shadow-dark: 0 3px 10px rgba(0, 0, 0, 0.24);
-    --card-shadow-hover-light: 0 4px 10px rgba(0, 0, 0, 0.12);
-    --card-shadow-hover-dark: 0 6px 14px rgba(0, 0, 0, 0.3);
-    --card-pad-x: 14px;
-    --card-pad-y: 12px;
-}
-
-/* Theme-specific convenience aliases */
+/* ==========================================================================
+   Theme colors: everything below uses these, so each theme is defined once
+   ========================================================================== */
 .light-theme {
-    --bg: var(--color-bg-light);
-    --text: var(--color-text-light);
-    /* light theme accent */
-    --color-accent: var(--accent-light);
-    --color-accent-strong: var(--accent-light-strong);
-    --color-link: var(--accent-light);
+    --bg: #ffffff;
+    --text: #333333;
+    --accent: #B36C56;
+    --accent-strong: #9B5946;
+    --accent-tint: rgba(179, 108, 86, 0.14);
+    --muted: #909090;
+    --border: #d9d9d9;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --surface: #f5f5f5;
+    --card: #ffffff;
+    --selection: #ffb699;
 }
 .dark-theme {
-    --bg: var(--color-bg-dark);
-    --text: var(--color-text-dark);
-    /* dark theme accent */
-    --color-accent: var(--accent-dark);
-    --color-accent-strong: var(--accent-dark-strong);
-    --color-link: var(--accent-dark);
+    --bg: #333333;
+    --text: #ffffff;
+    --accent: #bcdf86;
+    --accent-strong: #8dc048;
+    --accent-tint: rgba(188, 223, 134, 0.14);
+    --muted: #909090;
+    --border: #4a4a4a;
+    --shadow: 0 3px 10px rgba(0, 0, 0, 0.24);
+    --surface: #292929;
+    --card: #2f2f2f;
+    --selection: #545454;
+}
+:root {
+    --radius: 12px;
 }
 
-body.light-theme {
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
     background-color: var(--bg);
     color: var(--text);
     transition: 0.5s;
 }
-body.dark-theme {
-    background-color: var(--bg);
-    color: var(--text);
-    transition: 0.5s;
-}
-
-
-/* Hyperlink, highlight, and text styles */
 a {
-    color: var(--color-accent);
+    color: var(--accent);
     text-decoration: underline;
-    background-color: transparent;
 }
 a:hover {
-    color: var(--color-accent-strong);
-    text-decoration: underline;
+    color: var(--accent-strong);
 }
 highlight {
-    color: var(--color-accent);
-    text-decoration: none;
-    background-color: transparent;
+    color: var(--accent);
 }
-
-
-/* Styles for user selection */
 ::selection {
-    background-color: var(--color-selection-light);
+    background-color: var(--selection);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #909090;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+
+/* ==========================================================================
+   Page chrome: scroll progress bar, back-to-top and theme buttons
+   ========================================================================== */
+.progress-bar-container {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 1px;
+    background: #f1f1f1;
     transition: 0.5s;
 }
-
-/* Light theme style for user selection */
-.light-theme ::selection {
-    background-color: var(--color-selection-light);
+.dark-theme .progress-bar-container {
+    background: #909090;
+}
+.progress-bar {
+    height: 1px;
+    width: 0%;
+    background: var(--accent);
 }
 
-/* Dark theme style for user selection */
-.dark-theme ::selection {
-    background-color: var(--color-selection-dark);
+#back-to-top-button,
+.toggle-theme-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    width: 55px;
+    height: 55px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+#back-to-top-button {
+    display: inline-block;
+    text-align: center;
+    font-size: 2em;
+    line-height: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #9faba6;
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+}
+#back-to-top-button:hover {
+    color: #ffffff;
+    background-color: #767f7b;
+}
+#back-to-top-button.show {
+    opacity: 0.7;
+    visibility: visible;
+}
+.toggle-theme-button {
+    color: #ffffff;
+    background-color: #919191;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.dark-theme .toggle-theme-button {
+    color: #333333;
+    background-color: #f1f1f1;
 }
 
 
-/* Styles for navigation bar (menu under the profile header) */
-nav.site-nav {
+/* ==========================================================================
+   Profile header (every page): photo beside name, intro, and social icons
+   ========================================================================== */
+.profile-header {
+    align-items: center;
+    row-gap: 0.75rem;
+}
+/* photo with an accent ring around a thin gap */
+.profile-image {
+    display: block;
+    width: 152px;
+    height: 152px;
+    margin: 4px;
+    border: 5px solid var(--bg);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--accent-strong);
+    transition: 0.5s;
+}
+.profile-header h2 {
+    margin-bottom: 0;
+}
+.profile-pronouns {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+.profile-intro {
+    margin-bottom: 0.4rem;
+}
+.profile-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.25rem 0 0 -0.6rem; /* line the first icon up with the text above */
+}
+.profile-socials .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.7rem;
+    height: 3.7rem;
+    margin-right: 0.25rem;
+    padding-top: 4px;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    color: #495057;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.profile-socials .social-icon > * {
+    font-size: 28px;
+}
+.profile-socials .social-icon:last-child {
+    margin-right: 0;
+}
+.profile-socials .social-icon:hover {
+    transform: scale(1.3);
+    text-decoration: none;
+}
+/* the GitHub and CodePen logos are near-black, so lighten them in dark mode (overrides their inline color) */
+.dark-theme .profile-socials .fa-github,
+.dark-theme .profile-socials .fa-codepen {
+    color: var(--text) !important;
+}
+@media (max-width: 767px) {
+    .profile-header {
+        text-align: center;
+    }
+    .profile-image {
+        margin: 4px auto;
+    }
+    .profile-socials {
+        justify-content: center;
+        margin-left: 0;
+    }
+}
+
+
+/* ==========================================================================
+   Navigation bar (under the profile header)
+   ========================================================================== */
+.site-nav {
     margin: 1.25rem 0 1.5rem;
-    border-bottom: 1px solid var(--card-border-light);
+    border-bottom: 1px solid var(--border);
     transition: 0.5s;
 }
-.dark-theme nav.site-nav {
-    border-bottom-color: var(--card-border-dark);
-}
-/* The nav's bottom border already separates it from the first section */
-nav.site-nav + hr {
+/* the nav's bottom border already separates it from the first section */
+.site-nav + hr {
     display: none;
 }
-
-
-/* Styles for each link in the navigation bar */
-nav.site-nav ul {
+.site-nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0 2rem;
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
-nav.site-nav .nav-item-link {
+.site-nav .nav-item-link {
     display: inline-flex;
     align-items: center;
     padding: 0.6rem 0;
     margin-bottom: -1px;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--color-accent);
     border-bottom: 2px solid transparent;
+    font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
 }
-nav.site-nav .nav-item-link i,
-nav.site-nav .nav-item-link > svg {
-    color: inherit;
+.site-nav .nav-item-link > svg {
     margin-right: 6px;
 }
-nav.site-nav .nav-item-link:hover {
-    color: var(--color-accent-strong);
+.site-nav .nav-item-link:hover {
+    color: var(--accent-strong);
     text-decoration: none;
 }
-nav.site-nav .nav-item-link.active {
-    border-bottom-color: var(--color-accent);
+.site-nav .nav-item-link.active {
+    border-bottom-color: var(--accent);
 }
-nav.site-nav .nav-item-link:focus-visible {
-    outline: 2px dashed var(--color-accent);
+.site-nav .nav-item-link:focus-visible {
+    outline: 2px dashed var(--accent);
     outline-offset: 2px;
     border-radius: 6px;
 }
-
 @media (max-width: 576px) {
-    nav.site-nav ul {
+    .site-nav ul {
         gap: 0 1rem;
     }
-    nav.site-nav .nav-item-link i,
-    nav.site-nav .nav-item-link > svg {
+    .site-nav .nav-item-link > svg {
         display: none;
     }
 }
 
 
-/* Code-style text for research interest */
-code {
-    font-family: "Consolas";
-    color: var(--color-text-light);
-    background-color: var(--color-muted-bg);
-    padding: 2px 4px 2px 4px;
-    font-size: 83%;
-    border-radius: 5px;
-    transition: 0.5s;
+/* ==========================================================================
+   Shared pieces: filter chips
+   ========================================================================== */
+.filter-button {
+    padding: 4px 7px;
+    border: 1px solid var(--text);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.5s, box-shadow 0.5s;
 }
-.light-theme code {
-    color: var(--color-text-dark);
-    background-color: var(--color-muted);
+.filter-button:hover,
+.filter-button.active {
+    border-color: var(--accent);
+    background-color: var(--accent-tint);
+    color: var(--accent-strong);
 }
-.dark-theme code {
-    color: var(--color-text-light);
-    background-color: var(--color-muted-bg);
+.dark-theme .filter-button:hover,
+.dark-theme .filter-button.active {
+    color: #f4f8f2;
 }
 
-/* Research introduction (homepage) */
+
+/* ==========================================================================
+   Home: research introduction
+   ========================================================================== */
 .research-intro {
     line-height: 1.65;
     margin-bottom: 1rem;
@@ -219,405 +306,31 @@ code {
     flex-direction: column;
     gap: 2px;
     padding: 0.6rem 0.9rem;
-    border-left: 4px solid var(--color-accent);
-    border-radius: 0 var(--card-radius) var(--card-radius) 0;
-    background-color: var(--color-surface);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background-color: var(--surface);
     transition: 0.5s;
-}
-.dark-theme .research-interest {
-    background-color: var(--color-card-dark);
 }
 .research-interest-field {
     font-weight: bold;
-    color: var(--color-accent);
+    color: var(--accent);
 }
 .research-interest-subfields {
     font-size: 0.9rem;
 }
 
 
-/* Profile header: photo beside name, intro, and social icons */
-.profile-header {
-    align-items: center;
-    row-gap: 0.75rem;
-}
-.profile-header h2 {
-    margin-bottom: 0;
-}
-.profile-pronouns {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
-}
-.profile-intro {
-    margin-bottom: 0.4rem;
-}
-.social-icons.profile-socials {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 0.25rem 0 0 -0.6rem; /* line the first icon up with the text above */
-}
-.profile-socials .social-icon {
-    height: 2.6rem;
-    width: 2.6rem;
-}
-/* The GitHub and CodePen logos are near-black, so lighten them in dark mode (overrides their inline color) */
-.dark-theme .profile-socials .fa-github,
-.dark-theme .profile-socials .fa-codepen {
-    color: var(--color-text-dark) !important;
-}
-@media (max-width: 767px) {
-    .profile-header {
-        text-align: center;
-    }
-    .social-icons.profile-socials {
-        justify-content: center;
-        margin-left: 0;
-    }
-}
-
-
-/* Border styles for profile picture */
-.ring-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.ring {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    position: relative;
-}
-.light-theme .ring::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    padding: 4px;
-    box-sizing: border-box;
-    /* background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); */
-    background: var(--accent-light-strong);
-    mask-composite: exclude;
-}
-
-.dark-theme .ring::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    padding: 4px;
-    box-sizing: border-box;
-    /* background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); */
-    background: var(--accent-dark-strong);
-    mask-composite: exclude;
-}
-
-.hollow-ring {
-    width: 152px;
-    height: 152px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-white);
-    z-index: 1;
-    transition: 0.5s;
-}
-.light-theme .hollow-ring {
-    background-color: var(--color-white);
-}
-.dark-theme .hollow-ring {
-    background-color: var(--color-bg-dark);
-}
-.profile-image {
-    width: 152px;
-    height: 152px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 5px solid var(--color-white);
-    z-index: 2;
-    transition: 0.5s;
-}
-.light-theme .profile-image {
-    border: 5px solid var(--color-white)
-}
-.dark-theme .profile-image {
-    border: 5px solid var(--color-bg-dark)
-}
-
-
-/* Styles for emoji indicator with emoji */
-.emoji-indicator {
-    font-size: medium;
-    width: 43px;
-    height: 43px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-emoji-bg);
-    /* position: absolute;
-    bottom: 5px;
-    right: 1px; */
-    position: relative;
-    top: 112px;
-    left: 107px;
-    /* border: 4px solid #ffffff; */
-    z-index: 1000;
-}
-.light-theme .emoji-indicator {
-    /* border: 4px solid var(--color-white); */
-    background-color: var(--color-emoji-bg);
-}
-.dark-theme .emoji-indicator {
-    /* border: 4px solid var(--color-bg-dark); */
-    background-color: var(--color-emoji-bg-dark);
-}
-.emoji-indicator .hover-text {
-    display: none;
-    white-space: nowrap;
-    margin-left: 2px;
-    /* margin-right: 4px; */
-}
-.emoji-indicator:hover .hover-text {
-    display: inline;
-}
-.emoji-indicator:hover {
-    border-radius: 21.5px;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* If using an image for the emoji indicator, make it fit the circle */
-.emoji-indicator img,
-.emoji-indicator .emoji-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Handle for social icons */
-.social-icons .social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 3.70rem;
-    width: 3.70rem;
-    color: #495057; 
-    border-radius: 100%;
-    font-size: 1.5rem;
-    margin-right: 0.25rem;
-    padding-top: 4px;
-    text-decoration: none;
-    transition: transform 0.3s;
-}
-.social-icons .social-icon:hover,
-.social-icons .social-icon:focus-visible {
-    text-decoration: none;
-}
-.social-icons .social-icon:hover {
-    transform: scale(1.30);
-}
-.social-icons .social-icon:last-child {
-    margin-right: 0;
-}
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* Publications: compact list with a small graphic beside each paper */
-#projects {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-.paper {
-    display: flex;
-    gap: 1.1rem;
-    align-items: flex-start;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--card-border-light);
-}
-.dark-theme .paper {
-    border-bottom-color: var(--card-border-dark);
-}
-.paper[hidden] {
-    display: none;
-}
-.paper-thumb {
-    flex: 0 0 180px;
-    width: 180px;
-    border-radius: 8px;
-    border: 1px solid var(--card-border-light);
-}
-.dark-theme .paper-thumb {
-    border-color: var(--card-border-dark);
-}
-.paper-body {
-    flex: 1;
-    min-width: 0;
-}
-.paper-title {
-    font-size: 1.05rem;
-    font-weight: bold;
-    margin-bottom: 0.2rem;
-}
-.paper-venue {
-    font-size: 0.95rem;
-    font-style: italic;
-}
-.paper-location {
-    color: var(--color-muted);
-}
-.paper-status {
-    margin-left: 0.4rem;
-    padding: 1px 8px;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-style: normal;
-    color: var(--color-accent-strong);
-    background-color: rgba(179, 108, 86, 0.14);
-}
-.paper-authors {
-    font-size: 0.9rem;
-    margin: 0.15rem 0 0.4rem;
-}
-.paper-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-}
-.paper-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 1px 10px;
-    border: 1px solid var(--color-accent);
-    border-radius: 999px;
-    font-size: 0.85rem;
-    text-decoration: none;
-}
-.paper-link:hover {
-    text-decoration: none;
-    background-color: rgba(179, 108, 86, 0.14);
-}
-.dark-theme .paper-link:hover {
-    background-color: rgba(188, 223, 134, 0.14);
-}
-.paper-abstract {
-    margin-top: 0.5rem;
-}
-.paper-abstract summary {
-    display: inline-block;
-    font-size: 0.85rem;
-    color: var(--color-accent);
-    cursor: pointer;
-    list-style: none;
-}
-.paper-abstract summary::-webkit-details-marker {
-    display: none;
-}
-.paper-abstract summary::before {
-    content: "\25B8  ";
-}
-.paper-abstract[open] summary::before {
-    content: "\25BE  ";
-}
-.paper-abstract p {
-    margin: 0.4rem 0 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-@media (max-width: 576px) {
-    .paper {
-        flex-direction: column;
-    }
-    .paper-thumb {
-        flex-basis: auto;
-        width: 100%;
-        max-width: 320px;
-    }
-}
-
-
-/* Shared styles for filter buttons */
-#filters-project .filter-button {
-    padding: 4px 7px;
-    border: 1px solid var(--color-border-dark);
-    border-radius: 10px;
-    background-color: transparent;
-    color: var(--color-text-light);
-    cursor: pointer;
-    transition: background-color 0.5s, box-shadow 0.5s;
-}
-#filters-project .filter-button:hover {
-    background-color: rgba(194, 194, 194, 0.45);
-}
-#filters-project .filter-button.active {
-    background-color: rgba(194, 194, 194, 0.45);
-}
-
-
-/* Light theme styles for filter button */
-.light-theme #filters-project .filter-button {
-    border: 1px solid var(--color-border-dark);
-    color: var(--color-text-light);
-}
-
-.light-theme #filters-project .filter-button:hover,
-.light-theme #filters-project .filter-button.active {
-    border-color: var(--accent-light);
-    background-color: rgba(179, 108, 86, 0.14);
-    color: var(--accent-light-strong);
-}
-
-
-/* Dark theme styles for filter button */
-.dark-theme #filters-project .filter-button {
-    border: 1px solid var(--color-white);
-    color: var(--color-white);
-}
-
-.dark-theme #filters-project .filter-button:hover,
-.dark-theme #filters-project .filter-button.active {
-    border-color: var(--accent-dark);
-    background-color: rgba(188, 223, 134, 0.14);
-    color: #f4f8f2;
-}
-
-/* Styles for updates timeline */
+/* ==========================================================================
+   Home: updates timeline (cards alternate above and below a line)
+   ========================================================================== */
 .updates-timeline {
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0.1rem 0 .2rem;
+    padding: 0.1rem 0 0.2rem;
     scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) transparent;
+    scrollbar-color: var(--accent) transparent;
 }
-
-#updates > .col > p {
-    margin: 0;
-    line-height: 0;
-}
-
 .updates-timeline-track {
     position: relative;
     display: flex;
@@ -633,61 +346,52 @@ code {
     right: 0;
     top: 50%;
     height: 2px;
-    background: var(--color-accent);
+    background: var(--accent);
     opacity: 0.45;
 }
 .updates-timeline-item {
     flex: 0 0 clamp(12.5rem, 17vw, 14rem);
     display: grid;
     grid-template-rows: minmax(4rem, 1fr) auto minmax(4rem, 1fr);
-    align-items: stretch;
     min-height: 19rem;
     scroll-snap-align: start;
 }
 .updates-timeline-marker {
     position: relative;
+    z-index: 1;
     grid-row: 2;
     display: flex;
     justify-content: center;
-    flex: 0 0 auto;
     min-height: 1.65rem;
-    padding: 0;
-    z-index: 1;
 }
 .updates-timeline-dot {
     width: 0.95rem;
     height: 0.95rem;
     border-radius: 999px;
     background: var(--bg);
-    border: 3px solid var(--color-accent);
+    border: 3px solid var(--accent);
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
-    z-index: 1;
 }
 .updates-timeline-card {
     position: relative;
     max-width: 100%;
-    background-color: var(--color-white);
-    border: var(--card-border-width) solid var(--card-border-light);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow-light);
     padding: 0.65rem 0.7rem 0.7rem;
-}
-.dark-theme .updates-timeline-card {
-    background-color: #2f2f2f;
-    border-color: var(--card-border-dark);
-    box-shadow: var(--card-shadow-dark);
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 .updates-timeline-time {
     display: inline-block;
+    margin-bottom: 0.3rem;
+    padding: 0.2rem 0.48rem;
+    border-radius: 999px;
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--color-accent-strong);
-    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-    border-radius: 999px;
-    padding: 0.2rem 0.48rem;
-    margin-bottom: 0.3rem;
+    color: var(--accent-strong);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 .updates-timeline-desc {
     font-size: 0.86rem;
@@ -696,28 +400,22 @@ code {
 .updates-timeline-image {
     display: block;
     width: 100%;
-    border-radius: calc(var(--card-radius) - 2px);
     margin-bottom: 0.35rem;
+    border-radius: calc(var(--radius) - 2px);
     object-fit: cover;
 }
-
 .updates-timeline-item--top {
     padding-bottom: 0.2rem;
-}
-.updates-timeline-item--top .updates-timeline-marker {
-    grid-row: 2;
 }
 .updates-timeline-item--top .updates-timeline-card {
     grid-row: 1;
     align-self: end;
     margin-bottom: 0.5rem;
 }
-
 .updates-timeline-item--bottom {
     padding-top: 0.2rem;
 }
 .updates-timeline-item--bottom .updates-timeline-marker {
-    grid-row: 2;
     transform: translateY(0.7rem);
 }
 .updates-timeline-item--bottom .updates-timeline-card {
@@ -725,13 +423,6 @@ code {
     align-self: start;
     margin-top: 0.5rem;
 }
-
-@supports not (background: color-mix(in srgb, white, black)) {
-    .updates-timeline-time {
-        background: rgba(0, 0, 0, 0.04);
-    }
-}
-
 @media (max-width: 576px) {
     .updates-timeline {
         padding: 1.15rem 0 1.35rem;
@@ -760,7 +451,7 @@ code {
         padding-bottom: 0.15rem;
     }
 }
-
+/* browsers without scrollbar-color (e.g. older Safari) */
 @supports not (scrollbar-color: auto) {
     .updates-timeline::-webkit-scrollbar {
         height: 10px;
@@ -778,183 +469,11 @@ code {
 }
 
 
-/* Random thoughts page: topics grouped by category that expand in place */
-.thought-group {
-    margin-top: 1.5rem;
-}
-.thought-group-title {
-    font-size: 1.15rem;
-    font-weight: bold;
-    color: var(--color-accent);
-    margin-bottom: 0.25rem;
-}
-.thought {
-    border-bottom: 1px solid var(--card-border-light);
-}
-.dark-theme .thought {
-    border-bottom-color: var(--card-border-dark);
-}
-.thought summary {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.15rem 0.75rem;
-    padding: 0.6rem 0 0.6rem 1.4rem;
-    position: relative;
-    list-style: none;
-    cursor: pointer;
-}
-.thought summary::-webkit-details-marker {
-    display: none;
-}
-/* chevron that turns when the topic is open */
-.thought summary::before {
-    content: "\203A";
-    position: absolute;
-    left: 0.3rem;
-    top: 0.45rem;
-    font-size: 1.2rem;
-    line-height: 1.2;
-    color: var(--color-accent);
-    transition: transform 0.2s ease;
-}
-.thought[open] summary::before {
-    transform: rotate(90deg);
-}
-.thought summary:hover .thought-title {
-    color: var(--color-accent);
-}
-.thought summary:focus-visible {
-    outline: 2px dashed var(--color-accent);
-    outline-offset: 2px;
-}
-.thought-title {
-    font-weight: bold;
-    transition: color 0.2s ease;
-}
-.thought-summary {
-    color: var(--color-muted);
-    font-size: 0.9rem;
-}
-.thought-content {
-    padding: 0 0 0.75rem 1.4rem;
-    overflow-wrap: anywhere;
-}
-.thought-content ul {
-    margin-bottom: 0.5rem;
-    padding-left: 1.2rem;
-}
-.thought-content p {
-    margin-bottom: 0.5rem;
-}
-
-
-/* Back-to-top button styles */
-#back-to-top-button {
-    display: inline-block;
-    background-color: var(--color-backtotop);
-    width: 55px;
-    height: 55px;
-    text-align: center;
-    border-radius: 7px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    transition: background-color .3s, opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-}
-#back-to-top-button::after {
-    content: "\f077";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2em;
-    line-height: 50px;
-    color: #fff;
-}
-#back-to-top-button:hover {
-    cursor: pointer;
-    background-color: var(--color-backtotop-hover);
-}
-#back-to-top-button:active {
-    background-color: #9faba6;
-}
-#back-to-top-button.show {
-    opacity: 0.70;
-    visibility: visible;
-}
-
-
-/* Toggle theme button styles */
-.toggle-theme-button {
-    width: 55px;
-    height: 55px;
-    border-radius: 7px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000; 
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-
-/* Light theme styles for toggle theme button */
-.light-theme .toggle-theme-button {
-    background-color: var(--color-toggle-light);
-    color: var(--color-white);
-}
-
-
-/* Dark theme styles for toggle theme button */
-.dark-theme .toggle-theme-button {
-    background-color: var(--color-muted-bg);
-    color: var(--color-text-light);
-}
-
-
-/* Styles for progress bar */
-.progress-bar-container {
-    width: 100%;
-    height: 1px;
-    background: var(--color-muted-bg);
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    transition: 0.5s;
-}
-.progress-bar {
-    height: 1px;
-    background: var(--color-accent);
-    width: 0%;
-}
-.light-theme .progress-bar-container {
-    background: var(--color-muted-bg);
-}
-.dark-theme .progress-bar-container {
-    background: var(--color-muted);
-}
-
-
-/* New style for webpage scrollbar */
-::-webkit-scrollbar-track {
-    background-color: var(--color-muted-bg);
-}
-::-webkit-scrollbar-thumb {
-    background-color: var(--color-muted);
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color-muted-strong);
-}
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Travel map (about page) */
-/* ids/element/body prefixes so these win over jsvectormap's stylesheet, which loads after this one */
-/* Maps are kept narrow and centered; each box is shaped to fit its map */
+/* ==========================================================================
+   About: maps (travel world map and the two parks maps)
+   ========================================================================== */
+/* ids/element prefixes so these win over jsvectormap's stylesheet, which loads after this one.
+   Maps are kept narrow and centered; each box is shaped to fit its map. */
 #travel-map,
 div.parks-map {
     width: 100%;
@@ -962,9 +481,9 @@ div.parks-map {
     height: auto;
     aspect-ratio: 1.55 / 1; /* US map */
     margin: 0.5rem auto 1rem;
-    border: var(--card-border-width) solid var(--card-border-light);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     overflow: hidden;
 }
 #travel-map {
@@ -973,17 +492,30 @@ div.parks-map {
 #nc-parks-map {
     aspect-ratio: 2.6 / 1;
 }
-/* shrink the map a touch so it doesn't touch the box's edges (the map library ignores padding) */
+/* shrink the world map a touch so it doesn't touch the box's edges (the map library ignores padding) */
 #travel-map svg {
     transform: scale(0.92);
     transform-origin: center;
 }
-.dark-theme #travel-map,
-.dark-theme div.parks-map {
-    border-color: var(--card-border-dark);
-    box-shadow: var(--card-shadow-dark);
+body .jvm-tooltip {
+    font-family: inherit;
+    font-size: 0.85rem;
+    background-color: #333333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-/* Trip list under the map: a small header per trip, with photos as polaroids */
+.dark-theme .jvm-tooltip {
+    background-color: #f1f1f1;
+    color: #333333;
+}
+body .jvm-tooltip ul {
+    margin: 4px 0 0;
+    padding-left: 1rem;
+}
+
+
+/* ==========================================================================
+   About: travel trips under the map
+   ========================================================================== */
 .travel-trips {
     display: flex;
     flex-direction: column;
@@ -999,25 +531,31 @@ div.parks-map {
 .travel-trip-event {
     font-weight: bold;
 }
-.travel-trip-place i,
 .travel-trip-place svg {
-    color: var(--color-accent);
     margin-right: 2px;
+    color: var(--accent);
 }
+.travel-time {
+    color: var(--muted);
+}
+
+
+/* ==========================================================================
+   About: polaroids (travel trips and lab fun) and the enlarged-photo viewer
+   ========================================================================== */
 .polaroid-row {
     display: flex;
     flex-wrap: wrap;
     gap: 1.1rem;
     padding: 1rem 0.5rem 0.25rem;
 }
-/* Polaroids (travel trips and lab fun): photos share a height and keep their own shape,
-   so wide photos make wider polaroids */
+/* photos share a height and keep their own shape, so wide photos make wider polaroids */
 .polaroid {
     position: relative;
     max-width: 100%;
     padding: 7px 7px 4px;
-    background: #fdfcf8;
     border: 0;
+    background: #fdfcf8;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     transform: rotate(-2.5deg);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -1038,18 +576,22 @@ div.parks-map {
     width: 46px;
     height: 14px;
     transform: translateX(-50%) rotate(-3deg);
-    background: var(--color-accent);
+    background: var(--accent);
     opacity: 0.55;
 }
 .polaroid:hover,
 .polaroid:focus-visible {
+    z-index: 1;
     transform: rotate(0deg) scale(1.05);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-    z-index: 1;
 }
 .polaroid:focus-visible {
-    outline: 2px dashed var(--color-accent);
+    outline: 2px dashed var(--accent);
     outline-offset: 4px;
+}
+.dark-theme .polaroid {
+    background: #f1efe9;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
 }
 .polaroid img {
     display: block;
@@ -1068,119 +610,16 @@ div.parks-map {
     color: #3a3a3a;
     text-align: center;
 }
-.dark-theme .polaroid {
-    background: #f1efe9;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
-}
-
-/* National parks and NC state parks share a row, split by a divider; they stack on
-   narrow screens (Bootstrap's lg breakpoint) with the divider moving above the second */
-.parks-pair .parks-col {
-    min-width: 0; /* let the columns shrink below the maps' drawn width so they can sit side by side */
-}
-.parks-pair .parks-col + .parks-col {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--card-border-light);
-}
-@media (min-width: 992px) {
-    .parks-pair .parks-col + .parks-col {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: 0;
-        border-left: 1px solid var(--card-border-light);
+@media (max-width: 576px) {
+    .polaroid-row {
+        justify-content: center;
+    }
+    .polaroid img {
+        height: 90px;
+        min-width: 70px;
     }
 }
-.dark-theme .parks-pair .parks-col + .parks-col {
-    border-color: var(--card-border-dark);
-}
 
-/* Parks that can't be pinned on the US map, shown in the map's corner */
-.parks-offmap {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    background: var(--bg);
-    border: 1px dashed var(--card-border-light);
-    border-radius: 8px;
-}
-.dark-theme .parks-offmap {
-    border-color: var(--card-border-dark);
-}
-.parks-offmap-title {
-    color: var(--color-muted);
-    font-size: 0.7rem;
-}
-.parks-offmap-park {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.parks-offmap-pin {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    border: 2px solid var(--bg);
-    box-shadow: 0 0 0 1px var(--color-accent);
-}
-
-/* Key under each parks map: visited pin, not-yet pin, and (national parks) shaded states */
-.parks-map-key {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.25rem 1rem;
-    margin: -0.5rem 0 0.75rem;
-    font-size: 0.85rem;
-    color: var(--color-muted);
-}
-.parks-map-key-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-.parks-map-key-pin {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-accent-strong);
-}
-.parks-map-key-pin-todo {
-    width: 9px;
-    height: 9px;
-    background: transparent;
-    border: 1.5px solid #8a8a8a;
-}
-.parks-map-key-swatch {
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-    background: var(--color-accent);
-    opacity: 0.4;
-}
-
-/* Visited parks listed under each parks map */
-.parks-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    list-style: none;
-    padding: 0;
-}
-.parks-list li {
-    padding: 2px 10px;
-    border: 1px solid var(--color-accent);
-    border-radius: 999px;
-    font-size: 0.85rem;
-}
-
-/* Enlarged photo, opened by clicking a polaroid */
 .photo-lightbox {
     max-width: min(92vw, 900px);
     padding: 14px 14px 8px;
@@ -1212,29 +651,286 @@ div.parks-map {
     color: #3a3a3a;
     cursor: pointer;
 }
-.travel-time {
-    color: var(--color-muted);
+
+
+/* ==========================================================================
+   About: national parks and NC state parks
+   ========================================================================== */
+/* side by side, split by a divider; they stack on narrow screens (Bootstrap's lg
+   breakpoint) with the divider moving above the second */
+.parks-pair .parks-col {
+    min-width: 0; /* let the columns shrink below the maps' drawn width so they can sit side by side */
 }
-body .jvm-tooltip {
-    font-family: inherit;
+.parks-pair .parks-col + .parks-col {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+@media (min-width: 992px) {
+    .parks-pair .parks-col + .parks-col {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+        border-left: 1px solid var(--border);
+    }
+}
+
+/* key under each map: visited pin, not-yet pin, and (national parks) shaded states */
+.parks-map-key {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+    margin: -0.5rem 0 0.75rem;
     font-size: 0.85rem;
-    background-color: var(--color-bg-dark);
-    box-shadow: var(--card-shadow-light);
+    color: var(--muted);
 }
-.dark-theme .jvm-tooltip {
-    background-color: var(--color-muted-bg);
-    color: var(--color-text-light);
+.parks-map-key-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
-body .jvm-tooltip ul {
-    margin: 4px 0 0;
-    padding-left: 1rem;
+.parks-map-key-pin {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-strong);
+}
+.parks-map-key-pin-todo {
+    width: 9px;
+    height: 9px;
+    background: transparent;
+    border: 1.5px solid #8a8a8a;
+}
+.parks-map-key-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: var(--accent);
+    opacity: 0.4;
+}
+
+/* visited parks that can't be pinned on the US map, shown in the map's corner */
+.parks-offmap {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    background: var(--bg);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+}
+.parks-offmap-title {
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+.parks-offmap-park {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.parks-offmap-pin {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* visited parks listed under each map */
+.parks-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    list-style: none;
+}
+.parks-list li {
+    padding: 2px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+
+/* ==========================================================================
+   Publications: compact list with a small graphic beside each paper
+   ========================================================================== */
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.paper {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+.paper[hidden] {
+    display: none;
+}
+.paper-thumb {
+    flex: 0 0 180px;
+    width: 180px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+.paper-body {
+    flex: 1;
+    min-width: 0;
+}
+.paper-title {
+    margin-bottom: 0.2rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+.paper-venue {
+    font-size: 0.95rem;
+    font-style: italic;
+}
+.paper-location {
+    color: var(--muted);
+}
+.paper-status {
+    margin-left: 0.4rem;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--accent-strong);
+    background-color: var(--accent-tint);
+}
+.paper-authors {
+    margin: 0.15rem 0 0.4rem;
+    font-size: 0.9rem;
+}
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.paper-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 1px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+.paper-link:hover {
+    text-decoration: none;
+    background-color: var(--accent-tint);
+}
+.paper-abstract {
+    margin-top: 0.5rem;
+}
+.paper-abstract summary {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+}
+.paper-abstract summary::-webkit-details-marker {
+    display: none;
+}
+.paper-abstract summary::before {
+    content: "\25B8  ";
+}
+.paper-abstract[open] summary::before {
+    content: "\25BE  ";
+}
+.paper-abstract p {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 @media (max-width: 576px) {
-    .polaroid-row {
-        justify-content: center;
+    .paper {
+        flex-direction: column;
     }
-    .polaroid img {
-        height: 90px;
-        min-width: 70px;
+    .paper-thumb {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 320px;
     }
+}
+
+
+/* ==========================================================================
+   Random thoughts: topics grouped by category that expand in place
+   ========================================================================== */
+.thought-group {
+    margin-top: 1.5rem;
+}
+.thought-group-title {
+    margin-bottom: 0.25rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+.thought {
+    border-bottom: 1px solid var(--border);
+}
+.thought summary {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15rem 0.75rem;
+    padding: 0.6rem 0 0.6rem 1.4rem;
+    list-style: none;
+    cursor: pointer;
+}
+.thought summary::-webkit-details-marker {
+    display: none;
+}
+/* chevron that turns when the topic is open */
+.thought summary::before {
+    content: "\203A";
+    position: absolute;
+    left: 0.3rem;
+    top: 0.45rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+}
+.thought[open] summary::before {
+    transform: rotate(90deg);
+}
+.thought summary:hover .thought-title {
+    color: var(--accent);
+}
+.thought summary:focus-visible {
+    outline: 2px dashed var(--accent);
+    outline-offset: 2px;
+}
+.thought-title {
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+.thought-summary {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+.thought-content {
+    padding: 0 0 0.75rem 1.4rem;
+    overflow-wrap: anywhere;
+}
+.thought-content ul {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+}
+.thought-content p {
+    margin-bottom: 0.5rem;
 }

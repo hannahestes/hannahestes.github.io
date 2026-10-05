@@ -1,10 +1,9 @@
-<!-- Updates section -->
+<!-- Updates: a horizontal timeline, newest first -->
 
 <hr>
 <div class="row" id="updates">
     <div class="col">
         <h2 class="mb-1"><i class="fas fa-edit" aria-hidden="true"></i> Updates</h2>
-        <p></p>
         <div class="updates-timeline" aria-label="Updates timeline scroller">
             <div class="updates-timeline-track">
                 {% for update in site.data.updates.updates %}
@@ -12,6 +11,5 @@
                 {% endfor %}
             </div>
         </div>
-        <p></p>
     </div>
 </div>

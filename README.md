@@ -1,86 +1,53 @@
 # Academic Website
 
-This repository contains source code of [my academic website](https://hannahestes.github.io/) using Jekyll as a static website generator. Feel free to clone this code for your personal use!
+Source for [my academic website](https://hannahestes.github.io/), built with Jekyll and hosted on GitHub Pages.
+Originally based on [Khang Nguyen's template](https://github.com/mkhangg/academic-website/tree/main) ([site](https://mkhangg.com/)).
 
 
-## Template from Khang Nguyen
-Thanks for the great template and here is what I have done to make it my own! :)
-
-[Orginal Reference Repo](https://github.com/mkhangg/academic-website/tree/main)
-[Actual Website](https://mkhangg.com/)
-
-
-## Local Run
+## Run locally
 
 ```
 bundle install
 bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000
 ```
 
-Open http://127.0.0.1:4000 in your browser.
+Then open http://127.0.0.1:4000. Changes to `_config.yml` need a server restart; everything else reloads on save.
+If `jekyll serve` exits with code `1`, run `pkill -f "jekyll serve"` and try again. If pages look stale,
+hard refresh (`Cmd+Shift+R`) or delete `.jekyll-cache`.
 
 
-## Troubleshooting
+## Editing content
 
-- If `jekyll serve` exits with code `1`, kill stale server processes and retry:
+Almost everything on the site comes from the YAML files in `_data/`:
 
-```bash
-pkill -f "jekyll serve" || true
-bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000
-```
+| File | What it controls |
+|---|---|
+| `about.yaml` | name, pronouns, photo, social links, CV, intro paragraphs, research interests |
+| `navigation.yaml` | pages in the nav bar |
+| `updates.yaml` | the homepage updates timeline (newest first) |
+| `research.yaml` | publications and their topic chips |
+| `resources.yaml` | random thoughts topics and their categories |
+| `travel.yaml` | conference trips: the travel map and the polaroids under it |
+| `national_parks.yaml` | all 63 national parks; set `visited: true` when you go |
+| `nc_state_parks.yaml` | NC state parks; set `visited: true` when you go |
+| `lab.yaml` | Lab Fun polaroids |
 
-- If styles or content look stale, do a hard refresh (`Cmd+Shift+R`).
-- If stale generated content persists, delete `.jekyll-cache` and run again.
-
-
-## Content Authoring Notes
-
-- Most website content is data-driven via files in `_data/`.
-- For long text values in YAML, prefer multiline block style (`>-`) for readability.
-- Key editable files:
-    - `_data/updates.yaml` for update cards.
-    - `_data/resources.yaml` for resources/random thoughts cards and modal content.
-    - `_data/gallery.yaml` for gallery images/captions/categories.
+Keep photos small (around 1000-1200px wide JPGs); on a Mac, `sips -Z 1200 photo.jpg` shrinks one in place.
+For long text in YAML, use a folded block (`>-`).
 
 
-
-## File Structure**
+## Structure
 
 ```
-.
-├───assets                      # folder including your images, files, etc
-├───js                  
-    └───scripts.js              # the JS file for functional buttons
-├───styles              
-    └───styles.css              # the CSS file for colors and stuffs 
-├───_data               
-    ├───about.yaml              # data file for About section
-    ├───footer.yaml             # data file for Footer section
-    ├───gallery.yaml            # data file for Gallery section
-    ├───research.yaml           # data file for Research section
-    ├───resources.yaml          # data file for Resources/Random Thoughts section
-    └───updates.yaml            # data file for Updates section
-├───_layouts      
-    └───main.html               # the HTML layout for the webpage 
-├───_libs      
-    ├───about_widget.html       # html file for About widget
-    ├───footer_widget.html      # html file for Footer widget
-    ├───gallery_widget.html     # html file for Gallery widget
-    ├───research_widget.html    # html file for Research widget
-    ├───resources_widget.html   # html file for Resources widget
-    └───updates_widget.html     # html file for Updates widget
-├───_sections           
-    ├───about.html              # html file for About section
-    ├───footer.html             # html file for Footer section
-    ├───gallery.html            # html file for Gallery section
-    ├───research.html           # html file for Research section
-    ├───resources.html          # html file for Resources/Random Thoughts section
-    └───updates.html            # html file for Updates section
-├───_site                       # all contents for deployable version here!
-    ├───assets
-    ├───js
-    ├───styles
-    └───index.html              # the generated HTML file
-├───index.md                    # markdown file that uses main.html as layout
-└───_config.yml                 # information for webpage title and favicon
+_config.yml          site title, tagline, browser-tab icon
+_layouts/main.html   page shell: header, nav, footer, and which CSS/JS each page loads
+index.md, about.md, publications.md, resources.md
+                     the four pages, each a list of sections
+_sections/           one file per section (profile header, nav, updates, travel, parks, ...)
+_libs/               small repeated pieces (a paper, a polaroid, an update card, ...)
+_data/               the content (see above)
+styles/styles.css    all styling; theme colors are defined once at the top
+js/scripts.js        theme toggle, scroll buttons, publications filter, photo viewer
+js/maps.js           the about page's travel and parks maps
+assets/              images, papers, slides, CV
 ```
