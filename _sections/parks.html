@@ -1,30 +1,38 @@
-<!-- Parks section: a map with a pin per park visited, plus the list of parks.
-     Include with: id, category (nps/ncsp in _data/updates-nps-ncsp.yaml), title, icon, total, intro,
-     and optionally focus (a US state code like "US-NC" to show only that state) and rotate (degrees). -->
+<!-- Parks column: a map with every park as a pin (filled once visited), plus the list of parks
+     visited (see parks_pair.html). Include with: id, data (a parks file in _data/, e.g.
+     national_parks), title, icon, intro, and optionally focus (a US state code like "US-NC" to
+     show only that state), rotate (degrees), and fill_complete (true to shade states where every
+     park has been visited). -->
 
-{% assign parks = site.data.updates-nps-ncsp | where: "category", include.category %}
-<hr>
-<div class="row" id="{{ include.id }}">
-    <div class="col">
-        <h2 class="mb-1"><i class="{{ include.icon }}" aria-hidden="true"></i> {{ include.title }}</h2>
-        {{ include.intro }} So far I've visited <highlight>{{ parks.size }} / {{ include.total }}</highlight>. Hover over a pin to see the park.
-        <p></p>
-        <div id="{{ include.id }}-map" class="parks-map" aria-label="Map of {{ include.title }} visited"></div>
-        <ul class="parks-list">
-            {% for park in parks %}
-                {% comment %} drop a trailing " National Park" to keep the list short {% endcomment %}
-                {% assign park_name = park.caption | append: "|" | replace: " National Park|", "" | remove: "|" %}
-                <li>{{ park_name }}</li>
-            {% endfor %}
-        </ul>
-        <script>
-            (window.parkMaps = window.parkMaps || []).push({
-                selector: '#{{ include.id }}-map',
-                parks: {{ parks | jsonify }},
-                focus: {{ include.focus | jsonify }},
-                rotate: {{ include.rotate | default: 0 }}
-            });
-        </script>
-        <p></p>
-    </div>
+{% assign all_parks = site.data[include.data].parks %}
+{% assign visited_parks = all_parks | where: "visited", true %}
+<div class="col-lg parks-col" id="{{ include.id }}">
+    <h2 class="mb-1"><i class="{{ include.icon }}" aria-hidden="true"></i> {{ include.title }}</h2>
+    {{ include.intro }} So far I've visited <highlight>{{ visited_parks.size }} / {{ all_parks.size }}</highlight>.
+    <p></p>
+    <div id="{{ include.id }}-map" class="parks-map" aria-label="Map of {{ include.title }}"></div>
+    <p class="parks-map-key">
+        <span class="parks-map-key-item"><span class="parks-map-key-pin" aria-hidden="true"></span> visited</span>
+        <span class="parks-map-key-item"><span class="parks-map-key-pin parks-map-key-pin-todo" aria-hidden="true"></span> not yet</span>
+        {% if include.fill_complete %}
+            <span class="parks-map-key-item"><span class="parks-map-key-swatch" aria-hidden="true"></span> every park in the state visited</span>
+        {% endif %}
+    </p>
+    <ul class="parks-list">
+        {% for park in visited_parks %}
+            {% comment %} drop a trailing " National Park" to keep the list short {% endcomment %}
+            {% assign park_name = park.name | append: "|" | replace: " National Park|", "" | remove: "|" %}
+            <li>{{ park_name }}</li>
+        {% endfor %}
+    </ul>
+    <script>
+        (window.parkMaps = window.parkMaps || []).push({
+            selector: '#{{ include.id }}-map',
+            parks: {{ all_parks | jsonify }},
+            focus: {{ include.focus | jsonify }},
+            rotate: {{ include.rotate | default: 0 }},
+            fillCompleteStates: {{ include.fill_complete | default: false }}
+        });
+    </script>
+    <p></p>
 </div>

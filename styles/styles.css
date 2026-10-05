@@ -452,18 +452,8 @@ code {
 }
 
 
-/* Styles for project list */
-#pictures {
-    margin: 0px;
-}
-.picture {
-    margin: 0px;
-}
-
-
 /* Shared styles for filter buttons */
 #filters-project .filter-button,
-#filters-pictures .filter-button,
 #filters-resources .filter-button {
     padding: 4px 7px;
     border: 1px solid var(--color-border-dark);
@@ -474,20 +464,17 @@ code {
     transition: background-color 0.5s, box-shadow 0.5s;
 }
 #filters-project .filter-button:hover,
-#filters-pictures .filter-button:hover,
 #filters-resources .filter-button:hover {
     background-color: rgba(194, 194, 194, 0.45);
 }
 #filters-project .filter-button.active,
-#filters-pictures .filter-button.active,
 #filters-resources .filter-button.active {
     background-color: rgba(194, 194, 194, 0.45);
 }
 
 
 /* Light theme styles for filter button */
-.light-theme #filters-project .filter-button,
-.light-theme #filters-pictures .filter-button {
+.light-theme #filters-project .filter-button {
     border: 1px solid var(--color-border-dark);
     color: var(--color-text-light);
 }
@@ -499,8 +486,6 @@ code {
 
 .light-theme #filters-project .filter-button:hover,
 .light-theme #filters-project .filter-button.active,
-.light-theme #filters-pictures .filter-button:hover,
-.light-theme #filters-pictures .filter-button.active,
 .light-theme #filters-resources .filter-button:hover,
 .light-theme #filters-resources .filter-button.active {
     border-color: var(--accent-light);
@@ -510,8 +495,7 @@ code {
 
 
 /* Dark theme styles for filter button */
-.dark-theme #filters-project .filter-button,
-.dark-theme #filters-pictures .filter-button {
+.dark-theme #filters-project .filter-button {
     border: 1px solid var(--color-white);
     color: var(--color-white);
 }
@@ -524,63 +508,12 @@ code {
 
 .dark-theme #filters-project .filter-button:hover,
 .dark-theme #filters-project .filter-button.active,
-.dark-theme #filters-pictures .filter-button:hover,
-.dark-theme #filters-pictures .filter-button.active,
 .dark-theme #filters-resources .filter-button:hover,
 .dark-theme #filters-resources .filter-button.active {
     border-color: var(--accent-dark);
     background-color: rgba(188, 223, 134, 0.14);
     color: #f4f8f2;
 }
-
-/* Styles for pager buttons */
-.isotope-pager-pictures {
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center;
-}
-.isotope-pager-pictures .pager {
-    display: block;
-    padding: 4px 7px;
-    background-color: transparent;
-    border: 1px solid var(--color-border-dark);
-    margin: 0 5px;
-    border-radius: 7px;
-    transition: 0.5s;
-}
-.isotope-pager-pictures .pager:hover {
-    background-color: rgba(194, 194, 194, 0.45);
-    cursor: pointer;
-}
-.isotope-pager-pictures .pager.active {
-    background-color: rgba(194, 194, 194, 0.45);
-}
-
-
-/* Light theme styles for pager button */
-.light-theme .isotope-pager-pictures .pager {
-    border: 1px solid var(--color-border-dark);
-    color: var(--color-text-light);
-}
-
-
-/* Dark theme styles for pager button */
-.dark-theme .isotope-pager-pictures .pager {
-    border: 1px solid var(--color-white);
-    color: var(--color-white);
-}
-
-
-/* Disabled stye for pager buttons */
-.isotope-pager-pictures .pager:disabled {
-    background-color: var(--color-disabled);
-    color: var(--color-disabled-text);
-    cursor: default;
-    opacity: 0.5;
-    border: 1px solid var(--color-border-muted);
-}
-
 
 /* Styles for pager buttons */
 .isotope-pager-project {
@@ -635,49 +568,6 @@ code {
 .collapse.in { 
     display: inline !important; 
 }
-
-
-/* Handle for gallery and pictures in gallery
-div.gallery {
-    margin: 3px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    float: left;
-    width: 212px;
-}
-div.gallery:nth-child(8n+1) {
-    clear: both;
-}
-div.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 7px;
-}
-div.desc {
-    padding: 8px;
-    text-align: center;
-}
-
-#pictures {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-  gap: 0.5rem;
-  padding: 0.5rem;
-
-  & li {
-    background-color: rgba(0,0,0,0.1);
-
-    & img {
-      display: block;
-      width: 100%;
-      height: 40vmin;
-      object-fit: cover; 
-      transition: opacity 0.3s;
-    }
-  }
-
-} */
 
 
 /* Styles for updates timeline */
@@ -1038,109 +928,26 @@ div.desc {
     width: 10px;
 }
 
-#gallery {
-  margin: 0;
-}
-
-/* Enhanced gallery styles (mimic CodePen layout: card tiles with hover overlay) */
-#gallery-pictures {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -0.45rem;
-    padding: 0.35rem 0;
-    
-}
-#gallery-pictures .gallery-card {
-    box-sizing: border-box;
-    padding: 0.45rem;
-    width: 100%;
-}
-
-/* Image styling */
-.gallery-card .w-full {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: contain;
-    object-position: center;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: var(--card-radius);
-    border: 1px solid rgba(255, 255, 255, 0.92);
-    box-shadow: var(--card-shadow-light);
-    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.3s, border-color 0.25s;
-}
-
-.gallery-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--card-radius);
-}
-
-/* Overlay that slides up on hover */
-.gallery-card .overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.45rem;
-    margin: 0 0.45rem;
-    padding: 1rem;
-    border-bottom-left-radius: var(--card-radius);
-    border-bottom-right-radius: var(--card-radius);
-    background: linear-gradient(180deg, var(--overlay-grad-start) 0%, var(--overlay-grad) 65%);
-    color: var(--color-white);
-    transform: translateY(24%);
-    opacity: 0;
-    transition: transform 0.35s, opacity 0.35s;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.gallery-card:hover .w-full {
-    transform: translateY(-2px);
-    box-shadow: var(--card-shadow-hover-light);
-}
-.gallery-card:hover .overlay {
-    transform: translateY(0%);
-    opacity: 1;
-}
-
-.dark-theme .gallery-card .w-full {
-    background-color: rgba(0, 0, 0, 0.22);
-    border-color: rgba(255, 255, 255, 0.7);
-    box-shadow: var(--card-shadow-dark);
-}
-
-.gallery-desc { color: var(--color-white); font-weight: 600; }
-.gallery-time { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
-
-/* Responsive columns */
-@media (min-width: 576px) {
-    #gallery-pictures .gallery-card { width: 50%; }
-}
-@media (min-width: 900px) {
-    #gallery-pictures .gallery-card { width: 33.3333%; }
-}
-@media (min-width: 1200px) {
-    #gallery-pictures .gallery-card { width: 20%; }
-}
-
-
 /* Travel map (about page) */
 /* ids/element/body prefixes so these win over jsvectormap's stylesheet, which loads after this one */
+/* Maps are kept narrow and centered; each box is shaped to fit its map */
 #travel-map,
 div.parks-map {
     width: 100%;
-    height: 320px;
-    margin: 0.5rem 0 1rem;
+    max-width: 640px;
+    height: auto;
+    aspect-ratio: 1.55 / 1; /* US map */
+    margin: 0.5rem auto 1rem;
     border: var(--card-border-width) solid var(--card-border-light);
     border-radius: var(--card-radius);
     box-shadow: var(--card-shadow-light);
     overflow: hidden;
 }
-/* The world map is wide, so give it a little more height to breathe */
 #travel-map {
-    height: 380px;
+    aspect-ratio: 2 / 1;
+}
+#nc-parks-map {
+    aspect-ratio: 2.6 / 1;
 }
 /* shrink the map a touch so it doesn't touch the box's edges (the map library ignores padding) */
 #travel-map svg {
@@ -1152,7 +959,7 @@ div.parks-map {
     border-color: var(--card-border-dark);
     box-shadow: var(--card-shadow-dark);
 }
-/* Trip list under the map: a small header per trip, with photos as taped-on polaroids */
+/* Trip list under the map: a small header per trip, with photos as polaroids */
 .travel-trips {
     display: flex;
     flex-direction: column;
@@ -1173,17 +980,18 @@ div.parks-map {
     color: var(--color-accent);
     margin-right: 2px;
 }
-.travel-photos {
+.polaroid-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 1.1rem 0.5rem 0.25rem;
+    gap: 1.1rem;
+    padding: 1rem 0.5rem 0.25rem;
 }
-/* Photos share a height and keep their own shape, so wide photos make wider polaroids */
-.travel-polaroid {
+/* Polaroids (travel trips and lab fun): photos share a height and keep their own shape,
+   so wide photos make wider polaroids */
+.polaroid {
     position: relative;
     max-width: 100%;
-    padding: 10px 10px 6px;
+    padding: 7px 7px 4px;
     background: #fdfcf8;
     border: 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
@@ -1191,54 +999,76 @@ div.parks-map {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: zoom-in;
 }
-.travel-polaroid:nth-child(even) {
+.polaroid:nth-child(even) {
     transform: rotate(2deg);
 }
-.travel-polaroid:nth-child(3n) {
+.polaroid:nth-child(3n) {
     transform: rotate(-1deg);
 }
 /* strip of washi tape holding each photo */
-.travel-polaroid::before {
+.polaroid::before {
     content: "";
     position: absolute;
-    top: -9px;
+    top: -7px;
     left: 50%;
-    width: 64px;
-    height: 18px;
+    width: 46px;
+    height: 14px;
     transform: translateX(-50%) rotate(-3deg);
     background: var(--color-accent);
     opacity: 0.55;
 }
-.travel-polaroid:hover,
-.travel-polaroid:focus-visible {
+.polaroid:hover,
+.polaroid:focus-visible {
     transform: rotate(0deg) scale(1.05);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
-.travel-polaroid:focus-visible {
+.polaroid:focus-visible {
     outline: 2px dashed var(--color-accent);
     outline-offset: 4px;
 }
-.travel-polaroid img {
+.polaroid img {
     display: block;
-    height: 170px;
+    height: 120px;
     width: auto;
-    min-width: 130px; /* keeps the frame from looking squished before the photo loads */
+    min-width: 90px; /* keeps the frame from looking squished before the photo loads */
     max-width: 100%;
     object-fit: contain;
 }
-.travel-polaroid-caption {
+.polaroid-caption {
     display: block;
     margin-top: 6px;
     font-family: 'Caveat', cursive;
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     line-height: 1.1;
     color: #3a3a3a;
     text-align: center;
 }
-.dark-theme .travel-polaroid {
+.dark-theme .polaroid {
     background: #f1efe9;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* National parks and NC state parks share a row, split by a divider; they stack on
+   narrow screens (Bootstrap's lg breakpoint) with the divider moving above the second */
+.parks-pair .parks-col {
+    min-width: 0; /* let the columns shrink below the maps' drawn width so they can sit side by side */
+}
+.parks-pair .parks-col + .parks-col {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border-light);
+}
+@media (min-width: 992px) {
+    .parks-pair .parks-col + .parks-col {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+        border-left: 1px solid var(--card-border-light);
+    }
+}
+.dark-theme .parks-pair .parks-col + .parks-col {
+    border-color: var(--card-border-dark);
 }
 
 /* Parks that can't be pinned on the US map, shown in the map's corner */
@@ -1276,6 +1106,41 @@ div.parks-map {
     box-shadow: 0 0 0 1px var(--color-accent);
 }
 
+/* Key under each parks map: visited pin, not-yet pin, and (national parks) shaded states */
+.parks-map-key {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+    margin: -0.5rem 0 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+.parks-map-key-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.parks-map-key-pin {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent-strong);
+}
+.parks-map-key-pin-todo {
+    width: 9px;
+    height: 9px;
+    background: transparent;
+    border: 1.5px solid #8a8a8a;
+}
+.parks-map-key-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: var(--color-accent);
+    opacity: 0.4;
+}
+
 /* Visited parks listed under each parks map */
 .parks-list {
     display: flex;
@@ -1292,27 +1157,27 @@ div.parks-map {
 }
 
 /* Enlarged photo, opened by clicking a polaroid */
-.travel-lightbox {
+.photo-lightbox {
     max-width: min(92vw, 900px);
     padding: 14px 14px 8px;
     border: 0;
     background: #fdfcf8;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
-.travel-lightbox::backdrop {
+.photo-lightbox::backdrop {
     background: rgba(0, 0, 0, 0.6);
 }
-.travel-lightbox img {
+.photo-lightbox img {
     display: block;
     max-width: 100%;
     max-height: 75vh;
     margin: 0 auto;
 }
-.travel-lightbox .travel-polaroid-caption {
+.photo-lightbox .polaroid-caption {
     margin: 8px 0 0;
     font-size: 1.6rem;
 }
-.travel-lightbox-close {
+.photo-lightbox-close {
     position: absolute;
     top: 2px;
     right: 8px;
@@ -1341,14 +1206,11 @@ body .jvm-tooltip ul {
     padding-left: 1rem;
 }
 @media (max-width: 576px) {
-    #travel-map,
-    div.parks-map {
-        height: 200px;
-    }
-    .travel-photos {
+    .polaroid-row {
         justify-content: center;
     }
-    .travel-polaroid img {
-        height: 120px;
+    .polaroid img {
+        height: 90px;
+        min-width: 70px;
     }
 }

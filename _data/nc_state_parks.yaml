@@ -1,0 +1,173 @@
+# NC state parks, shown on the NC state parks map (about page).
+# visited: set to true once you've been. The "19 / 42" count on the page updates on its own.
+# coords: [latitude, longitude] for the pin.
+
+parks:
+
+  - name: Carolina Beach
+    visited: true
+    coords: [34.05, -77.92]
+
+  - name: Chimney Rock
+    visited: true
+    coords: [35.43, -82.25]
+
+  - name: Crowders Mountain
+    visited: true
+    coords: [35.21, -81.29]
+
+  - name: Dismal Swamp
+    visited: true
+    coords: [36.51, -76.36]
+
+  - name: Falls Lake
+    visited: true
+    coords: [36.01, -78.69]
+
+  - name: Fort Fisher
+    visited: true
+    coords: [33.95, -77.93]
+
+  - name: Grandfather Mountain
+    visited: true
+    coords: [36.11, -81.81]
+
+  - name: Hanging Rock
+    visited: true
+    coords: [36.41, -80.25]
+
+  - name: Haw River
+    visited: true
+    coords: [36.25, -79.76]
+
+  - name: Jockeys Ridge
+    visited: true
+    coords: [35.96, -75.63]
+
+  - name: Jordan Lake
+    visited: true
+    coords: [35.73, -79.02]
+
+  - name: Lake Waccamaw
+    visited: true
+    coords: [34.28, -78.47]
+
+  - name: Mayo River
+    visited: true
+    coords: [36.44, -79.95]
+
+  - name: Morrow Mountain
+    visited: true
+    coords: [35.37, -80.07]
+
+  - name: New River
+    visited: true
+    coords: [36.47, -81.34]
+
+  - name: Occoneechee Mountain
+    visited: true
+    coords: [36.06, -79.12]
+
+  - name: Pilot Mountain
+    visited: true
+    coords: [36.34, -80.47]
+
+  - name: Raven Rock
+    visited: true
+    coords: [35.46, -78.91]
+
+  - name: William B. Umstead
+    visited: true
+    coords: [35.87, -78.75]
+
+  - name: Carvers Creek
+    visited: false
+    coords: [35.20, -78.98]
+
+  - name: Cliffs of the Neuse
+    visited: false
+    coords: [35.24, -77.89]
+
+  - name: Elk Knob
+    visited: false
+    coords: [36.33, -81.69]
+
+  - name: Eno River
+    visited: false
+    coords: [36.08, -79.00]
+
+  - name: Fort Macon
+    visited: false
+    coords: [34.70, -76.68]
+
+  - name: Goose Creek
+    visited: false
+    coords: [35.48, -76.90]
+
+  - name: Gorges
+    visited: false
+    coords: [35.10, -82.95]
+
+  - name: Hammocks Beach
+    visited: false
+    coords: [34.67, -77.14]
+
+  - name: Jones Lake
+    visited: false
+    coords: [34.68, -78.60]
+
+  - name: Kerr Lake
+    visited: false
+    coords: [36.44, -78.37]
+
+  - name: Lake James
+    visited: false
+    coords: [35.73, -81.90]
+
+  - name: Lake Norman
+    visited: false
+    coords: [35.67, -80.93]
+
+  - name: Lumber River
+    visited: false
+    coords: [34.39, -79.00]
+
+  - name: Medoc Mountain
+    visited: false
+    coords: [36.26, -77.89]
+
+  - name: Merchants Millpond
+    visited: false
+    coords: [36.44, -76.70]
+
+  - name: Mount Jefferson
+    visited: false
+    coords: [36.40, -81.47]
+
+  - name: Mount Mitchell
+    visited: false
+    coords: [35.77, -82.27]
+
+  - name: Pettigrew
+    visited: false
+    coords: [35.79, -76.41]
+
+  - name: Rendezvous Mountain
+    visited: false
+    coords: [36.22, -81.29]
+
+  - name: Singletary Lake
+    visited: false
+    coords: [34.58, -78.45]
+
+  - name: South Mountains
+    visited: false
+    coords: [35.60, -81.63]
+
+  - name: Stone Mountain
+    visited: false
+    coords: [36.39, -81.03]
+
+  - name: Weymouth Woods
+    visited: false
+    coords: [35.15, -79.37]

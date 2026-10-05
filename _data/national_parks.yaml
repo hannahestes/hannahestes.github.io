@@ -1,0 +1,321 @@
+# All 63 US national parks, shown on the national parks map (about page).
+# visited: set to true once you've been. The "17 / 63" count on the page updates on its own.
+# states: the state(s) the park is in. A state is shaded once every park in it is visited
+#   (per-state totals are counted from this list).
+# coords: [latitude, longitude] for the pin. American Samoa and the Virgin Islands have none
+#   since they're off the US map; visited ones are listed in the map's corner instead.
+
+parks:
+
+  - name: Acadia National Park
+    visited: true
+    states: [ME]
+    coords: [44.35, -68.21]
+
+  - name: National Park of American Samoa
+    visited: false
+    states: [AS]
+
+  - name: Arches National Park
+    visited: true
+    states: [UT]
+    coords: [38.68, -109.57]
+
+  - name: Badlands National Park
+    visited: false
+    states: [SD]
+    coords: [43.75, -102.50]
+
+  - name: Big Bend National Park
+    visited: true
+    states: [TX]
+    coords: [29.25, -103.25]
+
+  - name: Biscayne National Park
+    visited: false
+    states: [FL]
+    coords: [25.65, -80.08]
+
+  - name: Black Canyon of the Gunnison National Park
+    visited: true
+    states: [CO]
+    coords: [38.57, -107.72]
+
+  - name: Bryce Canyon National Park
+    visited: true
+    states: [UT]
+    coords: [37.57, -112.18]
+
+  - name: Canyonlands National Park
+    visited: true
+    states: [UT]
+    coords: [38.20, -109.93]
+
+  - name: Capitol Reef National Park
+    visited: true
+    states: [UT]
+    coords: [38.20, -111.17]
+
+  - name: Carlsbad Caverns National Park
+    visited: true
+    states: [NM]
+    coords: [32.17, -104.44]
+
+  - name: Channel Islands National Park
+    visited: false
+    states: [CA]
+    coords: [34.01, -119.42]
+
+  - name: Congaree National Park
+    visited: false
+    states: [SC]
+    coords: [33.78, -80.78]
+
+  - name: Crater Lake National Park
+    visited: false
+    states: [OR]
+    coords: [42.94, -122.10]
+
+  - name: Cuyahoga Valley National Park
+    visited: false
+    states: [OH]
+    coords: [41.24, -81.55]
+
+  - name: Death Valley National Park
+    visited: false
+    states: [CA, NV]
+    coords: [36.24, -116.82]
+
+  - name: Denali National Park
+    visited: false
+    states: [AK]
+    coords: [63.33, -150.50]
+
+  - name: Dry Tortugas National Park
+    visited: false
+    states: [FL]
+    coords: [24.63, -82.87]
+
+  - name: Everglades National Park
+    visited: false
+    states: [FL]
+    coords: [25.32, -80.93]
+
+  - name: Gates of the Arctic National Park
+    visited: false
+    states: [AK]
+    coords: [67.78, -153.30]
+
+  - name: Gateway Arch National Park
+    visited: false
+    states: [MO]
+    coords: [38.63, -90.19]
+
+  - name: Glacier National Park
+    visited: false
+    states: [MT]
+    coords: [48.80, -114.00]
+
+  - name: Glacier Bay National Park
+    visited: false
+    states: [AK]
+    coords: [58.50, -137.00]
+
+  - name: Grand Canyon National Park
+    visited: true
+    states: [AZ]
+    coords: [36.06, -112.14]
+
+  - name: Grand Teton National Park
+    visited: false
+    states: [WY]
+    coords: [43.73, -110.80]
+
+  - name: Great Basin National Park
+    visited: false
+    states: [NV]
+    coords: [38.98, -114.30]
+
+  - name: Great Sand Dunes National Park
+    visited: true
+    states: [CO]
+    coords: [37.73, -105.51]
+
+  - name: Great Smoky Mountains National Park
+    visited: false
+    states: [TN, NC]
+    coords: [35.68, -83.53]
+
+  - name: Guadalupe Mountains National Park
+    visited: true
+    states: [TX]
+    coords: [31.92, -104.87]
+
+  - name: Haleakalā National Park
+    visited: false
+    states: [HI]
+    coords: [20.72, -156.17]
+
+  - name: Hawaiʻi Volcanoes National Park
+    visited: false
+    states: [HI]
+    coords: [19.38, -155.20]
+
+  - name: Hot Springs National Park
+    visited: false
+    states: [AR]
+    coords: [34.51, -93.05]
+
+  - name: Indiana Dunes National Park
+    visited: false
+    states: [IN]
+    coords: [41.65, -87.05]
+
+  - name: Isle Royale National Park
+    visited: false
+    states: [MI]
+    coords: [48.10, -88.55]
+
+  - name: Joshua Tree National Park
+    visited: false
+    states: [CA]
+    coords: [33.79, -115.90]
+
+  - name: Katmai National Park
+    visited: false
+    states: [AK]
+    coords: [58.50, -155.00]
+
+  - name: Kenai Fjords National Park
+    visited: false
+    states: [AK]
+    coords: [59.92, -149.65]
+
+  - name: Kings Canyon National Park
+    visited: false
+    states: [CA]
+    coords: [36.80, -118.55]
+
+  - name: Kobuk Valley National Park
+    visited: false
+    states: [AK]
+    coords: [67.55, -159.28]
+
+  - name: Lake Clark National Park
+    visited: false
+    states: [AK]
+    coords: [60.97, -153.42]
+
+  - name: Lassen Volcanic National Park
+    visited: false
+    states: [CA]
+    coords: [40.49, -121.51]
+
+  - name: Mammoth Cave National Park
+    visited: false
+    states: [KY]
+    coords: [37.18, -86.10]
+
+  - name: Mesa Verde National Park
+    visited: true
+    states: [CO]
+    coords: [37.18, -108.49]
+
+  - name: Mount Rainier National Park
+    visited: false
+    states: [WA]
+    coords: [46.85, -121.75]
+
+  - name: New River Gorge National Park and Preserve
+    visited: false
+    states: [WV]
+    coords: [38.07, -81.08]
+
+  - name: North Cascades National Park
+    visited: false
+    states: [WA]
+    coords: [48.70, -121.20]
+
+  - name: Olympic National Park
+    visited: false
+    states: [WA]
+    coords: [47.97, -123.50]
+
+  - name: Petrified Forest National Park
+    visited: true
+    states: [AZ]
+    coords: [35.07, -109.78]
+
+  - name: Pinnacles National Park
+    visited: false
+    states: [CA]
+    coords: [36.48, -121.16]
+
+  - name: Redwood National and State Parks
+    visited: false
+    states: [CA]
+    coords: [41.30, -124.00]
+
+  - name: Rocky Mountain National Park
+    visited: false
+    states: [CO]
+    coords: [40.40, -105.58]
+
+  - name: Saguaro National Park
+    visited: true
+    states: [AZ]
+    coords: [32.25, -110.50]
+
+  - name: Sequoia National Park
+    visited: false
+    states: [CA]
+    coords: [36.43, -118.68]
+
+  - name: Shenandoah National Park
+    visited: false
+    states: [VA]
+    coords: [38.53, -78.35]
+
+  - name: Theodore Roosevelt National Park
+    visited: false
+    states: [ND]
+    coords: [46.97, -103.45]
+
+  - name: Virgin Islands National Park
+    visited: true
+    states: [VI]
+
+  - name: Voyageurs National Park
+    visited: false
+    states: [MN]
+    coords: [48.50, -92.88]
+
+  - name: White Sands National Park
+    visited: true
+    states: [NM]
+    coords: [32.78, -106.17]
+
+  - name: Wind Cave National Park
+    visited: false
+    states: [SD]
+    coords: [43.57, -103.48]
+
+  - name: Wrangell-St. Elias National Park
+    visited: false
+    states: [AK]
+    coords: [61.00, -142.00]
+
+  - name: Yellowstone National Park
+    visited: false
+    states: [WY, MT, ID]
+    coords: [44.60, -110.50]
+
+  - name: Yosemite National Park
+    visited: false
+    states: [CA]
+    coords: [37.83, -119.50]
+
+  - name: Zion National Park
+    visited: true
+    states: [UT]
+    coords: [37.30, -113.05]

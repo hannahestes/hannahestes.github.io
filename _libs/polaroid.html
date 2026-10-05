@@ -1,0 +1,4 @@
+<button type="button" class="polaroid" data-src="{{ include.photo.src }}" data-caption="{{ include.photo.caption }}" aria-label="Open photo: {{ include.photo.caption }}">
+    <img src="{{ include.photo.src }}" alt="{{ include.photo.caption }}" loading="lazy" decoding="async">
+    <span class="polaroid-caption">{{ include.photo.caption }}</span>
+</button>

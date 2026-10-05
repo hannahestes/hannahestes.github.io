@@ -5,8 +5,6 @@ map: true
 ---
 
 {% include_relative _sections/travel.html %}
-{% include_relative _sections/parks.html id="parks" category="nps" title="National Parks" icon="fas fa-mountain" total=63
-    intro="I love exploring national parks!" %}
-{% include_relative _sections/parks.html id="nc-parks" category="ncsp" title="NC State Parks" icon="fas fa-tree" total=42 focus="US-NC" rotate=12
-    intro="I'm also working my way through North Carolina's state parks!" %}
-{% include_relative _sections/gallery.html %}
+{% include_relative _sections/parks_pair.html %}
+{% include_relative _sections/lab.html %}
+{% include_relative _libs/photo_lightbox.html %}

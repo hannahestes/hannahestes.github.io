@@ -1,0 +1,9 @@
+<!-- National parks and NC state parks side by side (stacked on narrow screens) -->
+
+<hr>
+<div class="row parks-pair">
+    {% include_relative _sections/parks.html id="parks" data="national_parks" title="National Parks" icon="fas fa-mountain" fill_complete=true
+        intro="I love exploring national parks!" %}
+    {% include_relative _sections/parks.html id="nc-parks" data="nc_state_parks" title="NC State Parks" icon="fas fa-tree" focus="US-NC" rotate=12
+        intro="I'm also working my way through North Carolina's state parks!" %}
+</div>

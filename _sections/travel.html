@@ -16,23 +16,15 @@
                         <span class="travel-time">{{ trip.time }}</span>
                     </div>
                     {% if trip.photos %}
-                        <div class="travel-photos">
+                        <div class="polaroid-row">
                             {% for photo in trip.photos %}
-                                <button type="button" class="travel-polaroid" data-src="{{ photo.src }}" data-caption="{{ photo.caption }}" aria-label="Open photo: {{ photo.caption }}">
-                                    <img src="{{ photo.src }}" alt="{{ photo.caption }}" loading="lazy" decoding="async">
-                                    <span class="travel-polaroid-caption">{{ photo.caption }}</span>
-                                </button>
+                                {% include_relative _libs/polaroid.html photo=photo %}
                             {% endfor %}
                         </div>
                     {% endif %}
                 </div>
             {% endfor %}
         </div>
-        <dialog id="travel-lightbox" class="travel-lightbox" aria-label="Trip photo">
-            <button type="button" class="travel-lightbox-close" aria-label="Close">&times;</button>
-            <img src="" alt="">
-            <p class="travel-polaroid-caption"></p>
-        </dialog>
         <script>window.travelTrips = {{ site.data.travel.trips | jsonify }};</script>
         <p></p>
     </div>
