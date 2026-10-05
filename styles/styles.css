@@ -443,18 +443,123 @@ code {
 }
 
 
-/* Styles for project list */
+/* Publications: compact list with a small graphic beside each paper */
 #projects {
-    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
-.project {
-    margin: 0px;
+.paper {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--card-border-light);
+}
+.dark-theme .paper {
+    border-bottom-color: var(--card-border-dark);
+}
+.paper[hidden] {
+    display: none;
+}
+.paper-thumb {
+    flex: 0 0 180px;
+    width: 180px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border-light);
+}
+.dark-theme .paper-thumb {
+    border-color: var(--card-border-dark);
+}
+.paper-body {
+    flex: 1;
+    min-width: 0;
+}
+.paper-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+.paper-venue {
+    font-size: 0.95rem;
+    font-style: italic;
+}
+.paper-location {
+    color: var(--color-muted);
+}
+.paper-status {
+    margin-left: 0.4rem;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-style: normal;
+    color: var(--color-accent-strong);
+    background-color: rgba(179, 108, 86, 0.14);
+}
+.paper-authors {
+    font-size: 0.9rem;
+    margin: 0.15rem 0 0.4rem;
+}
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.paper-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 1px 10px;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+.paper-link:hover {
+    text-decoration: none;
+    background-color: rgba(179, 108, 86, 0.14);
+}
+.dark-theme .paper-link:hover {
+    background-color: rgba(188, 223, 134, 0.14);
+}
+.paper-abstract {
+    margin-top: 0.5rem;
+}
+.paper-abstract summary {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    cursor: pointer;
+    list-style: none;
+}
+.paper-abstract summary::-webkit-details-marker {
+    display: none;
+}
+.paper-abstract summary::before {
+    content: "\25B8  ";
+}
+.paper-abstract[open] summary::before {
+    content: "\25BE  ";
+}
+.paper-abstract p {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+@media (max-width: 576px) {
+    .paper {
+        flex-direction: column;
+    }
+    .paper-thumb {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 
 /* Shared styles for filter buttons */
-#filters-project .filter-button,
-#filters-resources .filter-button {
+#filters-project .filter-button {
     padding: 4px 7px;
     border: 1px solid var(--color-border-dark);
     border-radius: 10px;
@@ -463,12 +568,10 @@ code {
     cursor: pointer;
     transition: background-color 0.5s, box-shadow 0.5s;
 }
-#filters-project .filter-button:hover,
-#filters-resources .filter-button:hover {
+#filters-project .filter-button:hover {
     background-color: rgba(194, 194, 194, 0.45);
 }
-#filters-project .filter-button.active,
-#filters-resources .filter-button.active {
+#filters-project .filter-button.active {
     background-color: rgba(194, 194, 194, 0.45);
 }
 
@@ -479,15 +582,8 @@ code {
     color: var(--color-text-light);
 }
 
-.light-theme #filters-resources .filter-button {
-    border: 1px solid #333333;
-    color: #333333;
-}
-
 .light-theme #filters-project .filter-button:hover,
-.light-theme #filters-project .filter-button.active,
-.light-theme #filters-resources .filter-button:hover,
-.light-theme #filters-resources .filter-button.active {
+.light-theme #filters-project .filter-button.active {
     border-color: var(--accent-light);
     background-color: rgba(179, 108, 86, 0.14);
     color: var(--accent-light-strong);
@@ -500,75 +596,12 @@ code {
     color: var(--color-white);
 }
 
-.dark-theme #filters-resources .filter-button {
-    border: 1px solid #6f7a72;
-    color: #e9efe6;
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
 .dark-theme #filters-project .filter-button:hover,
-.dark-theme #filters-project .filter-button.active,
-.dark-theme #filters-resources .filter-button:hover,
-.dark-theme #filters-resources .filter-button.active {
+.dark-theme #filters-project .filter-button.active {
     border-color: var(--accent-dark);
     background-color: rgba(188, 223, 134, 0.14);
     color: #f4f8f2;
 }
-
-/* Styles for pager buttons */
-.isotope-pager-project {
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center;
-}
-.isotope-pager-project .pager {
-    display: block;
-    padding: 4px 7px;
-    background-color: transparent;
-    border: 1px solid var(--color-border-dark);
-    margin: 0 5px;
-    border-radius: 7px;
-    transition: 0.5s;
-}
-.isotope-pager-project .pager:hover {
-    background-color: rgba(194, 194, 194, 0.45);
-    cursor: pointer;
-}
-.isotope-pager-project .pager.active {
-    background-color: rgba(194, 194, 194, 0.45);
-}
-
-
-/* Light theme styles for pager button */
-.light-theme .isotope-pager-project .pager {
-    border: 1px solid var(--color-border-dark);
-    color: var(--color-text-light);
-}
-
-
-/* Dark theme styles for pager button */
-.dark-theme .isotope-pager-project .pager {
-    border: 1px solid var(--color-white);
-    color: var(--color-white);
-}
-
-
-/* Disabled stye for pager buttons */
-.isotope-pager-project .pager:disabled {
-    background-color: var(--color-disabled);
-    color: var(--color-disabled-text);
-    cursor: default;
-    opacity: 0.5;
-    border: 1px solid var(--color-border-muted);
-}
-
-
-/* More/Less button for widgets */
-.collapse.in { 
-    display: inline !important; 
-}
-
 
 /* Styles for updates timeline */
 .updates-timeline {
@@ -745,16 +778,7 @@ code {
 }
 
 
-/* Random thoughts page: category jump links, then topics that expand in place */
-.thought-jump {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.5rem;
-}
-#filters-resources a.filter-button {
-    text-decoration: none;
-}
+/* Random thoughts page: topics grouped by category that expand in place */
 .thought-group {
     margin-top: 1.5rem;
 }

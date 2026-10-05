@@ -15,35 +15,6 @@ btn.on('click', function(e) {
 });
 
 
-// Change the text interchangably "See More" and "See Less"
-function toggleText(linkElement) {
-    var collapseId = linkElement.getAttribute('href').substring(1);
-    var collapseElement = document.getElementById(collapseId);
-
-    $(collapseElement).on('hidden.bs.collapse', function () {
-        linkElement.textContent = '... See More';
-    });
-    $(collapseElement).on('shown.bs.collapse', function () {
-        linkElement.textContent = '... See Less';
-    });
-}
-
-
-// Initialize the toggleText function for each link
-document.querySelectorAll('[data-toggle="collapse"]').forEach(function (linkElement) {
-    toggleText(linkElement);
-});
-
-
-// Scroll to top of a div based on its tag
-function scrollToTopDiv(divTag) {
-    $(divTag)[0].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
-}
-
-
 // Theme state (single source of truth)
 const THEME_STORAGE_KEY = 'preferred-theme';
 
@@ -184,182 +155,22 @@ function progressBar() {
 }
 
 
-// Function to update Isotope layout with smooth transitions
-function updateLayoutProjects(collapseElement, isExpanding) {
-    
-    // Initialize Isotope with vertical layout
-    var iso = new Isotope('#projects', {
-        itemSelector: '.project',
-        layoutMode: 'vertical'
-    });
-
-    if (isExpanding) {
-        $(collapseElement).css('display', 'none');
-        iso.arrange();
-        setTimeout(function() {
-            $(collapseElement).css('display', '');
-            iso.arrange();
-        }, 300);
-    } else {
-        iso.arrange();
-        setTimeout(function() {
-            $(collapseElement).css('display', 'none');
-            iso.arrange();
-        }, 300);
-    }
-}
-
-
-// Bind updateLayout function to the collapsible elements' events
-$('.collapse').on('show.bs.collapse', function () {
-    updateLayoutProjects(this, true);
-}).on('hide.bs.collapse', function () {
-    updateLayoutProjects(this, false);
-});
-
-
-// Modified from https://codepen.io/SohRonery/pen/wvvBLyP
-var itemsPerPageDefault = 5;
-var currentNumberPages = 1;
-var currentPage = 1;
-var currentFilter = '*';
-var filterAtribute = 'data-filter';
-var pageAtribute = 'data-page-project';
-var pagerClass = 'isotope-pager-project';
-var $projects = $('#projects').isotope({
-    itemcategory: '.project',
-    layoutMode: 'vertical'
-});
-
-
-// Filter based on input category
-function filterCategoryProjects(category) {
-    $projects.isotope({
-        filter: category
-    });
-}
-
-
-// Determine items to be categorized and displayed per page
-function showPageProjects(n) {
-    currentPage = n;
-    var category = '.project';
-        category += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
-        category += '[' + pageAtribute + '="' + currentPage+'"]';
-    filterCategoryProjects(category);
-}
-
-
-// Update pager indicator when user clicks previous or next button, and disable buttons as needed
-function updatePagerProjects() {
-    var $isotopePager = ($('.' + pagerClass).length == 0 ) ? $('<div class="' + pagerClass + '"></div>') : $('.' + pagerClass);
-    $isotopePager.html('');
-
-    var $previous = $('<button class="pager" id="previous-page">&#8592; previous</button>');
-    $previous.click(function() {
-        if (currentPage > 1) {
-            showPageProjects(currentPage - 1);
-            updatePagerProjects();
-            scrollToTopDiv('#research');
-        }
-    });
-    if (currentPage === 1) {
-        $previous.prop('disabled', true);
-    }
-    
-    var $next = $('<button class="pager" id="next-page">next &#8594;</button>');
-    $next.click(function() {
-        if (currentPage < currentNumberPages) {
-            showPageProjects(currentPage + 1);
-            updatePagerProjects();
-            scrollToTopDiv('#research');
-        }
-    });
-    if (currentPage === currentNumberPages) {
-        $next.prop('disabled', true);
-    }
-
-    var $currentPageIndicator = $('<span class="current-page">&nbsp; page ' + currentPage + ' of ' + currentNumberPages + ' &nbsp; </span>');
-    
-    $previous.appendTo($isotopePager);
-    $currentPageIndicator.appendTo($isotopePager);
-    $next.appendTo($isotopePager);
-    $projects.after($isotopePager);
-}
-
-
-// Set pagination
-function setPaginationProjects() {
-    var SettingsPagesOnItems = function() {
-        var itemsLength = $projects.children('.project').length;
-        var pages = Math.ceil(itemsLength / itemsPerPageDefault);
-        var item = 1;
-        var page = 1;
-        var category = '.project';
-            category += ( currentFilter != '*' ) ? '[' + filterAtribute + '="' + currentFilter + '"]' : '';
-        
-        $projects.children(category).each(function() {
-            if (item > itemsPerPageDefault) {
-                page++;
-                item = 1;
-            }
-            $(this).attr(pageAtribute, page);
-            item++;
+// Publications: show only the papers matching the selected topic chip
+document.querySelectorAll('#filters-project .filter-button').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('#filters-project .filter-button').forEach(function(other) {
+            other.classList.toggle('active', other === button);
         });
-        currentNumberPages = page;
-    }();
-
-    updatePagerProjects();
-}
-
-
-function initializeIsotopeProjects() {
-    // Set number of pages, return to first page,
-    setPaginationProjects();
-    showPageProjects(1);
-
-
-    // Filter projects based on category, including change active buttons, filter projects, 
-    // set the number of pages, return to the first page, and update the pager indicator 
-    $('#filters-project .filter-button').click(function() {
-        $('#filters-project .filter-button').removeClass('active');
-        $(this).addClass('active');
-        var filter = $(this).attr('data-filter');
-        currentFilter = filter;
-        setPaginationProjects();
-        showPageProjects(1);
-        updatePagerProjects();
+        const filter = button.getAttribute('data-filter');
+        document.querySelectorAll('#projects .paper').forEach(function(paper) {
+            paper.hidden = filter !== '*' && paper.getAttribute('data-filter') !== filter;
+        });
     });
-}
+});
 
-// // Guarantee correct layouts when all web resources are fully loaded 
-// This version is slow --> only re-layout when all the gifs are fully loaded
-// $(window).on('load', function() {
-//     initializeOwlCarousel();
-//     initializeIsotopeProjects();
-// });
-// This version is faster --> re-layout when all the images are fully loaded not neccessarily all the gifs
+
 $(document).ready(function() {
     initializeUpdatesSection();
-
-    // Exclude lazy-loaded images — they don't fire onload until scrolled into view,
-    // which would stall Promise.all and prevent Isotope layouts from initializing.
-    var Images = $('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"]').not('[loading="lazy"]').get();
-    var imageLoadPromises = Images.map(function(img) {
-        return new Promise(function(resolve) {
-            if (img.complete) {
-                resolve();
-            } else {
-                img.onload = resolve;
-                img.onerror = resolve;
-            }
-        });
-    });
-
-    // Only the publications page has projects to lay out
-    Promise.all(imageLoadPromises).then(function() {
-        if ($projects.length) initializeIsotopeProjects();
-    });
 });
 
 
@@ -442,7 +253,7 @@ function renderTravelMap(colors) {
         regionStyle: {
             initial: { fill: colors.land },
             hover: { fillOpacity: 0.8, cursor: 'default' },
-            selected: { fill: colors.accent }
+            selected: { fill: colors.accent, fillOpacity: 0.4 } // same tint as the shaded national park states
         },
         markers: window.travelTrips.map(function(trip) {
             return { name: trip.event + ' · ' + trip.city, coords: trip.coords };

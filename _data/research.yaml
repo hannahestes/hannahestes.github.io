@@ -8,9 +8,11 @@ categories:
 projects:
   - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"
     system-name: 
-    gif: assets/img/vda_vlhcc.jpg
-    conference: "VL/HCC" 
-    conference-web: https://conf.researchr.org/home/vlhcc-2026
+    image: assets/img/vda_vlhcc.jpg
+    venue: VL/HCC
+    year: 2026
+    location: Paderborn, Germany
+    venue-web: https://conf.researchr.org/home/vlhcc-2026
     status: 
     authors: <b>Hannah Estes</b>, Kathryn T. Stolee.
     pdf: assets/papers/Shaping_Stances_VDA__VLHCC.pdf
@@ -20,7 +22,7 @@ projects:
     talk: 
     doi: 
     poster: 
-    abstract-less: >-
+    abstract: >-
       Large language models are pervasive in everyday writing tools, yet in most 
       instances, the rhetorical elements of
       the writing are not considered. Using data from CoAuthor, an
@@ -29,7 +31,6 @@ projects:
       the LLM was prompted, the rhetorical content of its suggestions,
       and the outcomes of those suggestions. We find a failure of
       negotiation where the LLMs often default to 
-    abstract-more: >-
       generating facts
       and opinions 63% of the time, which writers often reject.
       More critically, 33% of accepted suggestions are ultimately
@@ -48,14 +49,15 @@ projects:
       iterative, writer-aware design inspired by the DevOps cycle of
       plan, do, check, and act, to continuously align suggestions to the
       writer’s personal style, rhetorical trajectory, and context.
-    tag: vda_ai_writing_tools
     category: other
     
   # - title: "Expectations of Software Product Managers: An Empirical Evaluation of Software Professionals' Perspectives"
   #   system-name: 
-  #   gif: assets/img/TOSEM_graphic.jpg
-  #   conference: TOSEM 
-  #   conference-web: https://dl.acm.org/journal/tosem
+  #   image: assets/img/TOSEM_graphic.jpg
+  #   venue: TOSEM
+  #   year:
+  #   location:
+  #   venue-web: https://dl.acm.org/journal/tosem
   #   status: Currently Under Review
   #   authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn T. Stolee.
   #   pdf: assets/papers/blank_notyet.pdf
@@ -65,14 +67,13 @@ projects:
   #   talk: 
   #   doi:
   #   poster: assets/papers/making_sense_poster.pdf
-  #   abstract-less: >-
+  #   abstract: >-
   #     The role of the software product manager is often ambiguous and potentially
   #     contentious, with tensions often arising between the software product manager
   #     and the software team. The goal of this work is to uncover software product
   #     manager role expectations from three perspectives: their own, that of the
   #     software team, and that of the software companies. We deployed a survey
   #     targeting
-  #   abstract-more: >-
   #     software professionals (n=80, 22 companies) to uncover software product manager
   #     role expectations and the typical questions they answer, providing direct and
   #     indirect lenses into software product manager activities. Through qualitative
@@ -86,14 +87,15 @@ projects:
   #     team. We synthesize these results across the software development lifecycle in
   #     the SENSE framework, providing a comprehensive view of software product manager
   #     role expectations and points of friction with software teams.
-  #   tag: spm_role_questions_jobs
   #   category: spm
 
   - title: 'Advancing Software Product Management Education: Insights from an Industry Survey'
     system-name: 
-    gif: assets/img/fse-seet-graphic.jpg
-    conference: FSE-SEET (Trondheim, Norway) 
-    conference-web: https://conf.researchr.org/home/fse-2025
+    image: assets/img/fse-seet-graphic.jpg
+    venue: FSE-SEET
+    year: 2025
+    location: Trondheim, Norway
+    venue-web: https://conf.researchr.org/home/fse-2025
     status:
     authors: <b>Hannah Estes</b>, Katie Hollowell, John Cheek, Shiv Patel, Hanna Reese, Kathryn T. Stolee.
     pdf: assets/papers/AdvancingSPMEducation_FSE_SEET_2025.pdf
@@ -103,14 +105,13 @@ projects:
     talk: 
     doi: https://doi.org/10.1145/3696630.3727256
     poster: 
-    abstract-less: >-
+    abstract: >-
       Software product managers have become critical to a software product’s success.
       They act as a liaison among various stakeholders - software engineers,
       management, and customers - to ensure a product meets customer needs. Despite
       the role’s rise in popularity, research and related educational materials are
       just emerging. In this paper, we aim to understand the educational needs of
       software product managers, and why embedding them in a software
-    abstract-more: >-
       team is valuable. To do this, we collected survey responses from 59 software
       product managers and 63 software engineers, with responses from at least 24
       companies, to identify the topics, skills, and abilities that software product
@@ -124,5 +125,4 @@ projects:
       sense from a vision and strategy. This paper provides the groundwork for future
       software product management curricula by identifying 21 key competencies and 10
       factors to describe the role’s value in software teams.
-    tag: spm_edu
     category: spm

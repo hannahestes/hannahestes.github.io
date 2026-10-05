@@ -1,31 +1,27 @@
-<div class="project" data-filter="{{ project.category }}">
-    <div class="row mb-4">
-        <div class="col-sm-5">
-            <img width="100%" height="auto" class="w-full rounded-lg" src="{{ project.gif }}">
+<article class="paper" data-filter="{{ project.category }}">
+    {% if project.image %}<img class="paper-thumb" src="{{ project.image }}" alt="" loading="lazy" decoding="async">{% endif %}
+    <div class="paper-body">
+        <h3 class="paper-title">{% if project.system-name %}<i>{{ project.system-name }}</i>: {% endif %}{{ project.title }}</h3>
+        <div class="paper-venue">
+            {% if project.venue-web %}<a href="{{ project.venue-web }}" target="_blank" rel="noopener">{{ project.venue }} {{ project.year }}</a>{% else %}{{ project.venue }} {{ project.year }}{% endif %}
+            {% if project.location %}<span class="paper-location">&middot; {{ project.location }}</span>{% endif %}
+            {% if project.status %}<span class="paper-status">{{ project.status }}</span>{% endif %}
         </div>
-        <div class="col-sm-7">
-            {% if project.system-name %} <b><i>{{ project.system-name }}</i>:</b> {% endif %}
-            <b>{{ project.title }}</b>
-            <br>
-            <i><a href="{{ project.conference-web }}" target="_blank" rel="noopener">{{ project.conference }}</a></i> 
-            {% if project.status %} <b style = "color: #5C878E">[{{ project.status }}]</b> {% endif %}
-            <br>
-            {{ project.authors }}
-            <br>
-            {% if project.pdf %} <a href="{{ project.pdf }}" target="_blank" rel="noopener">[pdf]</a> {% endif %}
-            {% if project.code %} | <a href="{{ project.code }}" target="_blank" rel="noopener">[code]</a> {% endif %}
-            {% if project.demo %} | <a href="{{ project.demo }}" target="_blank" rel="noopener">[demo]</a> {% endif %}
-            {% if project.slides %} | <a href="{{ project.slides }}" target="_blank" rel="noopener">[slides]</a> {% endif %}
-            {% if project.talk %} | <a href="{{ project.talk }}" target="_blank" rel="noopener">[talk]</a> {% endif %}
-            {% if project.poster %} | <a href="{{ project.poster }}" target="_blank" rel="noopener">[poster]</a> {% endif %}
-            {% if project.doi %} | <a href="{{ project.doi }}" target="_blank" rel="noopener">[doi]</a> {% endif %}
-            <br>
-            <u><b><i>Abstract</i></b>:</u> 
-            {{ project.abstract-less }}
-            <span class="collapse" id="{{ project.tag }}">
-                {{ project.abstract-more }}
-            </span> 
-            <span> <a href="#{{ project.tag }}" data-toggle="collapse" onclick="toggleText(this)" id="link-{{ project.tag }}">... See More</a></span>
-        </div>                       
+        <div class="paper-authors">{{ project.authors }}</div>
+        <div class="paper-links">
+            {% if project.pdf %}<a class="paper-link" href="{{ project.pdf }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> paper</a>{% endif %}
+            {% if project.slides %}<a class="paper-link" href="{{ project.slides }}" target="_blank" rel="noopener"><i class="fas fa-chalkboard" aria-hidden="true"></i> slides</a>{% endif %}
+            {% if project.poster %}<a class="paper-link" href="{{ project.poster }}" target="_blank" rel="noopener"><i class="fas fa-image" aria-hidden="true"></i> poster</a>{% endif %}
+            {% if project.talk %}<a class="paper-link" href="{{ project.talk }}" target="_blank" rel="noopener"><i class="fas fa-video" aria-hidden="true"></i> talk</a>{% endif %}
+            {% if project.code %}<a class="paper-link" href="{{ project.code }}" target="_blank" rel="noopener"><i class="fas fa-code" aria-hidden="true"></i> code</a>{% endif %}
+            {% if project.demo %}<a class="paper-link" href="{{ project.demo }}" target="_blank" rel="noopener"><i class="fas fa-play" aria-hidden="true"></i> demo</a>{% endif %}
+            {% if project.doi %}<a class="paper-link" href="{{ project.doi }}" target="_blank" rel="noopener"><i class="fas fa-link" aria-hidden="true"></i> doi</a>{% endif %}
+        </div>
+        {% if project.abstract %}
+            <details class="paper-abstract">
+                <summary>abstract</summary>
+                <p>{{ project.abstract }}</p>
+            </details>
+        {% endif %}
     </div>
-</div>
+</article>

@@ -6,11 +6,6 @@
         <h2 class="mb-1"><i class="fas fa-lightbulb" aria-hidden="true"></i> Random Thoughts</h2>
         {{ site.data.resources.introduction }}
         <p></p>
-        <div id="filters-resources" class="thought-jump">
-            {% for category in site.data.resources.categories %}
-                <a class="filter-button" href="#thoughts-{{ category.data-filter }}">{{ category.category-name }}</a>
-            {% endfor %}
-        </div>
         {% for category in site.data.resources.categories %}
             {% assign thoughts = site.data.resources.links | where: "category", category.data-filter %}
             <section class="thought-group" id="thoughts-{{ category.data-filter }}">
