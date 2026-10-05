@@ -1,6 +1,10 @@
 updates:
 # assets/img/updates_gan/spider_bot.jpg
   - picture:
+    desc: Presented <highlight>Who Shapes the Stance</highlight> and <highlight>Reducing the Burden of Code Review (Grad Consort)</highlight> VL/HCC!
+    time: October 2026
+
+  - picture:
     desc: Selected as student volunteer for ACM AI Leadership Summit
     time: July 2026
   

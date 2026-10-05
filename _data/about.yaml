@@ -1,5 +1,5 @@
 # basic information
-name: Hannah Estes
+name: Hannah Estes <a href="https://pronouns.org/she-her" target="_blank" rel="noopener">she/her</a>
 profile-pic: assets/img/Hannah_Portrait_Square.png
 pronunciation: #/kʰæŋ/
 pronunciation-emoji: #🎧
@@ -39,10 +39,10 @@ first-paragraph: >-
   <a href="https://kstolee.github.io/" target="_blank" rel="noopener">Dr. Katie Stolee</a>.
 
 second-paragraph: >-
-  Got feedback, questions, or just want to chat? <a href="mailto:hmestes@ncsu.edu">Please reach out!</a>
+  Got feedback, questions, or just want to chat? Please reach out! <highlight>hmestes [at] ncsu [dot] edu </highlight>
 
 research-introduction: >-
-  I’m fascinated by the human and organizational factors that shape software development,
+  I'm fascinated by the human and organizational factors that shape software development,
   especially how team communication and coordination impact the products we build. My
   research focuses on the interactions between software product managers (SPMs) and software
   engineers (SWEs), exploring where alignment succeeds and where misalignment creates friction.
