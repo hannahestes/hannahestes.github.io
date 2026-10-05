@@ -1,12 +1,12 @@
-introduction: some happy moments!
+introduction: Some happy moments!
 
 categories:
   - data-filter: lab
-    category-name: lab fun
+    category-name: Lab Fun
   # - data-filter: travel
   #   category-name: travel
   - data-filter: conference
-    category-name: conference
+    category-name: Conference
   # - data-filter: nps
   #   category-name: national parks
   # - data-filter: ncsp
@@ -32,7 +32,7 @@ pictures:
     category: lab
 
   - source: assets/gallery/exploring_trondheim.jpg
-    caption: exploring trondheim
+    caption: exploring Trondheim
     year: 2025
     category: conference
 

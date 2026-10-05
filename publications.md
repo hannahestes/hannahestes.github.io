@@ -1,6 +1,6 @@
 ---
 layout: main
-title: publications
+title: Publications
 ---
 
 {% include_relative _sections/research.html %}

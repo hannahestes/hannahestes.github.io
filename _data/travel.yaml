@@ -50,7 +50,7 @@ trips:
     time: June 2025
     photos:
       - src: assets/travel/fse2025_trondheim.jpg
-        caption: exploring trondheim
+        caption: exploring Trondheim
       - src: assets/travel/fse2025_group.jpg
         caption: FSE group
 

@@ -1,11 +1,11 @@
 updates:
 # assets/img/updates_gan/spider_bot.jpg
   - picture:
-    desc: Presented <highlight>Who Shapes the Stance</highlight> and <highlight>Reducing the Burden of Code Review (Grad Consort)</highlight> VL/HCC!
+    desc: Presented <highlight>Who Shapes the Stance</highlight> and <highlight>Reducing the Burden of Code Review (Grad Consort)</highlight> at VL/HCC!
     time: October 2026
 
   - picture:
-    desc: Selected as student volunteer for ACM AI Leadership Summit
+    desc: Selected as a student volunteer for the ACM AI Leadership Summit!
     time: July 2026
   
   - picture:
@@ -25,7 +25,7 @@ updates:
     time: April 2026
 
   - picture: 
-    desc: I will attend VL/HCC in <highlight>Raleigh, North Carolina</highlight>. 
+    desc: I attended VL/HCC in <highlight>Raleigh, North Carolina</highlight>!
     time: October 2025
 
   - picture: 
@@ -37,7 +37,7 @@ updates:
     time: June 20, 2025
 
   - picture: 
-    desc: I will attend the CRA <a target="_blank" href="https://cra.org/cra-wp/events/2025-cra-wp-grad-cohort-workshops/">Grad Cohort Workshop</a> in Denver, Colorado! 
+    desc: I attended the CRA <a target="_blank" href="https://cra.org/cra-wp/events/2025-cra-wp-grad-cohort-workshops/">Grad Cohort Workshop</a> in Denver, Colorado! 
     time: April 2025
   
   - picture: 
@@ -82,7 +82,7 @@ updates:
     time: May 2022
     
   - picture: 
-    desc: Nominated as the ambassador with most volunteer hours!
+    desc: Nominated as the ambassador with the most volunteer hours!
     time: May 2022
     
   - picture: 
@@ -94,5 +94,5 @@ updates:
     time: August 2020
 
   - picture: 
-    desc: I start my undergrad at <highlight>NC State</highlight>.
+    desc: I started my undergrad at <highlight>NC State</highlight>.
     time: August 2020

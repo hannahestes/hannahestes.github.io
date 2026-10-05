@@ -1,9 +1,9 @@
 categories:
 
   - data-filter: spm
-    category-name: software product management
+    category-name: Software Product Management
   - data-filter: other
-    category-name: other
+    category-name: Other
 
 projects:
   - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"
@@ -38,7 +38,7 @@ projects:
       multinomial logistic regression, we find that who the writer is
       explains significantly more variance in a suggestion’s outcome
       rather than what the LLM suggests or where it is prompted. The
-      solution is not to soley focus on generating better suggestions with
+      solution is not to solely focus on generating better suggestions with
       higher acceptance rates, but build systems that learn and adapt
       to each writer’s unique style and rhetorical trajectory. When the
       LLM ignores the author’s characteristics and focuses instead on

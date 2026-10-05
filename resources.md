@@ -1,6 +1,6 @@
 ---
 layout: main
-title: random thoughts
+title: Random Thoughts
 ---
 
 {% include_relative _sections/resources.html %}

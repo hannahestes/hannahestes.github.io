@@ -1,23 +1,23 @@
-introduction: a short collection of helpful links and advice I have collected along the way. click any topic to open it!
+introduction: A short collection of helpful links and advice I have collected along the way. Click any topic to open it!
 
 categories:
 
   - data-filter: research
-    category-name: research
+    category-name: Research
 
   - data-filter: ncsu
-    category-name: nc state
+    category-name: NC State
 
   - data-filter: misc
-    category-name: misc
+    category-name: Misc
 
 
 
 links:
   - title: Everything PhD
-    summary: Useful list of blogs and resources about apply for, succeeding in, and graduating from your PhD!
+    summary: Useful list of blogs and resources about applying for, succeeding in, and graduating from your PhD!
     content: |-
-      - Everything Phillip Guo!! (can't post the links but if you are interested reach out!)
+      - Everything Philip Guo!! (can't post the links but if you are interested reach out!)
         - <https://www.youtube.com/watch?v=zdOLa7w9lnE>
       - <https://matt.might.net/articles/> : Great blog about everything PhD
         - some of my favorites:
@@ -51,8 +51,8 @@ links:
       should utilize the big picture and highlight different stages of it
       during your talk)
       
-      4. Details (but keep it simple and remember a talks purpose is to
-      raise interest for your paper. If you didn't introduce a running example in the motivation part, do it now und use it intensively in the
+      4. Details (but keep it simple and remember a talk's purpose is to
+      raise interest for your paper. If you didn't introduce a running example in the motivation part, do it now and use it intensively in the
       following slides)
       
       5. Conclusion + Future Work (1-2 slides, what are the main messages
@@ -74,7 +74,7 @@ links:
     content: |-
       - How to approximate it?
       - How can we make it cheaper? (including time for other people and time for self)
-      - How would we actually a study this?
+      - How would we actually study this?
     category: research
 
   - title: Inductive Writing All the Way!
@@ -130,10 +130,10 @@ links:
   - title: Software Engineering & Research Book Recommendations
     summary: 
     content: |-
-      - The inmates are running the asylum
-      - the mythical man month
-      - even a geek can speak
-      - the incomplete guide to the art of discovery
+      - The Inmates Are Running the Asylum
+      - The Mythical Man-Month
+      - Even a Geek Can Speak
+      - The Incomplete Guide to the Art of Discovery
     category: misc
 
   - title: Threats to Validity Clarification
