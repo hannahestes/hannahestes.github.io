@@ -1,0 +1,17 @@
+# pages shown in the top navigation bar (in order)
+pages:
+  - title: home
+    url: index.html
+    icon: fas fa-home
+
+  - title: about
+    url: about.html
+    icon: fas fa-camera
+
+  - title: publications
+    url: publications.html
+    icon: fas fa-book
+
+  - title: random thoughts
+    url: resources.html
+    icon: fas fa-lightbulb

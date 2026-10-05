@@ -1,4 +1,4 @@
-introduction: a short collection of helpful links and advice I have collected along the way. click any card to read more!
+introduction: a short collection of helpful links and advice I have collected along the way. click any topic to open it!
 
 categories:
 
@@ -21,14 +21,14 @@ links:
         - <https://www.youtube.com/watch?v=zdOLa7w9lnE>
       - <https://matt.might.net/articles/> : Great blog about everything PhD
         - some of my favorites:
-          - http://matt.might.net/articles/phd-school-in-pictures/> : Illustrated Guide to PhD
+          - <http://matt.might.net/articles/phd-school-in-pictures/> : Illustrated Guide to PhD
           - <https://matt.might.net/articles/what-cs-majors-should-know/> : Every CS Major should know
           - <https://matt.might.net/articles/grad-student-resolutions/> : 12 Resolutions for Grad Students
           - <https://matt.might.net/articles/successful-phd-students/> : 3 qualities of successful PhD students
       - <https://matt-welsh.blogspot.com/2012/03/do-you-need-phd.html> : Do you need a PhD?
       - <https://homes.cs.washington.edu/~mernst/advice/> : Another Great Collection of Advice for Everything PhD
       - <https://vijay03.github.io/asstprofbook/> : CS Assistant Professor Handbook (good for TA too!)
-      <https://github.com/poloclub/awesome-grad-school> : General Collection of Advice for all things PhD
+      - <https://github.com/poloclub/awesome-grad-school> : General Collection of Advice for all things PhD
       - <https://parentheticallyspeaking.org/articles/us-cs-phd-faq/> : PhD application advice
       - <https://clairelegoues.com/posts/clg-writing-rules.html> : writing advice
       - <https://michaelnielsen.org/blog/principles-of-effective-research/> : Principles of Effective Research
@@ -150,7 +150,7 @@ links:
     category: research
 
   - title: Great Portfolio/Website Templates
-    summary: Some great examples (I think
+    summary: Some great examples (I think!)
     content: |-
       - <https://tichung.com/teaching-statement/>
       - <https://mkhangg.com/> (what I based mine on!)

@@ -11,45 +11,8 @@ $(window).scroll(function() {
 
 btn.on('click', function(e) {
     e.preventDefault();
-    const speechBalloon = document.querySelector('.speech-balloon');
-    // const clickSound = new Audio('assets/sounds/collision_sound.wav');
     $('html, body').animate({scrollTop:0}, '300');
-    showSpeech('back to top!');
-    // clickSound.play();
 });
-
-// helper to show speech balloon messages and auto-hide after 3 seconds
-let _speechTimeout = null;
-function showSpeech(text) {
-    const el = document.querySelector('.speech-balloon');
-    if (!el) return;
-    el.innerText = text;
-    el.classList.remove('hidden');
-    if (_speechTimeout) {
-        clearTimeout(_speechTimeout);
-    }
-    _speechTimeout = setTimeout(() => {
-        el.classList.add('hidden');
-        _speechTimeout = null;
-    }, 3000);
-}
-
-
-// Play pronunciation audio when the emoji is clicked (guarded)
-// var _volumeEmojiEl = document.getElementById('volumeEmoji');
-// if (_volumeEmojiEl) {
-//     _volumeEmojiEl.addEventListener('click', function() {
-//         const pronunicationAudio = new Audio('assets/sounds/khang.mp3');
-//         pronunicationAudio.play();
-//     });
-// }
-
-
-// Toggle navigation menu bar
-function toggleNav() {
-    document.querySelector('nav').classList.toggle('animated-menu');
-    document.querySelector('.nav-toggle-btn').classList.toggle('active');
-}
 
 
 // Change the text interchangably "See More" and "See Less"
@@ -123,11 +86,10 @@ function toggleTheme() {
 
     if (isDark) {
         applyTheme('light-theme');
-        showSpeech('lights turned on!');
     } else {
         applyTheme('dark-theme');
-        showSpeech('lights turned off!');
     }
+    renderMaps();
 }
 
 
@@ -196,8 +158,8 @@ function initializeUpdatesSection() {
     initializeOwlCarousel();
 }
 
-function applySidebarAccessibility() {
-    const navActions = document.querySelectorAll('nav ul li .nav-item-button, nav ul li .nav-item-link');
+function applyNavAccessibility() {
+    const navActions = document.querySelectorAll('nav .nav-item-link');
 
     navActions.forEach(function(actionEl) {
         const labelEl = actionEl.querySelector('.text');
@@ -207,91 +169,6 @@ function applySidebarAccessibility() {
         }
     });
 }
-
-// Touch and mouse event listeners
-let isDragging = false;
-let isMobile = 'ontouchstart' in window;
-let startEvent = isMobile ? 'touchstart' : 'mousedown';
-let moveEvent = isMobile ? 'touchmove' : 'mousemove';
-let endEvent = isMobile ? 'touchend' : 'mouseup';
-// popup icon and dismissal area
-var popupIconContainer = document.getElementById('popupIconContainer');
-var dismissalArea = document.getElementById('dismissalArea');
-var startX = 0, startY = 0, originalX = 0, originalY = 0;
-
-
-// Capture mouse down (desktop) or touch start (mobile) events (guarded)
-if (popupIconContainer) {
-    popupIconContainer.addEventListener(startEvent, (e) => {
-    e.preventDefault();
-    isDragging = true;
-    let clientX = isMobile ? e.touches[0].clientX : e.clientX;
-    let clientY = isMobile ? e.touches[0].clientY : e.clientY;
-
-    startX = clientX;
-    startY = clientY;
-    originalX = popupIconContainer.getBoundingClientRect().left;
-    originalY = popupIconContainer.getBoundingClientRect().top;
-    if (dismissalArea) dismissalArea.style.display = 'flex';
-    
-    // Hide the speech balloon as users start dragging and drag the icon
-    document.querySelector('.speech-balloon').classList.add('hidden');
-});
-
-
-    // Capture mouse move (desktop) or touch move (mobile) events
-    document.addEventListener(moveEvent, (e) => {
-        if (!isDragging) {
-            return;
-        }
-        
-        let clientX = isMobile ? e.touches[0].clientX : e.clientX;
-        let clientY = isMobile ? e.touches[0].clientY : e.clientY;
-
-        let x = originalX + (clientX - startX);
-        let y = originalY + (clientY - startY);
-        if (popupIconContainer) {
-            popupIconContainer.style.left = `${x}px`;
-            popupIconContainer.style.bottom = `calc(100% - ${y}px - ${popupIconContainer.offsetHeight}px)`;
-        }
-    });
-}
-
-
-// Capture mouse up (desktop) or touch end (mobile) events
-document.addEventListener(endEvent, (e) => {
-    // const clickSound = new Audio('assets/sounds/disappear_sound.wav');
-
-    if (!isDragging) {
-        return;
-    }
-
-    let clientX = isMobile ? e.changedTouches[0].clientX : e.clientX;
-    let clientY = isMobile ? e.changedTouches[0].clientY : e.clientY;
-    let centerX = window.innerWidth / 2;
-    let centerY = window.innerHeight;
-
-    // Check if icon is near the middle bottom dismissal area
-    if (Math.abs(clientX - centerX) < 50 && Math.abs(clientY - centerY) < 100) {
-        if (popupIconContainer) popupIconContainer.classList.add('hidden');
-        // clickSound.play();
-    }
-
-    if (dismissalArea) dismissalArea.style.display = 'none';
-    isDragging = false;
-});
-
-
-// Hide speech balloon when scrolling down
-window.addEventListener('scroll', function() {
-    let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    if (scrollPosition > 300) {
-        document.querySelector('.speech-balloon').classList.add('hidden');
-    } else {
-        document.querySelector('.speech-balloon').classList.remove('hidden');
-    }
-});
-
 
 // Update progress bar as user scrolls down
 window.onscroll = function() {progressBar()};
@@ -305,86 +182,6 @@ function progressBar() {
         _progressBarEl.style.width = scrolled + "%";
     }
 }
-
-
-// Scripts to activate/deactivate contact info card 
-var overlaybg = document.getElementById('overlay-bg');
-var contactTrigger = document.getElementById('contact-card-trigger');
-if (overlaybg && contactTrigger) {
-    contactTrigger.onclick = function() {
-        overlaybg.style.display = 'flex';
-    };
-
-    overlaybg.addEventListener('click', function(event) {
-        if (event.target === overlaybg) {
-            overlaybg.style.display = 'none';
-        }
-    });
-}
-
-
-// Play the flipping-card sound when user flips the contact info card
-var frontEndCard = document.getElementById('front_end_card');
-if (frontEndCard) {
-    frontEndCard.addEventListener('click', function() {
-        this.classList.toggle('flip');
-        // const flipAudio = new Audio('assets/sounds/flipcard_sound.mp3');
-        // flipAudio.play();
-    });
-}
-
-
-// Get all filter buttons and change their active status as user clicks
-var filterButtonsProject = document.querySelectorAll('#filters-project .filter-button'); 
-var filterButtonsPicture = document.querySelectorAll('#filters-pictures .filter-button'); 
-var filterButtonsGithub = document.querySelectorAll('#filters-resources .filter-button'); 
-var speechBalloon = document.querySelector('.speech-balloon');
-
-filterButtonsProject.forEach(function(filterButtonProject) {
-    filterButtonProject.addEventListener('click', function() {
-        filterButtonsProject.forEach(function(flrbtn) {
-            flrbtn.classList.remove('active');
-        });
-        this.classList.add('active');
-        if (this.textContent === "perception + manipulation") {
-            showSpeech('see RoPM projects!');
-        } else {
-            showSpeech('see ' + this.textContent + ' projects!');
-        }
-    });
-});
-
-filterButtonsPicture.forEach(function(filterButtonPicture) {
-    filterButtonPicture.addEventListener('click', function() {
-        filterButtonsPicture.forEach(function(flrbtn) {
-            flrbtn.classList.remove('active');
-        });
-        this.classList.add('active');
-        if (this.textContent === "national parks") {
-            showSpeech('16 / 63 national parks visited!');  //TODO: make sure to update this!
-        } else if (this.textContent === "nc state parks") {
-            showSpeech('21 / 43 NC state parks visited!') //TODO: make sure to update this!
-        } 
-        else {
-            showSpeech('see ' + this.textContent + ' pictures!');
-        }
-    });
-});
-
-filterButtonsGithub.forEach(function(filterButtonGithub) {
-    filterButtonGithub.addEventListener('click', function() {
-        filterButtonsGithub.forEach(function(flrbtn) {
-            flrbtn.classList.remove('active');
-        });
-        this.classList.add('active');
-        var selected = this.textContent.trim().toLowerCase();
-        if (selected === 'all') {
-            showSpeech('see all resources!');
-        } else {
-            showSpeech('see ' + selected + ' resources!');
-        }
-    });
-});
 
 
 // Function to update Isotope layout with smooth transitions
@@ -569,189 +366,6 @@ $('.collapse').on('show.bs.collapse', function () {
 });
 
 
-
-
-
-// Function load GitHub repositories
-let _resourceModalLastFocused = null;
-let _resourceModalActiveCard = null;
-
-function getResourceModalFocusableElements(modal) {
-    return Array.from(
-        modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
-    ).filter(function(el) {
-        return !el.hasAttribute('disabled') && el.offsetParent !== null;
-    });
-}
-
-function onResourceModalKeydown(event) {
-    const modal = document.getElementById('resource-modal');
-    if (!modal || modal.getAttribute('aria-hidden') !== 'false') {
-        return;
-    }
-
-    if (event.key === 'Escape') {
-        event.preventDefault();
-        closeResourceModal();
-        return;
-    }
-
-    if (event.key !== 'Tab') {
-        return;
-    }
-
-    const focusable = getResourceModalFocusableElements(modal);
-    if (focusable.length === 0) {
-        event.preventDefault();
-        return;
-    }
-
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    const active = document.activeElement;
-
-    if (event.shiftKey && active === first) {
-        event.preventDefault();
-        last.focus();
-    } else if (!event.shiftKey && active === last) {
-        event.preventDefault();
-        first.focus();
-    }
-}
-
-function closeResourceModal() {
-    const modal = document.getElementById('resource-modal');
-    if (!modal) {
-        return;
-    }
-
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
-    modal.setAttribute('hidden', 'hidden');
-    modal.style.display = 'none';
-    document.body.classList.remove('modal-open');
-
-    document.removeEventListener('keydown', onResourceModalKeydown);
-
-    if (_resourceModalActiveCard) {
-        _resourceModalActiveCard.setAttribute('aria-expanded', 'false');
-    }
-
-    if (_resourceModalLastFocused && typeof _resourceModalLastFocused.focus === 'function') {
-        _resourceModalLastFocused.focus();
-    }
-
-    _resourceModalLastFocused = null;
-    _resourceModalActiveCard = null;
-}
-
-function openResourceModalFromCard(card) {
-    const modal = document.getElementById('resource-modal');
-    const modalTitle = document.getElementById('resource-modal-title');
-    const modalBody = document.getElementById('resource-modal-body');
-    const modalContent = modal ? modal.querySelector('.resource-modal-content') : null;
-
-    if (!modal || !modalTitle || !modalBody || !card || !modalContent) {
-        return;
-    }
-
-    const cardTitle = card.querySelector('.resource-entry-title');
-    const cardContent = card.querySelector('.resource-entry-content');
-
-    modalTitle.textContent = cardTitle ? cardTitle.textContent : 'Entry';
-    modalBody.innerHTML = cardContent ? cardContent.innerHTML : '';
-
-    _resourceModalLastFocused = document.activeElement;
-    _resourceModalActiveCard = card;
-    card.setAttribute('aria-expanded', 'true');
-
-    modal.removeAttribute('hidden');
-    modal.style.display = 'flex';
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open');
-
-    document.addEventListener('keydown', onResourceModalKeydown);
-    modalContent.focus();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const container = document.getElementById('github-cards');
-    if (!container) {
-        return;
-    }
-    const repoElements = container.querySelectorAll('div[data-url]');
-
-    repoElements.forEach(repoElement => {
-        const repoUrl = repoElement.getAttribute('data-url');
-        
-        axios.get(repoUrl)
-            .then(response => {
-                const { name, description, html_url, stargazers_count, forks_count, language } = response.data;
-                const cardHtml = `
-                        <div class="repo-header">
-                            <i class="far fa-bookmark bookmark-icon"></i>
-                            <a href="${html_url}" target="_blank" class="repo-name">${name}</a>
-                        </div>
-                        <div class="repo-description">${description || 'No description provided.'}</div>
-                        <div class="repo-stats">
-                            <i class="fas fa-code language-icon"></i>
-                            <span class="language">${language}</span>
-                            <div>
-                                <i class="fas fa-star star-icon"></i>
-                                <span class="stats-number">${stargazers_count}</span>
-                            </div>
-                            <div>
-                                <i class="fas fa-code-branch fork-icon"></i>
-                                <span class="stats-number">${forks_count}</span>
-                            </div>
-                        </div>
-                `;
-
-                repoElement.outerHTML = cardHtml;
-                
-                // Refresh GitHub cards isotope layout
-                $cards.isotope('layout');
-                
-            })
-            .catch(error => {
-                console.error('Error fetching repository data for', repoUrl, error);
-            });
-    });
-
-    const modalCloseBtn = document.getElementById('resource-modal-close');
-    const modal = document.getElementById('resource-modal');
-
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closeResourceModal);
-    }
-
-    if (modal) {
-        modal.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                closeResourceModal();
-            }
-        });
-    }
-
-});
-
-
-// Modified from https://codepen.io/SohRonery/pen/wvvBLyP
-var itemsPerPageDefault_1 = 6;
-var currentNumberPages_1 = 1;
-var currentPage_1 = 1;
-var currentFilter_1 = '*';
-var filterAtribute_1 = 'data-filter';
-var pageAtribute_1 = 'data-page-github';
-var pagerClass_1 = 'isotope-pager-github';
-var $cards = $('#github-cards').isotope({
-    itemcategory: '.github-card',
-    layoutMode: 'fitRows'
-});
-
-
 // Gallery / pictures pagination & filtering (matches projects pattern)
 var itemsPerPagePictures = 10;
 var currentNumberPagesPictures = 1;
@@ -888,107 +502,6 @@ function initializeIsotopePictures() {
 }
 
 
-// Filter based on input category
-function filterCategoryGithub(category) {
-    $cards.isotope({
-        filter: category
-    });
-}
-
-
-// Determine items to be categorized and displayed per page
-function showPageGithub(n) {
-    currentPage_1 = n;
-    var category = '.github-card';
-        category += ( currentFilter_1 != '*' ) ? '[' + filterAtribute_1 + '="' + currentFilter_1 + '"]' : '';
-        category += '[' + pageAtribute_1 + '="' + currentPage_1+'"]';
-    filterCategoryGithub(category);
-}
-
-
-// Update pager indicator when user clicks previous or next button, and disable buttons as needed
-function updatePagerGithub() {
-    var $isotopePager = ($('.' + pagerClass_1).length == 0 ) ? $('<div class="' + pagerClass_1 + '"></div>') : $('.' + pagerClass_1);
-    $isotopePager.html('');
-
-    var $previous = $('<button class="pager" id="previous-page">&#8592; previous</button>');
-    $previous.click(function() {
-        if (currentPage_1 > 1) {
-            showPageGithub(currentPage_1 - 1);
-            updatePagerGithub();
-            scrollToTopDiv('#resources');
-        }
-    });
-    if (currentPage_1 === 1) {
-        $previous.prop('disabled', true);
-    }
-    
-    var $next = $('<button class="pager" id="next-page">next &#8594;</button>');
-    $next.click(function() {
-        if (currentPage_1 < currentNumberPages_1) {
-            showPageGithub(currentPage_1 + 1);
-            updatePagerGithub();
-            scrollToTopDiv('#resources');
-        }
-    });
-    if (currentPage_1 === currentNumberPages_1) {
-        $next.prop('disabled', true);
-    }
-
-    var $currentPage_1Indicator = $('<span class="current-page">&nbsp; page ' + currentPage_1 + ' of ' + currentNumberPages_1 + ' &nbsp; </span>');
-    
-    $previous.appendTo($isotopePager);
-    $currentPage_1Indicator.appendTo($isotopePager);
-    $next.appendTo($isotopePager);
-    $cards.after($isotopePager);
-}
-
-
-// Set pagination
-function setPaginationGithub() {
-    var SettingsPagesOnItems = function() {
-        var itemsLength = $cards.children('.github-card').length;
-        var pages = Math.ceil(itemsLength / itemsPerPageDefault_1);
-        var item = 1;
-        var page = 1;
-        var category = '.github-card';
-            category += ( currentFilter_1 != '*' ) ? '[' + filterAtribute_1 + '="' + currentFilter_1 + '"]' : '';
-        
-        $cards.children(category).each(function() {
-            if (item > itemsPerPageDefault_1) {
-                page++;
-                item = 1;
-            }
-            $(this).attr(pageAtribute_1, page);
-            item++;
-        });
-        currentNumberPages_1 = page;
-    }();
-
-    updatePagerGithub();
-}
-
-
-function initializeIsotopeGithub() {
-    // Set number of pages, return to first page,
-    setPaginationGithub();
-    showPageGithub(1);
-
-
-    // Filter cards based on category, including change active buttons, filter cards, 
-    // set the number of pages, return to the first page, and update the pager indicator 
-    $('#filters-resources .filter-button').click(function() {
-        $('#filters-resources .filter-button').removeClass('active');
-        $(this).addClass('active');
-        var filter = $(this).attr('data-filter');
-        currentFilter_1 = filter;
-        setPaginationGithub();
-        showPageGithub(1);
-        updatePagerGithub();
-    });
-}
-
-
 // // Guarantee correct layouts when all web resources are fully loaded 
 // This version is slow --> only re-layout when all the gifs are fully loaded
 // $(window).on('load', function() {
@@ -1014,14 +527,14 @@ $(document).ready(function() {
         });
     });
 
+    // Each page only has some of these sections, so only initialize the ones present.
     Promise.all(imageLoadPromises).then(function() {
-        initializeIsotopeProjects();
-        initializeIsotopeGithub();
-        initializeIsotopePictures();
+        if ($projects.length) initializeIsotopeProjects();
+        if ($pictures.length) initializeIsotopePictures();
     });
     // Fallback: if images hang or onerror doesn't fire for some reason, ensure gallery initializes
     setTimeout(function() {
-        if (!window._galleryIsotopeInitialized) {
+        if ($pictures.length && !window._galleryIsotopeInitialized) {
             initializeIsotopePictures();
         }
     }, 2000);
@@ -1034,10 +547,8 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeTheme();
-    applySidebarAccessibility();
-
-    // Default assistant message on load
-    showSpeech('hi!');
+    applyNavAccessibility();
+    renderMaps();
 });
 
 
@@ -1048,73 +559,191 @@ if (_currentYearEl) {
 }
 
 
-// Canvas for particle moves
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-const particles = [];
+// Maps on the about page: world map of conference travel and US maps of parks visited.
+// They're rebuilt on theme change so their colors follow the theme. jsvectormap's
+// destroy() clears event handlers for every map on the page, so both are always rebuilt together.
+let _maps = [];
 
+function renderMaps() {
+    if (typeof jsVectorMap === 'undefined') {
+        return;
+    }
+    _maps.forEach(function(entry) {
+        entry.map.destroy();
+        entry.el.innerHTML = '';
+    });
+    _maps = [];
 
-// Resize canvas width and height
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const styles = getComputedStyle(document.body);
+    const colors = {
+        accent: styles.getPropertyValue('--color-accent').trim(),
+        accentStrong: styles.getPropertyValue('--color-accent-strong').trim(),
+        land: getCurrentTheme() === 'dark-theme' ? '#4a4a4a' : '#e4e4e4',
+        pinStroke: getCurrentTheme() === 'dark-theme' ? '#333333' : '#ffffff'
+    };
+
+    renderTravelMap(colors);
+    renderParksMaps(colors);
 }
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
 
-
-// Class for Particle
-class Particle {
-    
-    constructor() {
-        this.reset();
-    }
-
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
-        this.color = 'rgba(255, 255, 255, ' + 0.7 + ')';
-        this.lifespan = 100;
-    }
-
-    update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.color = 'rgba(255, 255, 255, ' + this.lifespan--/100 + ')';
-
-        if (this.lifespan <= 0) {
-            this.reset();
-        }
-    }
-
-    draw(ctx) {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-        ctx.fill();
+function addMap(selector, options) {
+    const el = document.querySelector(selector);
+    if (el) {
+        _maps.push({ el: el, map: new jsVectorMap(Object.assign({ selector: selector }, options)) });
     }
 }
 
+// Countries visited are shaded with the theme accent; each city gets a pin.
+function renderTravelMap(colors) {
+    if (!window.travelTrips) {
+        return;
+    }
 
-// Initialize 101 particles
-for (let i = 0; i < 101; i++) {
-    particles.push(new Particle());
-}
-
-
-// Make the particles move
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(particle => {
-        particle.update();
-        particle.draw(ctx);
+    // Group trips by country for the region tooltips
+    const tripsByCountry = {};
+    window.travelTrips.forEach(function(trip) {
+        const code = String(trip.country).toUpperCase();
+        (tripsByCountry[code] = tripsByCountry[code] || []).push(trip);
     });
 
-    requestAnimationFrame(animate);
+    addMap('#travel-map', {
+        map: 'world',
+        zoomOnScroll: false,
+        zoomButtons: true,
+        selectedRegions: Object.keys(tripsByCountry),
+        regionStyle: {
+            initial: { fill: colors.land },
+            hover: { fillOpacity: 0.8, cursor: 'default' },
+            selected: { fill: colors.accent }
+        },
+        markers: window.travelTrips.map(function(trip) {
+            return { name: trip.event + ' · ' + trip.city, coords: trip.coords };
+        }),
+        markerStyle: {
+            initial: { fill: colors.accentStrong, stroke: colors.pinStroke, strokeWidth: 2, r: 6 },
+            hover: { fill: colors.accentStrong, cursor: 'default' }
+        },
+        onRegionTooltipShow: function(event, tooltip, code) {
+            const trips = tripsByCountry[code];
+            if (!trips) {
+                return;
+            }
+            const items = trips.map(function(trip) {
+                return '<li>' + trip.event + ' · ' + trip.city + '</li>';
+            }).join('');
+            tooltip.text('<b>' + tooltip.text() + '</b><ul>' + items + '</ul>', true);
+        }
+    });
 }
 
-// Animate the particles
-animate();
+// One pin per park visited. Parks without coords (off the US map, e.g. the Virgin Islands)
+// are listed in a small "off the map" box in the corner instead.
+// A map with `focus` zooms to that state and hides the others; `rotate` (degrees) straightens
+// states far from the map's center, which the US map's projection draws tilted.
+function renderParksMaps(colors) {
+    (window.parkMaps || []).forEach(function(config) {
+        addMap(config.selector, {
+            map: 'us_aea_en',
+            zoomOnScroll: false,
+            zoomButtons: !config.focus,
+            draggable: !config.focus,
+            focusOn: config.focus ? { region: config.focus, animate: false } : undefined,
+            regionStyle: {
+                initial: { fill: colors.land, stroke: colors.pinStroke, strokeWidth: 1 },
+                hover: { fillOpacity: 0.8, cursor: 'default' }
+            },
+            markers: config.parks.filter(function(park) {
+                return park.coords;
+            }).map(function(park) {
+                return { name: park.caption, coords: park.coords };
+            }),
+            markerStyle: {
+                initial: { fill: colors.accent, stroke: colors.pinStroke, strokeWidth: 2, r: 6 },
+                hover: { fill: colors.accentStrong, cursor: 'default' }
+            }
+        });
+        const el = document.querySelector(config.selector);
+        if (config.focus) {
+            el.querySelectorAll('.jvm-region').forEach(function(region) {
+                if (region.getAttribute('data-code') !== config.focus) {
+                    region.style.display = 'none';
+                }
+            });
+        }
+        if (config.rotate && config.focus) {
+            rotateAndCenterRegion(el, el.querySelector('[data-code="' + config.focus + '"]'), config.rotate);
+        }
+
+        const offMapParks = config.parks.filter(function(park) {
+            return !park.coords;
+        });
+        if (offMapParks.length) {
+            const box = document.createElement('div');
+            box.className = 'parks-offmap';
+            box.innerHTML = '<span class="parks-offmap-title">off the map</span>' +
+                offMapParks.map(function(park) {
+                    return '<span class="parks-offmap-park"><span class="parks-offmap-pin"></span>' + park.caption + '</span>';
+                }).join('');
+            el.appendChild(box);
+        }
+    });
+}
+
+
+// Rotate a map's svg, then shift and scale it so the (rotated) region sits centered in the
+// container. The region's outline is sampled because bounding boxes ignore the rotation.
+function rotateAndCenterRegion(container, region, degrees) {
+    const svg = container.querySelector('svg');
+    svg.style.transformOrigin = 'center';
+    svg.style.transform = 'rotate(' + degrees + 'deg)';
+
+    const box = container.getBoundingClientRect();
+    const ctm = region.getScreenCTM();
+    const length = region.getTotalLength();
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (let i = 0; i <= 300; i++) {
+        const local = region.getPointAtLength(length * i / 300);
+        const point = new DOMPoint(local.x, local.y).matrixTransform(ctm);
+        minX = Math.min(minX, point.x);
+        maxX = Math.max(maxX, point.x);
+        minY = Math.min(minY, point.y);
+        maxY = Math.max(maxY, point.y);
+    }
+
+    const padding = 40;
+    const scale = Math.min((box.width - padding) / (maxX - minX), (box.height - padding) / (maxY - minY));
+    const offsetX = (minX + maxX) / 2 - (box.left + box.width / 2);
+    const offsetY = (minY + maxY) / 2 - (box.top + box.height / 2);
+    svg.style.transform = 'translate(' + (-offsetX * scale) + 'px, ' + (-offsetY * scale) + 'px) ' +
+        'rotate(' + degrees + 'deg) scale(' + scale + ')';
+}
+
+
+// Enlarge a travel photo when its polaroid is clicked (about page)
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('travel-lightbox');
+    if (!lightbox) {
+        return;
+    }
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxCaption = lightbox.querySelector('.travel-polaroid-caption');
+
+    document.querySelectorAll('.travel-polaroid').forEach(function(polaroid) {
+        polaroid.addEventListener('click', function() {
+            lightboxImg.src = polaroid.dataset.src;
+            lightboxImg.alt = polaroid.dataset.caption;
+            lightboxCaption.textContent = polaroid.dataset.caption;
+            lightbox.showModal();
+        });
+    });
+
+    lightbox.querySelector('.travel-lightbox-close').addEventListener('click', function() {
+        lightbox.close();
+    });
+    // Close when clicking the dark backdrop around the photo
+    lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox) {
+            lightbox.close();
+        }
+    });
+});

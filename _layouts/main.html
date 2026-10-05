@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="description" content="website"/>
         <meta name="author" content="hannah estes"/>
-        <title>{{ site.title }} | {{ site.info }}</title>
+        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} | {{ site.info }}</title>
         <link rel="icon" type="image/x-icon" href="{{ site.icon-pic }}"/>
         
         <!-- Font Awesome icons -->
@@ -30,15 +30,19 @@
         <!-- Core theme CSS -->
         <link href="styles/styles.css" rel="stylesheet"/>
 
+        {% if page.map %}
+        <!-- World map for travel section -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css">
+        <!-- Handwritten font for travel photo captions -->
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+        {% endif %}
+
         <!-- Light Gallery -->
         <link href=" https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/css/lightgallery-bundle.min.css " rel="stylesheet">
 
     </head>
 
     <body class="light-theme">
-
-        <!-- Moving particles -->
-        <canvas id="canvas"></canvas>
 
         <!-- Progress bar on top -->
         <div class="progress-bar-container">
@@ -51,36 +55,24 @@
         <!-- Toggle dark/light theme button -->
         <button class="toggle-theme-button" onclick="toggleTheme()">🌙</button>
         
-        <!-- Assitant icon saying about theme changes -->
-        <div class="popup-icon-container" id="popupIconContainer" draggable="true">
-            <div class="icon"><img src="/assets/img/comic_portrait_square.png" width="65" height="65"></div>
-            <div class="speech-balloon"></div>
-        </div>
-        
-        <!-- Dismissal area for assistant icon -->
-        <div class="dismissal-area" id="dismissalArea">&#10006;</div>
-
-        <!-- Navigation bar -->
-        <!-- Fusion of jQuery slidebar (https://codepen.io/BeshoyRomany/pen/qmNPwN) and animated hamburger menu (https://codepen.io/amberweinberg/pen/yeqJgG) -->
-        <nav>
-            <a class="nav-toggle-btn" onclick="toggleNav()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-            <ul>
-                <li><button type="button" class="nav-item-button" onclick="scrollToTopDiv('html')"><i class="fas fa-home" aria-hidden="true"></i> <span class="text">home</span></button></li>
-                <li><button type="button" class="nav-item-button" onclick="scrollToTopDiv('#updates')"><i class="fas fa-edit" aria-hidden="true"></i> <span class="text">updates</span></button></li>
-                <li><button type="button" class="nav-item-button" onclick="scrollToTopDiv('#research')"><i class="fas fa-book" aria-hidden="true"></i> <span class="text">publications</span></button></li>
-                <li><button type="button" class="nav-item-button" onclick="scrollToTopDiv('#resources')"><i class="fas fa-tools" aria-hidden="true"></i> <span class="text">resources</span></button></li>
-                <li><button type="button" class="nav-item-button" onclick="scrollToTopDiv('#gallery')"><i class="fas fa-camera" aria-hidden="true"></i> <span class="text">gallery</span></button></li>
-                <li><a target="_none" href="{{site.data.about.resume}}" class="nav-item-link"><span class="cv-icon-overlay"><i class="fas fa-file" aria-hidden="true"></i><span class="cv-overlay-text">CV</span></span> <span class="text">cv</span></a></li>
-            </ul>
-        </nav>
-
         <!-- Content -->
         <div class="container" style="padding-top: 3rem;">
+            {% include_relative _sections/profile.html %}
+
+            <!-- Navigation bar -->
+            <nav class="site-nav" aria-label="Main">
+                <ul>
+                    {% for item in site.data.navigation.pages %}
+                        {% assign item_url = "/" | append: item.url %}
+                        {% if page.url == item_url or page.url == "/" and item.url == "index.html" %}{% assign is_active = true %}{% else %}{% assign is_active = false %}{% endif %}
+                        <li><a href="{{ item.url }}" class="nav-item-link{% if is_active %} active{% endif %}"{% if is_active %} aria-current="page"{% endif %}><i class="{{ item.icon }}" aria-hidden="true"></i> <span class="text">{{ item.title }}</span></a></li>
+                    {% endfor %}
+                    <li><a target="_blank" rel="noopener" href="{{ site.data.about.resume }}" class="nav-item-link"><i class="fas fa-file" aria-hidden="true"></i> <span class="text">cv</span></a></li>
+                </ul>
+            </nav>
+
             {{ content }}
+            {% include_relative _sections/footer.html %}
         </div>
 
         <!-- Bootstrap core JS-->
@@ -95,15 +87,20 @@
         <!-- OwlCarousel2 JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-        <!-- Axios JS -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
         <!-- Gallery -->
         <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
         <script defer src='https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js'></script>
 
 		<!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        {% if page.map %}
+        <!-- World map for travel section -->
+        <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"></script>
+        <!-- US map is only published in jsvectormap's 1.4.x source -->
+        <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.4.5/src/maps/us-aea-en.js"></script>
+        {% endif %}
 
 		<!-- Core theme JS-->
         <script src="js/scripts.js"></script>

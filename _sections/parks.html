@@ -1,0 +1,30 @@
+<!-- Parks section: a map with a pin per park visited, plus the list of parks.
+     Include with: id, category (nps/ncsp in _data/updates-nps-ncsp.yaml), title, icon, total, intro,
+     and optionally focus (a US state code like "US-NC" to show only that state) and rotate (degrees). -->
+
+{% assign parks = site.data.updates-nps-ncsp | where: "category", include.category %}
+<hr>
+<div class="row" id="{{ include.id }}">
+    <div class="col">
+        <h2 class="mb-1"><i class="{{ include.icon }}" aria-hidden="true"></i> {{ include.title }}</h2>
+        {{ include.intro }} So far I've visited <highlight>{{ parks.size }} / {{ include.total }}</highlight>. Hover over a pin to see the park.
+        <p></p>
+        <div id="{{ include.id }}-map" class="parks-map" aria-label="Map of {{ include.title }} visited"></div>
+        <ul class="parks-list">
+            {% for park in parks %}
+                {% comment %} drop a trailing " National Park" to keep the list short {% endcomment %}
+                {% assign park_name = park.caption | append: "|" | replace: " National Park|", "" | remove: "|" %}
+                <li>{{ park_name }}</li>
+            {% endfor %}
+        </ul>
+        <script>
+            (window.parkMaps = window.parkMaps || []).push({
+                selector: '#{{ include.id }}-map',
+                parks: {{ parks | jsonify }},
+                focus: {{ include.focus | jsonify }},
+                rotate: {{ include.rotate | default: 0 }}
+            });
+        </script>
+        <p></p>
+    </div>
+</div>

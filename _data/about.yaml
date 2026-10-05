@@ -1,8 +1,7 @@
 # basic information
-name: Hannah Estes <a href="https://pronouns.org/she-her" target="_blank" rel="noopener">she/her</a>
-profile-pic: assets/img/Hannah_Portrait_Square.png
-pronunciation: #/kʰæŋ/
-pronunciation-emoji: #🎧
+name: Hannah Estes
+pronouns: <a href="https://pronouns.org/she-her" target="_blank" rel="noopener">she/her</a>
+profile-pic: assets/img/Hannah_Portrait_Square.jpg
 
 # emoji indicator
 emoji: 
@@ -11,26 +10,14 @@ desc-emoji: hi!
 
 # social links
 scholar: https://scholar.google.com/citations?user=IWVkTtEAAAAJ
-researchgate: https://www.researchgate.net/profile/Hannah-Estes-2
 github: https://github.com/hannahestes
 youtube: 
 resume: assets/doc/Estes_Hannah_CV.pdf
 projects: #show            # delete "show" or leave it blank to hide this icon
-location: https://maps.app.goo.gl/Pdk75JdnUGUdnWdP7
 codepen: 
 orcid: https://orcid.org/0009-0006-9893-286X
-contact: #show            # delete "show" or leave it blank to hide this icon
 linkedin: https://www.linkedin.com/in/hannahestes6
 dblp: https://dblp.org/pid/411/7186.html
-
-# information for contact card
-dept: cs @ nc state
-lab: wiser lab
-email: hmestes@ncsu.edu
-phone: 
-website: https://hannahestes.github.com/
-web-dns: hannahestes.github.com
-# linkedin: hannahestes6
 
 # about me
 first-paragraph: >-

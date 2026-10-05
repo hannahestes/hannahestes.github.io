@@ -8,7 +8,7 @@ categories:
 projects:
   - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"
     system-name: 
-    gif: assets/img/vda_vlhcc.png
+    gif: assets/img/vda_vlhcc.jpg
     conference: "VL/HCC" 
     conference-web: https://conf.researchr.org/home/vlhcc-2026
     status: 
@@ -53,7 +53,7 @@ projects:
     
   # - title: "Expectations of Software Product Managers: An Empirical Evaluation of Software Professionals' Perspectives"
   #   system-name: 
-  #   gif: assets/img/TOSEM_graphic.png
+  #   gif: assets/img/TOSEM_graphic.jpg
   #   conference: TOSEM 
   #   conference-web: https://dl.acm.org/journal/tosem
   #   status: Currently Under Review
@@ -91,7 +91,7 @@ projects:
 
   - title: 'Advancing Software Product Management Education: Insights from an Industry Survey'
     system-name: 
-    gif: assets/img/fse-seet-graphic.png
+    gif: assets/img/fse-seet-graphic.jpg
     conference: FSE-SEET (Trondheim, Norway) 
     conference-web: https://conf.researchr.org/home/fse-2025
     status:

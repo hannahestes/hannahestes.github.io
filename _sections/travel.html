@@ -1,0 +1,39 @@
+<!-- Travel section -->
+
+<hr>
+<div class="row" id="travel">
+    <div class="col">
+        <h2 class="mb-1"><i class="fas fa-globe-americas" aria-hidden="true"></i> travel</h2>
+        {{ site.data.travel.introduction }}
+        <p></p>
+        <div id="travel-map" class="travel-map" aria-label="World map of conference travel"></div>
+        <div class="travel-trips">
+            {% for trip in site.data.travel.trips %}
+                <div class="travel-trip">
+                    <div class="travel-trip-header">
+                        <span class="travel-trip-event">{% if trip.url %}<a href="{{ trip.url }}" target="_blank" rel="noopener">{{ trip.event }}</a>{% else %}<highlight>{{ trip.event }}</highlight>{% endif %}</span>
+                        <span class="travel-trip-place"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ trip.city }}</span>
+                        <span class="travel-time">{{ trip.time }}</span>
+                    </div>
+                    {% if trip.photos %}
+                        <div class="travel-photos">
+                            {% for photo in trip.photos %}
+                                <button type="button" class="travel-polaroid" data-src="{{ photo.src }}" data-caption="{{ photo.caption }}" aria-label="Open photo: {{ photo.caption }}">
+                                    <img src="{{ photo.src }}" alt="{{ photo.caption }}" loading="lazy" decoding="async">
+                                    <span class="travel-polaroid-caption">{{ photo.caption }}</span>
+                                </button>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <dialog id="travel-lightbox" class="travel-lightbox" aria-label="Trip photo">
+            <button type="button" class="travel-lightbox-close" aria-label="Close">&times;</button>
+            <img src="" alt="">
+            <p class="travel-polaroid-caption"></p>
+        </dialog>
+        <script>window.travelTrips = {{ site.data.travel.trips | jsonify }};</script>
+        <p></p>
+    </div>
+</div>

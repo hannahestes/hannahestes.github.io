@@ -1,30 +1,25 @@
-<!-- Resources section -->
+<!-- Random thoughts section: topics grouped by category, each expands in place -->
 
 <hr>
 <div class="row" id="resources">
     <div class="col">
-        <h2 class="mb-1"><i class="fas fa-tools" aria-hidden="true"></i> resources &amp; random thoughts</h2>
+        <h2 class="mb-1"><i class="fas fa-lightbulb" aria-hidden="true"></i> random thoughts</h2>
         {{ site.data.resources.introduction }}
         <p></p>
-        <div id="filters-resources">
-            <button class="filter-button active" data-filter="*">all</button>
+        <div id="filters-resources" class="thought-jump">
             {% for category in site.data.resources.categories %}
-                <button class="filter-button" data-filter="{{ category.data-filter }}">{{ category.category-name }}</button>
+                <a class="filter-button" href="#thoughts-{{ category.data-filter }}">{{ category.category-name }}</a>
             {% endfor %}
         </div>
-        <p></p>
-        <div id="github-cards" class="isotope">
-            {% for link in site.data.resources.links %}
-                {% include_relative _libs/resources_widget.html %}
-            {% endfor %}
-        </div>
-        <div id="resource-modal" class="resource-modal" aria-hidden="true" hidden style="display:none;">
-            <div class="resource-modal-content" role="dialog" aria-modal="true" aria-labelledby="resource-modal-title" aria-describedby="resource-modal-body" tabindex="-1">
-                <button type="button" id="resource-modal-close" class="resource-modal-close" aria-label="Close">&times;</button>
-                <h3 id="resource-modal-title"></h3>
-                <div id="resource-modal-body"></div>
-            </div>
-        </div>
+        {% for category in site.data.resources.categories %}
+            {% assign thoughts = site.data.resources.links | where: "category", category.data-filter %}
+            <section class="thought-group" id="thoughts-{{ category.data-filter }}">
+                <h3 class="thought-group-title">{{ category.category-name }}</h3>
+                {% for link in thoughts %}
+                    {% include_relative _libs/resources_widget.html %}
+                {% endfor %}
+            </section>
+        {% endfor %}
         <p></p>
     </div>
 </div>

@@ -16,57 +16,57 @@ categories:
 
 pictures:
   
-  - source: assets/memo/bbq.png
+  - source: assets/gallery/bbq.jpg
     caption: WISER lab BBQ
     year: 2025
     category: lab
 
-  - source: assets/memo/bbq_p2.png
+  - source: assets/gallery/bbq_p2.jpg
     caption: WISER lab BBQ p2
     year: 2025
     category: lab
 
-  - source: assets/memo/exploring_sunflowers.png
+  - source: assets/gallery/exploring_sunflowers.jpg
     caption: exploring the sunflowers
     year: 2025
     category: lab
 
-  - source: assets/memo/exploring_trondheim.png
+  - source: assets/gallery/exploring_trondheim.jpg
     caption: exploring trondheim
     year: 2025
     category: conference
 
-  - source: assets/memo/fse_academic_family.png
+  - source: assets/gallery/fse_academic_family.jpg
     caption: FSE group
     year: 2025
     category: conference
 
-  - source: assets/memo/kuttal_potluck.png
+  - source: assets/gallery/kuttal_potluck.jpg
     caption: Dr. Kuttal's potluck
     year: 2025
     category: lab
 
-  - source: assets/memo/lab_badges.png
+  - source: assets/gallery/lab_badges.jpg
     caption: decorating the lab
     year: 2025
     category: lab
 
-  - source: assets/memo/noryay.png
+  - source: assets/gallery/noryay.jpg
     caption: '#noryay'
     year: 2025
     category: lab
 
-  - source: assets/memo/vlhcc_group.png
+  - source: assets/gallery/vlhcc_group.jpg
     caption: VL/HCC fun
     year: 2025
     category: conference
 
-  - source: assets/memo/vlhcc_p2.png
+  - source: assets/gallery/vlhcc_p2.jpg
     caption: VL/HCC!
     year: 2025
     category: conference
 
-  - source: assets/memo/written_prelim.png
+  - source: assets/gallery/written_prelim.jpg
     caption: Passed my Written Prelim!
     year: 2025
     category: lab

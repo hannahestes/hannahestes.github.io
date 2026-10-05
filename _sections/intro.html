@@ -1,0 +1,13 @@
+<!-- Research introduction -->
+
+<hr>
+<div class="row" id="intro">
+    <div class="col">
+        <p class="research-intro">{{ site.data.about.research-introduction }}</p>
+        <div class="research-interests">
+            {% for interest in site.data.about.research-interests %}
+                {% include_relative _libs/about_widget.html %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
