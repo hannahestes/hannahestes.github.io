@@ -89,53 +89,66 @@ highlight {
     background: var(--accent);
 }
 
-#back-to-top-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
-    width: 55px;
-    height: 55px;
-    border-radius: 7px;
-    display: inline-block;
-    text-align: center;
-    font-size: 2em;
-    line-height: 50px;
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #9faba6;
-    opacity: 0;
-    visibility: hidden;
-    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-}
-#back-to-top-button:hover {
-    color: #ffffff;
-    background-color: #767f7b;
-}
-#back-to-top-button.show {
-    opacity: 0.7;
-    visibility: visible;
-}
-/* small round theme switch, pinned to the top-right so it's reachable anywhere on the page */
-.toggle-theme-button {
+/* top-right controls: a small pill that's dark in light mode and light in dark mode so it
+   stands out; the back-to-top arrow slides out beside the theme toggle once you scroll down */
+.corner-controls {
     position: fixed;
     top: 14px;
     right: 16px;
     z-index: 1000;
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    font-size: 18px;
-    line-height: 1;
-    background-color: var(--surface);
-    box-shadow: var(--shadow);
-    cursor: pointer;
-    transition: background-color 0.5s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    border-radius: 999px;
+    background-color: #333333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.5s;
 }
-.toggle-theme-button:hover {
-    transform: scale(1.1);
+.dark-theme .corner-controls {
+    background-color: #f1f1f1;
+}
+.corner-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    font-size: 17px;
+    line-height: 1;
+    color: #ffffff;
+    background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.corner-button:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.dark-theme .corner-button,
+.dark-theme .corner-button:hover {
+    color: #333333;
+}
+.dark-theme .corner-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.corner-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+#back-to-top-button {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease, margin 0.3s ease, background-color 0.2s;
+}
+#back-to-top-button.show {
+    width: 34px;
+    margin-right: 2px;
+    opacity: 1;
 }
 
 
@@ -682,7 +695,7 @@ body .jvm-tooltip ul {
     }
 }
 
-/* key under each map: visited pin, not-yet pin, shaded states, and visited parks off the map */
+/* key under each map: visited pin, not-yet pin, and (national parks) shaded states */
 .parks-map-key {
     display: flex;
     flex-wrap: wrap;
@@ -717,6 +730,38 @@ body .jvm-tooltip ul {
     opacity: 0.4;
 }
 
+/* visited parks that can't be pinned on the US map, shown in the map's corner */
+.parks-offmap {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    background: var(--bg);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+}
+.parks-offmap-title {
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+.parks-offmap-park {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.parks-offmap-pin {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
 /* visited parks listed under each map */
 .parks-list {
     display: flex;
@@ -730,6 +775,21 @@ body .jvm-tooltip ul {
     border: 1px solid var(--accent);
     border-radius: 999px;
     font-size: 0.85rem;
+}
+/* on phones the "off the map" box would cover the map, so the park's tag says it instead */
+.parks-list-note {
+    display: none;
+    margin-left: 4px;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+@media (max-width: 576px) {
+    .parks-offmap {
+        display: none;
+    }
+    .parks-list-note {
+        display: inline;
+    }
 }
 
 

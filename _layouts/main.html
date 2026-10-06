@@ -39,8 +39,11 @@
         <div class="progress-bar-container">
             <div class="progress-bar" id="progressBar"></div>
         </div>
-        <a id="back-to-top-button" href="#" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></a>
-        <button class="toggle-theme-button" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <!-- top-right controls: theme toggle, plus a back-to-top arrow that slides out once you scroll down -->
+        <div class="corner-controls">
+            <a id="back-to-top-button" class="corner-button" href="#" aria-label="Back to top" tabindex="-1"><i class="fas fa-chevron-up" aria-hidden="true"></i></a>
+            <button class="corner-button toggle-theme-button" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        </div>
 
         <div class="container" style="padding-top: 3rem;">
             {% include_relative _sections/profile.html %}

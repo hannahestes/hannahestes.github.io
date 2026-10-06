@@ -34,7 +34,7 @@ function toggleTheme() {
 applyTheme(getPreferredTheme());
 
 
-// Scroll chrome: progress bar and the back-to-top button (shown once you've scrolled down)
+// Scroll chrome: progress bar and the back-to-top arrow beside the theme toggle (shown once you've scrolled down)
 const progressBar = document.getElementById('progressBar');
 const backToTopButton = document.getElementById('back-to-top-button');
 
@@ -42,7 +42,9 @@ window.addEventListener('scroll', function() {
     const scrolled = document.documentElement.scrollTop;
     const scrollable = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     progressBar.style.width = (scrolled / scrollable) * 100 + '%';
-    backToTopButton.classList.toggle('show', scrolled > 300);
+    const showBackToTop = scrolled > 300;
+    backToTopButton.classList.toggle('show', showBackToTop);
+    backToTopButton.tabIndex = showBackToTop ? 0 : -1;
 });
 
 backToTopButton.addEventListener('click', function(event) {

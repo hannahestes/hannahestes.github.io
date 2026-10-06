@@ -6,7 +6,6 @@
 
 {% assign all_parks = site.data[include.data].parks %}
 {% assign visited_parks = all_parks | where: "visited", true %}
-{% assign off_map_parks = visited_parks | where_exp: "park", "park.coords == nil" %}
 <div class="col-lg parks-col" id="{{ include.id }}">
     <h2 class="mb-1"><i class="{{ include.icon }}" aria-hidden="true"></i> {{ include.title }}</h2>
     <p>{{ include.intro }} So far I've visited <highlight>{{ visited_parks.size }} / {{ all_parks.size }}</highlight>.</p>
@@ -17,16 +16,12 @@
         {% if include.fill_complete %}
             <span class="parks-map-key-item"><span class="parks-map-key-swatch" aria-hidden="true"></span> every park in the state visited</span>
         {% endif %}
-        {% for park in off_map_parks %}
-            {% assign park_name = park.name | append: "|" | replace: " National Park|", "" | remove: "|" %}
-            <span class="parks-map-key-item"><span class="parks-map-key-pin" aria-hidden="true"></span> {{ park_name }} (off the map)</span>
-        {% endfor %}
     </p>
     <ul class="parks-list">
         {% for park in visited_parks %}
             {% comment %} drop a trailing " National Park" to keep the list short {% endcomment %}
             {% assign park_name = park.name | append: "|" | replace: " National Park|", "" | remove: "|" %}
-            <li>{{ park_name }}</li>
+            <li>{{ park_name }}{% unless park.coords %}<span class="parks-list-note">* not on the map</span>{% endunless %}</li>
         {% endfor %}
     </ul>
     <script>

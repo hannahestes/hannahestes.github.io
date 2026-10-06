@@ -88,8 +88,9 @@ function renderTravelMap(colors) {
 }
 
 
-// Parks: every park gets a pin, solid once visited and small and hollow if not yet
-// (visited parks off the US map, like the Virgin Islands, are listed in the key instead).
+// Parks: every park gets a pin, solid once visited and small and hollow if not yet.
+// Visited parks off the US map (e.g. the Virgin Islands) go in a small box in the map's corner;
+// on phones that box is hidden and the park's tag under the map says so instead (parks.html).
 // Options per map (set in parks.html): `fillCompleteStates` shades states where every park is
 // visited; `focus` zooms to one state and hides the others; `rotate` (degrees) straightens a
 // state far from the map's center, which the US map's projection draws tilted.
@@ -151,6 +152,19 @@ function renderParksMaps(colors) {
                 hover: { fill: colors.accent, cursor: 'default' }
             }
         });
+
+        const offMapParks = config.parks.filter(function(park) {
+            return park.visited && !park.coords;
+        });
+        if (offMapParks.length) {
+            const box = document.createElement('div');
+            box.className = 'parks-offmap';
+            box.innerHTML = '<span class="parks-offmap-title">off the map</span>' +
+                offMapParks.map(function(park) {
+                    return '<span class="parks-offmap-park"><span class="parks-offmap-pin"></span>' + park.name + '</span>';
+                }).join('');
+            el.appendChild(box);
+        }
 
         if (config.focus) {
             el.querySelectorAll('.jvm-region').forEach(function(region) {
