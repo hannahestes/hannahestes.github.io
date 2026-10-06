@@ -64,8 +64,12 @@ document.querySelectorAll('#filters-project .filter-button').forEach(function(bu
             other.classList.toggle('active', other === button);
         });
         const filter = button.getAttribute('data-filter');
-        document.querySelectorAll('#projects .paper').forEach(function(paper) {
+        document.querySelectorAll('#research .paper').forEach(function(paper) {
             paper.hidden = filter !== '*' && paper.getAttribute('data-filter') !== filter;
+        });
+        // hide a group (e.g. "Currently Under Review") when none of its papers match
+        document.querySelectorAll('#research .paper-group').forEach(function(group) {
+            group.hidden = !group.querySelector('.paper:not([hidden])');
         });
     });
 });

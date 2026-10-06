@@ -5,6 +5,46 @@ categories:
   - data-filter: other
     category-name: Other
 
+# papers submitted but not yet accepted; the "Currently Under Review" section only shows when this list has entries
+under-review:
+  # - title: "Expectations of Software Product Managers: An Empirical Evaluation of Software Professionals' Perspectives"
+  #   system-name: 
+  #   image: assets/img/TOSEM_graphic.jpg
+  #   venue: TOSEM
+  #   year:
+  #   location:
+  #   venue-web: https://dl.acm.org/journal/tosem
+  #   status:
+  #   authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn T. Stolee.
+  #   pdf:
+  #   code: 
+  #   demo: 
+  #   slides:
+  #   talk: 
+  #   doi:
+  #   poster: assets/papers/making_sense_poster.pdf
+  #   abstract: >-
+  #     The role of the software product manager is often ambiguous and potentially
+  #     contentious, with tensions often arising between the software product manager
+  #     and the software team. The goal of this work is to uncover software product
+  #     manager role expectations from three perspectives: their own, that of the
+  #     software team, and that of the software companies. We deployed a survey
+  #     targeting
+  #     software professionals (n=80, 22 companies) to uncover software product manager
+  #     role expectations and the typical questions they answer, providing direct and
+  #     indirect lenses into software product manager activities. Through qualitative
+  #     analysis, we discovered that software product managers must be product experts,
+  #     user advocates, and communication gurus. From the companies’ perspective, we
+  #     analyzed 37 job descriptions to generalize our findings. We also identify that
+  #     communication and competency issues lead to frequent team frustration. Our
+  #     findings provide clarity on the software product manager role directly through
+  #     employees’ and employers’ perspectives, indirectly from the questions they
+  #     should answer, and through eight friction points when working with a software
+  #     team. We synthesize these results across the software development lifecycle in
+  #     the SENSE framework, providing a comprehensive view of software product manager
+  #     role expectations and points of friction with software teams.
+  #   category: spm
+
 projects:
   - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"
     system-name: 
@@ -51,44 +91,6 @@ projects:
       writer’s personal style, rhetorical trajectory, and context.
     category: other
     
-  # - title: "Expectations of Software Product Managers: An Empirical Evaluation of Software Professionals' Perspectives"
-  #   system-name: 
-  #   image: assets/img/TOSEM_graphic.jpg
-  #   venue: TOSEM
-  #   year:
-  #   location:
-  #   venue-web: https://dl.acm.org/journal/tosem
-  #   status: Currently Under Review
-  #   authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn T. Stolee.
-  #   pdf: assets/papers/blank_notyet.pdf
-  #   code: 
-  #   demo: 
-  #   slides:
-  #   talk: 
-  #   doi:
-  #   poster: assets/papers/making_sense_poster.pdf
-  #   abstract: >-
-  #     The role of the software product manager is often ambiguous and potentially
-  #     contentious, with tensions often arising between the software product manager
-  #     and the software team. The goal of this work is to uncover software product
-  #     manager role expectations from three perspectives: their own, that of the
-  #     software team, and that of the software companies. We deployed a survey
-  #     targeting
-  #     software professionals (n=80, 22 companies) to uncover software product manager
-  #     role expectations and the typical questions they answer, providing direct and
-  #     indirect lenses into software product manager activities. Through qualitative
-  #     analysis, we discovered that software product managers must be product experts,
-  #     user advocates, and communication gurus. From the companies’ perspective, we
-  #     analyzed 37 job descriptions to generalize our findings. We also identify that
-  #     communication and competency issues lead to frequent team frustration. Our
-  #     findings provide clarity on the software product manager role directly through
-  #     employees’ and employers’ perspectives, indirectly from the questions they
-  #     should answer, and through eight friction points when working with a software
-  #     team. We synthesize these results across the software development lifecycle in
-  #     the SENSE framework, providing a comprehensive view of software product manager
-  #     role expectations and points of friction with software teams.
-  #   category: spm
-
   - title: 'Advancing Software Product Management Education: Insights from an Industry Survey'
     system-name: 
     image: assets/img/fse-seet-graphic.jpg

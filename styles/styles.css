@@ -796,10 +796,18 @@ body .jvm-tooltip ul {
 /* ==========================================================================
    Publications: compact list with a small graphic beside each paper
    ========================================================================== */
-#projects {
+.paper-list {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+}
+.paper-group[hidden] {
+    display: none;
+}
+.paper-group-title {
+    margin-bottom: 0.9rem;
+    font-size: 1.15rem;
+    color: var(--muted);
 }
 .paper {
     display: flex;

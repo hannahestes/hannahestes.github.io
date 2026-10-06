@@ -1,4 +1,4 @@
-<!-- Publications section: a compact list of papers, filtered by topic -->
+<!-- Publications section: papers under review, then published papers, filtered by topic -->
 
 <hr>
 <div class="row" id="research">
@@ -10,10 +10,23 @@
                 <button class="filter-button" data-filter="{{ category.data-filter }}">{{ category.category-name }}</button>
             {% endfor %}
         </div>
-        <div id="projects" class="mb-3">
-            {% for project in site.data.research.projects %}
-                {% include_relative _libs/research_widget.html %}
-            {% endfor %}
-        </div>
+        {% if site.data.research.under-review %}
+            <section class="paper-group mb-4">
+                <h3 class="paper-group-title">Currently Under Review</h3>
+                <div class="paper-list">
+                    {% for project in site.data.research.under-review %}
+                        {% include_relative _libs/research_widget.html %}
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+        <section class="paper-group mb-3">
+            {% if site.data.research.under-review %}<h3 class="paper-group-title">Published</h3>{% endif %}
+            <div class="paper-list">
+                {% for project in site.data.research.projects %}
+                    {% include_relative _libs/research_widget.html %}
+                {% endfor %}
+            </div>
+        </section>
     </div>
 </div>
