@@ -1,5 +1,6 @@
 ---
 layout: main
+permalink: /about
 title: About
 map: true
 ---

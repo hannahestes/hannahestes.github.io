@@ -1,5 +1,6 @@
 ---
 layout: main
+permalink: /resources
 title: Random Thoughts
 ---
 

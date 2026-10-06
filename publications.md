@@ -1,5 +1,6 @@
 ---
 layout: main
+permalink: /publications
 title: Publications
 ---
 
