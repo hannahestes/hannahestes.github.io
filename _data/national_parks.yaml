@@ -3,7 +3,7 @@
 # states: the state(s) the park is in. A state is shaded once every park in it is visited
 #   (per-state totals are counted from this list).
 # coords: [latitude, longitude] for the pin. American Samoa and the Virgin Islands have none
-#   since they're off the US map; visited ones are listed in the map's corner instead.
+#   since they're off the US map; visited ones are listed in the key under the map instead.
 
 parks:
 

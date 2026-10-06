@@ -89,8 +89,7 @@ highlight {
     background: var(--accent);
 }
 
-#back-to-top-button,
-.toggle-theme-button {
+#back-to-top-button {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -98,9 +97,6 @@ highlight {
     width: 55px;
     height: 55px;
     border-radius: 7px;
-    cursor: pointer;
-}
-#back-to-top-button {
     display: inline-block;
     text-align: center;
     font-size: 2em;
@@ -120,14 +116,26 @@ highlight {
     opacity: 0.7;
     visibility: visible;
 }
+/* small round theme switch, pinned to the top-right so it's reachable anywhere on the page */
 .toggle-theme-button {
-    color: #ffffff;
-    background-color: #919191;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 1000;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.2s ease;
 }
-.dark-theme .toggle-theme-button {
-    color: #333333;
-    background-color: #f1f1f1;
+.toggle-theme-button:hover {
+    transform: scale(1.1);
 }
 
 
@@ -205,6 +213,12 @@ highlight {
         justify-content: center;
         margin-left: 0;
     }
+}
+
+
+/* the footer's divider sits a little further below the last section */
+.footer-rule {
+    margin-top: 2.5rem;
 }
 
 
@@ -396,13 +410,6 @@ highlight {
 .updates-timeline-desc {
     font-size: 0.86rem;
     line-height: 1.35;
-}
-.updates-timeline-image {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.35rem;
-    border-radius: calc(var(--radius) - 2px);
-    object-fit: cover;
 }
 .updates-timeline-item--top {
     padding-bottom: 0.2rem;
@@ -675,7 +682,7 @@ body .jvm-tooltip ul {
     }
 }
 
-/* key under each map: visited pin, not-yet pin, and (national parks) shaded states */
+/* key under each map: visited pin, not-yet pin, shaded states, and visited parks off the map */
 .parks-map-key {
     display: flex;
     flex-wrap: wrap;
@@ -708,38 +715,6 @@ body .jvm-tooltip ul {
     border-radius: 3px;
     background: var(--accent);
     opacity: 0.4;
-}
-
-/* visited parks that can't be pinned on the US map, shown in the map's corner */
-.parks-offmap {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    background: var(--bg);
-    border: 1px dashed var(--border);
-    border-radius: 8px;
-}
-.parks-offmap-title {
-    font-size: 0.7rem;
-    color: var(--muted);
-}
-.parks-offmap-park {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.parks-offmap-pin {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 2px solid var(--bg);
-    box-shadow: 0 0 0 1px var(--accent);
 }
 
 /* visited parks listed under each map */
@@ -871,6 +846,9 @@ body .jvm-tooltip ul {
    ========================================================================== */
 .thought-group {
     margin-top: 1.5rem;
+}
+.thought-group:last-child {
+    margin-bottom: 1rem;
 }
 .thought-group-title {
     margin-bottom: 0.25rem;

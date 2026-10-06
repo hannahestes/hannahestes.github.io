@@ -1,98 +1,74 @@
+# timeline on the homepage, newest first. desc can use HTML, e.g. <highlight>...</highlight> or links.
 updates:
-# assets/img/updates_gan/spider_bot.jpg
-  - picture:
-    desc: Presented <highlight>Who Shapes the Stance</highlight> and <highlight>Reducing the Burden of Code Review (Grad Consort)</highlight> at VL/HCC!
+  - desc: Presented <highlight>Who Shapes the Stance</highlight> and <highlight>Reducing the Burden of Code Review (Grad Consort)</highlight> at VL/HCC!
     time: October 2026
 
-  - picture:
-    desc: Selected as a student volunteer for the ACM AI Leadership Summit!
-    time: July 2026
-  
-  - picture:
-    desc:  Who Shapes the Stance? was <highlight>accepted</highlight> to VL/HCC!
+  - desc: Selected as a student volunteer for the ACM AI Leadership Summit!
     time: July 2026
 
-  - picture:
-    desc: I was selected for a mentored teaching fellowship at NC State for Fall 2026.
+  - desc: Who Shapes the Stance? was <highlight>accepted</highlight> to VL/HCC!
+    time: July 2026
+
+  - desc: I was selected for a mentored teaching fellowship at NC State for Fall 2026.
     time: June 2026
 
-  - picture:
-    desc: Sandia National Labs summer research internship starts!
+  - desc: Sandia National Labs summer research internship starts!
     time: May 2026
-    
-  - picture:
-    desc: I attended my first <a target="_blank" href="https://conf.researchr.org/home/icse-2026">ICSE</a> in Rio de Janeiro, Brazil!
+
+  - desc: I attended my first <a target="_blank" href="https://conf.researchr.org/home/icse-2026">ICSE</a> in Rio de Janeiro, Brazil!
     time: April 2026
 
-  - picture: 
-    desc: I attended VL/HCC in <highlight>Raleigh, North Carolina</highlight>!
+  - desc: I attended VL/HCC in <highlight>Raleigh, North Carolina</highlight>!
     time: October 2025
 
-  - picture: 
-    desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
+  - desc: My <a target="_blank" href="https://csc.ncsu.edu/2025/10/how-hannah-estes-found-her-passion-for-research/">research journey</a> was highlighted in NC State's CS News!
     time: June 2025
 
-  - picture: 
-    desc: I presented our paper in <highlight>Trondheim, Norway</highlight>!
+  - desc: I presented our paper in <highlight>Trondheim, Norway</highlight>!
     time: June 20, 2025
 
-  - picture: 
-    desc: I attended the CRA <a target="_blank" href="https://cra.org/cra-wp/events/2025-cra-wp-grad-cohort-workshops/">Grad Cohort Workshop</a> in Denver, Colorado! 
+  - desc: I attended the CRA <a target="_blank" href="https://cra.org/cra-wp/events/2025-cra-wp-grad-cohort-workshops/">Grad Cohort Workshop</a> in Denver, Colorado!
     time: April 2025
-  
-  - picture: 
-    desc: I passed my <highlight>written prelim exam</highlight>!
+
+  - desc: I passed my <highlight>written prelim exam</highlight>!
     time: March 25 2025
 
-  - picture: 
-    desc: >-
+  - desc: >-
       My first paper was <highlight>accepted</highlight> to FSE-SEET in Norway! #noryay
     time: March 25 2025
 
-  - picture: 
-    desc: Officially <highlight>starting my PhD</highlight> in the WISER lab with Dr. Katie Stolee!
+  - desc: Officially <highlight>starting my PhD</highlight> in the WISER lab with Dr. Katie Stolee!
     time: August 2024
 
-  - picture: 
-    desc: Interned at <highlight>Pearson</highlight> in Durham, North Carolina.
+  - desc: Interned at <highlight>Pearson</highlight> in Durham, North Carolina.
     time: May 2024
 
-  - picture: 
-    desc: Done with my undergrad!
+  - desc: Done with my undergrad!
     time: May 2024
 
-  - picture: 
-    desc: Starting my <highlight>undergraduate research</highlight> journey with Dr. Katie Stolee!
+  - desc: Starting my <highlight>undergraduate research</highlight> journey with Dr. Katie Stolee!
     time: November 2023
-  
-  - picture: 
-    desc: Chosen to represent the CS department at the <a target="_blank" href="https://businessofsoftware.org/events/bos-usa-2024/">Business of Software Conference</a>.
+
+  - desc: Chosen to represent the CS department at the <a target="_blank" href="https://businessofsoftware.org/events/bos-usa-2024/">Business of Software Conference</a>.
     time: September 2023
 
-  - picture: 
-    desc: Nominated for the <highlight>Faculty Senior Scholar</highlight> award by the CS department.
+  - desc: Nominated for the <highlight>Faculty Senior Scholar</highlight> award by the CS department.
     time: March 2023
 
-  - picture: 
-    desc: I am an official NC State <highlight>Computer Science ambassador</highlight>.
+  - desc: I am an official NC State <highlight>Computer Science ambassador</highlight>.
     time: August 2022
 
-  - picture: 
-    desc: Interned at <highlight>Protiviti</highlight> in Dallas, Texas.
+  - desc: Interned at <highlight>Protiviti</highlight> in Dallas, Texas.
     time: May 2022
-    
-  - picture: 
-    desc: Nominated as the ambassador with the most volunteer hours!
+
+  - desc: Nominated as the ambassador with the most volunteer hours!
     time: May 2022
-    
-  - picture: 
-    desc: A semester abroad in the <highlight>Czech Republic, Germany, and Austria</highlight>!
+
+  - desc: A semester abroad in the <highlight>Czech Republic, Germany, and Austria</highlight>!
     time: January 2022
 
-  - picture: 
-    desc: I completed NC State's <highlight>Developing Cultural Competence Certificate</highlight>.
+  - desc: I completed NC State's <highlight>Developing Cultural Competence Certificate</highlight>.
     time: August 2020
 
-  - picture: 
-    desc: I started my undergrad at <highlight>NC State</highlight>.
+  - desc: I started my undergrad at <highlight>NC State</highlight>.
     time: August 2020

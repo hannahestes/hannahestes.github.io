@@ -4,8 +4,7 @@
 <div class="row" id="resources">
     <div class="col">
         <h2 class="mb-1"><i class="fas fa-lightbulb" aria-hidden="true"></i> Random Thoughts</h2>
-        {{ site.data.resources.introduction }}
-        <p></p>
+        <p>{{ site.data.resources.introduction }}</p>
         {% for category in site.data.resources.categories %}
             {% assign thoughts = site.data.resources.links | where: "category", category.data-filter %}
             <section class="thought-group" id="thoughts-{{ category.data-filter }}">
@@ -15,6 +14,5 @@
                 {% endfor %}
             </section>
         {% endfor %}
-        <p></p>
     </div>
 </div>

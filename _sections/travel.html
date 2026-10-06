@@ -4,8 +4,7 @@
 <div class="row" id="travel">
     <div class="col">
         <h2 class="mb-1"><i class="fas fa-globe-americas" aria-hidden="true"></i> Travel</h2>
-        {{ site.data.travel.introduction }}
-        <p></p>
+        <p>{{ site.data.travel.introduction }}</p>
         <div id="travel-map" class="travel-map" aria-label="World map of conference travel"></div>
         <div class="travel-trips">
             {% for trip in site.data.travel.trips %}
@@ -26,6 +25,5 @@
             {% endfor %}
         </div>
         <script>window.travelTrips = {{ site.data.travel.trips | jsonify }};</script>
-        <p></p>
     </div>
 </div>

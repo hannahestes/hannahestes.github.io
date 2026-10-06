@@ -3,10 +3,21 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <meta name="description" content="{{ site.title }}: {{ site.info }}"/>
+        {% capture preview_description %}{{ site.data.about.first-paragraph | strip_html | normalize_whitespace }}{% endcapture %}
+        <meta name="description" content="{{ preview_description }}"/>
         <meta name="author" content="{{ site.title }}"/>
         <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} | {{ site.info }}</title>
         <link rel="icon" type="image/png" href="{{ site.icon-pic }}"/>
+
+        <!-- Link previews (Slack, LinkedIn, iMessage, ...) -->
+        {% capture preview_title %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="{{ site.title }}"/>
+        <meta property="og:title" content="{{ preview_title }}"/>
+        <meta property="og:description" content="{{ preview_description }}"/>
+        <meta property="og:url" content="{{ page.url | absolute_url | replace: 'index.html', '' }}"/>
+        <meta property="og:image" content="{{ site.data.about.profile-pic | absolute_url }}"/>
+        <meta name="twitter:card" content="summary"/>
 
         <!-- Icons: Font Awesome (most icons) and Academicons (Google Scholar, ORCID, DBLP) -->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>

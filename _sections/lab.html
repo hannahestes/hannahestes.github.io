@@ -4,12 +4,11 @@
 <div class="row" id="lab">
     <div class="col">
         <h2 class="mb-1"><i class="fas fa-users" aria-hidden="true"></i> Lab Fun</h2>
-        {{ site.data.lab.introduction }}
-        <div class="polaroid-row">
+        <p class="mb-0">{{ site.data.lab.introduction }}</p>
+        <div class="polaroid-row mb-3">
             {% for photo in site.data.lab.photos %}
                 {% include_relative _libs/polaroid.html photo=photo %}
             {% endfor %}
         </div>
-        <p></p>
     </div>
 </div>
