@@ -7,7 +7,8 @@
         <meta name="description" content="{{ preview_description }}"/>
         <meta name="author" content="{{ site.title }}"/>
         <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} | {{ site.info }}</title>
-        <link rel="icon" type="image/png" href="{{ site.icon-pic }}"/>
+        <link rel="icon" type="image/png" href="{{ site.icon-pic | relative_url }}"/>
+        <link rel="icon" type="image/svg+xml" href="{{ site.icon-svg | relative_url }}"/>
 
         <!-- Link previews (Slack, LinkedIn, iMessage, ...) -->
         {% capture preview_title %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
