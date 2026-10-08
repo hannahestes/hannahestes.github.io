@@ -15,6 +15,19 @@ trips:
     country: DE
     coords: [51.72, 8.75]
     time: October 2026
+    photos:
+      - src: assets/travel/vlhcc2026_group.jpg
+        # caption: VL/HCC group
+      - src: assets/travel/vlhcc2026_stream.jpg
+        # caption: stream by the old town wall
+      - src: assets/travel/vlhcc2026_waffles.jpg
+        # caption: waffle break
+      - src: assets/travel/vlhcc2026_poster.jpg
+        # caption: VL/HCC 2026!
+      - src: assets/travel/vlhcc2026_canal.jpg
+        # caption: canal view
+      - src: assets/travel/vlhcc2026_paderborn.jpg
+        # caption: exploring Paderborn
 
   - event: ACM AI Leadership Summit
     url: https://aisummit26.acm.org/
@@ -22,6 +35,19 @@ trips:
     country: US
     coords: [33.75, -84.39]
     time: September 2026
+    photos:
+      - src: assets/travel/acmai2026_group.jpg
+        # caption: summit group photo
+      - src: assets/travel/acmai2026_coda.jpg
+        # caption: Coda at night
+      - src: assets/travel/acmai2026_friends.jpg
+        # caption: summit friends
+      - src: assets/travel/acmai2026_welcome.jpg
+        # caption: welcome to Atlanta!
+      - src: assets/travel/acmai2026_gt.jpg
+        # caption: sunset over Georgia Tech
+      - src: assets/travel/acmai2026_stage.jpg
+        # caption: on the summit stage
 
   - event: ICSE 2026
     url: https://conf.researchr.org/home/icse-2026
@@ -29,6 +55,19 @@ trips:
     country: BR
     coords: [-22.91, -43.17]
     time: April 2026
+    photos:
+      - src: assets/travel/icse2026_group.jpg
+        # caption: ICSE Rio crew
+      - src: assets/travel/icse2026_palms.jpg
+        # caption: palm-lined path in the botanical garden
+      - src: assets/travel/icse2026_social.jpg
+        # caption: I ♥ ICSE
+      - src: assets/travel/icse2026_cristo.jpg
+        # caption: visiting Christ the Redeemer
+      - src: assets/travel/icse2026_view.jpg
+        # caption: window view of Rio
+      - src: assets/travel/icse2026_dinner.jpg
+        # caption: group dinner
 
   - event: VL/HCC 2025
     url: https://conf.researchr.org/home/vlhcc-2025
@@ -38,9 +77,17 @@ trips:
     time: October 2025
     photos:
       - src: assets/travel/vlhcc2025_group.jpg
-        caption: VL/HCC fun
+        # caption: VL/HCC fun
+      - src: assets/travel/vlhcc2025_poster.jpg
+        # caption: poster session
+      - src: assets/travel/vlhcc2025_dinner.jpg
+        # caption: group dinner
       - src: assets/travel/vlhcc2025_p2.jpg
-        caption: VL/HCC!
+        # caption: VL/HCC!
+      - src: assets/travel/vlhcc2025_lunch.jpg
+        # caption: conference lunch
+      - src: assets/travel/vlhcc2025_banquet.jpg
+        # caption: banquet
 
   - event: FSE 2025
     url: https://conf.researchr.org/home/fse-2025
@@ -49,10 +96,16 @@ trips:
     coords: [63.43, 10.40]
     time: June 2025
     photos:
+      - src: assets/travel/fse2025_river.jpg
+        # caption: along the river
       - src: assets/travel/fse2025_trondheim.jpg
-        caption: exploring Trondheim
+        # caption: exploring Trondheim
+      - src: assets/travel/fse2025_umbrellas.jpg
+        # caption: umbrella street
       - src: assets/travel/fse2025_group.jpg
-        caption: FSE group
+        # caption: FSE group
+      - src: assets/travel/fse2025_harbor.jpg
+        # caption: Trondheim harbor
 
   - event: CRA-WP Grad Cohort Workshop
     url: https://cra.org/cra-wp/events/2025-cra-wp-grad-cohort-workshops/
@@ -60,3 +113,10 @@ trips:
     country: US
     coords: [39.74, -104.99]
     time: April 2025
+    photos:
+      - src: assets/travel/gradcohort2025_flowers.jpg
+        # caption: spring flowers in Denver
+      - src: assets/travel/gradcohort2025_group.jpg
+        # caption: CRA-WP Grad Cohort
+      - src: assets/travel/gradcohort2025_tulips.jpg
+        # caption: tulips!

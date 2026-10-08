@@ -630,6 +630,10 @@ body .jvm-tooltip ul {
     color: #3a3a3a;
     text-align: center;
 }
+/* keep the thick polaroid bottom when a photo has no caption */
+.polaroid-caption:empty::before {
+    content: "\00a0";
+}
 @media (max-width: 576px) {
     .polaroid-row {
         justify-content: center;

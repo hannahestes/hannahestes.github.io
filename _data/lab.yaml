@@ -4,22 +4,46 @@ introduction: Some happy moments with the WISER lab!
 photos:
 
   - src: assets/lab/bbq.jpg
-    caption: WISER lab BBQ
+    # caption: WISER lab BBQ
+
+  - src: assets/lab/taco_lunch.jpg
+    # caption: taco lunch
+
+  - src: assets/lab/food_spread.jpg
+    # caption: food spread
 
   - src: assets/lab/bbq_p2.jpg
-    caption: WISER lab BBQ p2
+    # caption: WISER lab BBQ p2
 
   - src: assets/lab/exploring_sunflowers.jpg
-    caption: exploring the sunflowers
-
-  - src: assets/lab/kuttal_potluck.jpg
-    caption: Dr. Kuttal's potluck
+    # caption: exploring the sunflowers
 
   - src: assets/lab/lab_badges.jpg
-    caption: decorating the lab
+    # caption: decorating the lab
+
+  - src: assets/lab/jump_photo.jpg
+    # caption: jump!
+
+  - src: assets/lab/group_dinner.jpg
+    # caption: group dinner
+
+  - src: assets/lab/koch_hall.jpg
+    # caption: Koch Hall opening
+
+  - src: assets/lab/kuttal_potluck.jpg
+    # caption: Dr. Kuttal's potluck
+
+  - src: assets/lab/lab_selfie.jpg
+    # caption: lab selfie
 
   - src: assets/lab/noryay.jpg
-    caption: "#noryay"
+    # caption: "#noryay"
+
+  - src: assets/lab/big_group.jpg
+    # caption: big group photo
 
   - src: assets/lab/written_prelim.jpg
-    caption: Passed my Written Prelim!
+    # caption: Passed my Written Prelim!
+
+  - src: assets/lab/cooking.jpg
+    # caption: cooking
