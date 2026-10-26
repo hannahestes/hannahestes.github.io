@@ -879,7 +879,7 @@ a.paper-venue-block:focus-visible {
     color: var(--accent);
 }
 .paper-venue-block--pending .paper-venue-name {
-    font-size: 15px;
+    font-size: 13px;
 }
 .paper-body {
     flex: 1;
@@ -932,6 +932,10 @@ a.paper-venue-block:focus-visible {
 .paper-abstract {
     margin-top: 0.5rem;
 }
+/* no buttons: the authors' bottom margin is spacing enough */
+.paper-authors + .paper-abstract {
+    margin-top: 0;
+}
 .paper-abstract summary {
     display: inline-block;
     font-size: 0.85rem;
@@ -947,6 +951,10 @@ a.paper-venue-block:focus-visible {
 }
 .paper-abstract[open] summary::before {
     content: "\25BE  ";
+}
+/* LaTeX \textsc{} in abstracts */
+.smallcaps {
+    font-variant: small-caps;
 }
 .paper-abstract p {
     margin: 0.4rem 0 0;
@@ -975,7 +983,7 @@ a.paper-venue-block:focus-visible {
         font-size: 18px;
     }
     .paper-venue-block--pending .paper-venue-name {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 

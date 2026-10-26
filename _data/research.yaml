@@ -9,46 +9,6 @@ categories:
   - data-filter: other
     category-name: Other
 
-# papers submitted but not yet accepted; the "Currently Under Review" section only shows when this list has entries
-under-review:
-  # - title: "Expectations of Software Product Managers: An Empirical Evaluation of Software Professionals' Perspectives"
-  #   system-name: 
-  #   image: assets/img/TOSEM_graphic.jpg
-  #   venue: TOSEM
-  #   year:
-  #   location:
-  #   venue-web: https://dl.acm.org/journal/tosem
-  #   status:
-  #   authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn T. Stolee.
-  #   pdf:
-  #   code: 
-  #   demo: 
-  #   slides:
-  #   talk: 
-  #   doi:
-  #   poster: assets/papers/making_sense_poster.pdf
-  #   abstract: >-
-  #     The role of the software product manager is often ambiguous and potentially
-  #     contentious, with tensions often arising between the software product manager
-  #     and the software team. The goal of this work is to uncover software product
-  #     manager role expectations from three perspectives: their own, that of the
-  #     software team, and that of the software companies. We deployed a survey
-  #     targeting
-  #     software professionals (n=80, 22 companies) to uncover software product manager
-  #     role expectations and the typical questions they answer, providing direct and
-  #     indirect lenses into software product manager activities. Through qualitative
-  #     analysis, we discovered that software product managers must be product experts,
-  #     user advocates, and communication gurus. From the companies’ perspective, we
-  #     analyzed 37 job descriptions to generalize our findings. We also identify that
-  #     communication and competency issues lead to frequent team frustration. Our
-  #     findings provide clarity on the software product manager role directly through
-  #     employees’ and employers’ perspectives, indirectly from the questions they
-  #     should answer, and through eight friction points when working with a software
-  #     team. We synthesize these results across the software development lifecycle in
-  #     the SENSE framework, providing a comprehensive view of software product manager
-  #     role expectations and points of friction with software teams.
-  #   category: spm
-
 # template: copy the lines below, paste them under `projects:`, and remove the leading "# "
 # (same fields work under `under-review:`; venue, year, and location can stay blank there)
 #   - title: ""
@@ -69,6 +29,97 @@ under-review:
 #     abstract: >-
 #
 #     category:
+
+# papers submitted but not yet accepted; the "Currently Under Review" section only shows when this list has entries
+under-review:
+  - title: "The Evolution of Software Product Manager Role Expectations in Software Teams"
+    system-name:
+    venue: ICSE-SEIP
+    year: 2027
+    location: Dublin, Ireland
+    venue-web: https://conf.researchr.org/track/icse-2027/icse-2027-seip
+    status:
+    authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn Thomasset.
+    pdf:
+    code:
+    demo:
+    slides:
+    talk:
+    doi:
+    poster:
+    abstract: >-
+      The software product manager is often a multidisciplinary role and, like many other software industry roles,
+      ever-changing in the wake of AI. The goal of this work is to
+      uncover software product manager role expectations from two
+      perspectives – their own and that of the software team – and
+      two time periods: before AI was strongly impacting their work
+      and after. In 2024, we deployed a survey targeting software
+      professionals (n=80, 22 companies) to uncover software product
+      manager role expectations and the typical questions they answer,
+      providing direct and indirect lenses into software product
+      manager activities when AI was not as pervasive. Through qualitative
+      analysis, we discovered that software product managers must be
+      <span class="smallcaps">Product Experts</span>, <span class="smallcaps">User Advocates</span>,
+      and <span class="smallcaps">Communication Gurus</span>. Focusing on the impact of AI, a second survey was
+      deployed (n=53, 35 companies) in 2026 to examine how software
+      product managers are using AI and to look at how the software
+      product management role is evolving from both perspectives.
+      From this, we have identified a strong disadvantage in not
+      incorporating AI into SPM workflows, with the most common
+      tasks being data discovery and synthesis, and that the boundary
+      between SPMs and SWEs will likely continue to blur. SPMs, more
+      than ever, should prioritize the direction and team’s capabilities
+      to continue delivering a valuable and sustainable product.
+    category: spm
+
+  - title: "Software Product Managers, Software Teams, and the Requirements Between Them"
+    system-name:
+    venue: ICSE-SEIP
+    year: 2027
+    location: Dublin, Ireland
+    venue-web: https://conf.researchr.org/track/icse-2027/icse-2027-seip
+    status:
+    authors: <b>Hannah Estes</b>, Satwika Kancharla, Kathryn Thomasset.
+    pdf:
+    code:
+    demo:
+    slides:
+    talk:
+    doi:
+    poster:
+    abstract: >-
+      Software product managers (SPMs) are responsible for maintaining and evolving a product's vision. They are the bridge among customers, the business, and the software team, yet their role can be contentious, with tensions sometimes arising between the software product manager and the software team. Requirements, the artifacts at the center of this relationship, are also changing rapidly as AI is used more within the software industry. To understand where friction arises between SPMs and software teams and how AI is reshaping the requirements between them, we distributed two surveys, receiving responses from 56 product-focused and 40 engineering-focused participants across 44 companies. Using thematic analysis, we identify eight friction points centered on communication and competency issues. Our second survey highlights the frequency of these problems, as well as <i>how</i> software teams are documenting requirements and the impact of AI on that process. While the majority of participants agree that AI has changed this process, they differ in how it affects quality and trust. Authorship of requirements has become less structured, yet accountability still remains with the SPM. Our findings suggest that AI does not resolve the friction between SPMs and software teams, but rather increases the burden on SPMs to review requirements generated not just by themselves but by anyone on the team.
+    category: spm
+
+  - title: "Comparing What Rule-based and LLM-based Tools Report on Student Team Projects"
+    system-name:
+    venue: ICSE-SEET
+    year: 2027
+    location: Dublin, Ireland
+    venue-web: https://conf.researchr.org/track/icse-2027/icse-2027-software-engineering-education-and-training--seet-
+    status:
+    authors: Tiva Rocco, <b>Hannah Estes</b>, Sarah Heckman.
+    pdf:
+    code:
+    demo:
+    slides:
+    talk:
+    doi:
+    poster:
+    abstract: >- 
+      Instructors and students can choose between rule-based static analysis and reviewers built on large language models to assess code, but little is known about how the two approaches differ. 
+      This study compares SonarQube, a deterministic rule-based tool, with a Gemini-based reviewer across nine team repositories, using Java and JavaScript, from one six-week course project, with a focus on increasing code quality and maintainability. 
+      The tools reported 1,889 issues, of which 320 were distinct. 
+      Two raters sorted these into ten categories using open card sorting.  
+      Logic and simplification make up 68% of SonarQube's issues but 33% of Gemini's. 
+      Gemini reports a larger share of error handling, typing, dead code, and design issues, and it alone reports hardcoding issues. 
+      The tools flag many of the same files, but rarely the same lines, and only 18% of  Gemini's issues fall within five lines of a SonarQube issue. 
+      SonarQube returned identical issues across two runs, while the Gemini runs contained little overlap. 
+      The results suggest that Gemini's reports may be better suited for students' own review than for grading, while SonarQube's repeatable reports may suit both uses. 
+      Combining the tools would broaden coverage, provided the large language model's reports are checked. 
+    category: other
+
+
 
 projects:
   - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"

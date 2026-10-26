@@ -21,15 +21,16 @@
         <h3 class="paper-title">{% if project.system-name %}<i>{{ project.system-name }}</i>: {% endif %}{{ project.title }}</h3>
         {% if project.status %}<div class="paper-venue"><span class="paper-status">{{ project.status }}</span></div>{% endif %}
         <div class="paper-authors">{{ project.authors }}</div>
-        <div class="paper-links">
-            {% if project.pdf %}<a class="paper-link" href="{{ project.pdf }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> paper</a>{% endif %}
-            {% if project.slides %}<a class="paper-link" href="{{ project.slides }}" target="_blank" rel="noopener"><i class="fas fa-chalkboard" aria-hidden="true"></i> slides</a>{% endif %}
-            {% if project.poster %}<a class="paper-link" href="{{ project.poster }}" target="_blank" rel="noopener"><i class="fas fa-image" aria-hidden="true"></i> poster</a>{% endif %}
-            {% if project.talk %}<a class="paper-link" href="{{ project.talk }}" target="_blank" rel="noopener"><i class="fas fa-video" aria-hidden="true"></i> talk</a>{% endif %}
-            {% if project.code %}<a class="paper-link" href="{{ project.code }}" target="_blank" rel="noopener"><i class="fas fa-code" aria-hidden="true"></i> code</a>{% endif %}
-            {% if project.demo %}<a class="paper-link" href="{{ project.demo }}" target="_blank" rel="noopener"><i class="fas fa-play" aria-hidden="true"></i> demo</a>{% endif %}
-            {% if project.doi %}<a class="paper-link" href="{{ project.doi }}" target="_blank" rel="noopener"><i class="fas fa-link" aria-hidden="true"></i> doi</a>{% endif %}
-        </div>
+        {% capture links %}
+            {% assign link = project.pdf | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> paper</a>{% endif %}
+            {% assign link = project.slides | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-chalkboard" aria-hidden="true"></i> slides</a>{% endif %}
+            {% assign link = project.poster | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-image" aria-hidden="true"></i> poster</a>{% endif %}
+            {% assign link = project.talk | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-video" aria-hidden="true"></i> talk</a>{% endif %}
+            {% assign link = project.code | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-code" aria-hidden="true"></i> code</a>{% endif %}
+            {% assign link = project.demo | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-play" aria-hidden="true"></i> demo</a>{% endif %}
+            {% assign link = project.doi | strip %}{% if link != "" %}<a class="paper-link" href="{{ link }}" target="_blank" rel="noopener"><i class="fas fa-link" aria-hidden="true"></i> doi</a>{% endif %}
+        {% endcapture %}
+        {% if links contains "paper-link" %}<div class="paper-links">{{ links }}</div>{% endif %}
         {% if project.abstract %}
             <details class="paper-abstract">
                 <summary>abstract</summary>
