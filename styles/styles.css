@@ -798,7 +798,7 @@ body .jvm-tooltip ul {
 
 
 /* ==========================================================================
-   Publications: compact list with a small graphic beside each paper
+   Publications: compact list with a linked venue block beside each paper
    ========================================================================== */
 .paper-list {
     display: flex;
@@ -808,26 +808,78 @@ body .jvm-tooltip ul {
 .paper-group[hidden] {
     display: none;
 }
-.paper-group-title {
-    margin-bottom: 0.9rem;
-    font-size: 1.15rem;
-    color: var(--muted);
+/* under-review and published papers read as one list */
+.paper-group + .paper-group {
+    margin-top: 1.25rem;
 }
 .paper {
     display: flex;
     gap: 1.1rem;
-    align-items: flex-start;
+    align-items: center;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid var(--border);
 }
 .paper[hidden] {
     display: none;
 }
-.paper-thumb {
-    flex: 0 0 180px;
-    width: 180px;
-    border: 1px solid var(--border);
+/* lines only go between papers: drop it from the last paper still shown under the current filter */
+.paper-group:not(:has(~ .paper-group:not([hidden]))) .paper:not(:has(~ .paper:not([hidden]))) {
+    border-bottom: none;
+}
+/* keep the venue block beside the title rather than drifting into an opened abstract */
+.paper:has(.paper-abstract[open]) {
+    align-items: flex-start;
+}
+.paper-venue-block {
+    flex: 0 0 112px;
+    width: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.6rem 0.25rem;
+    border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
     border-radius: 8px;
+    text-align: center;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+a.paper-venue-block:hover,
+a.paper-venue-block:focus-visible {
+    text-decoration: none;
+    background-color: var(--accent-tint);
+}
+/* abbreviation in the deeper accent, year in the brighter one, so both stay readable in either theme */
+.paper-venue-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-strong);
+}
+.paper-venue-year {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--accent);
+}
+/* pin sits to the left of the city/country lines, centered between them */
+.paper-venue-place {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 0.15rem;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--text) 70%, var(--bg));
+}
+.paper-venue-lines {
+    display: flex;
+    flex-direction: column;
+}
+.paper-venue-icon {
+    margin-bottom: 0.3rem;
+    font-size: 22px;
+    color: var(--accent);
+}
+.paper-venue-block--pending .paper-venue-name {
+    font-size: 15px;
 }
 .paper-body {
     flex: 1;
@@ -903,12 +955,27 @@ body .jvm-tooltip ul {
 }
 @media (max-width: 576px) {
     .paper {
-        flex-direction: column;
+        gap: 0.6rem;
     }
-    .paper-thumb {
-        flex-basis: auto;
-        width: 100%;
-        max-width: 320px;
+    .paper-venue-block {
+        flex-basis: 76px;
+        width: 76px;
+        padding: 0.4rem 0.15rem;
+    }
+    .paper-venue-name {
+        font-size: 12px;
+    }
+    .paper-venue-year {
+        font-size: 22px;
+    }
+    .paper-venue-place {
+        font-size: 11px;
+    }
+    .paper-venue-icon {
+        font-size: 18px;
+    }
+    .paper-venue-block--pending .paper-venue-name {
+        font-size: 13px;
     }
 }
 

@@ -1,12 +1,25 @@
 <article class="paper" data-filter="{{ project.category }}">
-    {% if project.image %}<img class="paper-thumb" src="{{ project.image }}" alt="" loading="lazy" decoding="async">{% endif %}
+    {% if include.under_review or project.venue == blank %}
+        <div class="paper-venue-block paper-venue-block--pending"><span class="paper-venue-icon"><i class="fas fa-hourglass-half" aria-hidden="true"></i></span><span class="paper-venue-name">Currently<br>Under Review</span></div>
+    {% else %}
+        <a class="paper-venue-block" href="{{ project.venue-web }}" target="_blank" rel="noopener" title="{{ project.venue }} {{ project.year }}{% if project.location %} &middot; {{ project.location }}{% endif %}">
+            <span class="paper-venue-name">{{ project.venue }}</span>
+            {% if project.year %}<span class="paper-venue-year">{{ project.year }}</span>{% endif %}
+            {% if project.location %}
+                {% assign place = project.location | split: "," %}
+                <span class="paper-venue-place">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <span class="paper-venue-lines">
+                        <span class="paper-venue-city">{{ place[0] | strip }}{% if place[1] %},{% endif %}</span>
+                        {% if place[1] %}<span class="paper-venue-country">{{ place | shift | join: "," | strip }}</span>{% endif %}
+                    </span>
+                </span>
+            {% endif %}
+        </a>
+    {% endif %}
     <div class="paper-body">
         <h3 class="paper-title">{% if project.system-name %}<i>{{ project.system-name }}</i>: {% endif %}{{ project.title }}</h3>
-        <div class="paper-venue">
-            {% if project.venue-web %}<a href="{{ project.venue-web }}" target="_blank" rel="noopener">{{ project.venue }} {{ project.year }}</a>{% else %}{{ project.venue }} {{ project.year }}{% endif %}
-            {% if project.location %}<span class="paper-location">&middot; {{ project.location }}</span>{% endif %}
-            {% if project.status %}<span class="paper-status">{{ project.status }}</span>{% endif %}
-        </div>
+        {% if project.status %}<div class="paper-venue"><span class="paper-status">{{ project.status }}</span></div>{% endif %}
         <div class="paper-authors">{{ project.authors }}</div>
         <div class="paper-links">
             {% if project.pdf %}<a class="paper-link" href="{{ project.pdf }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> paper</a>{% endif %}
