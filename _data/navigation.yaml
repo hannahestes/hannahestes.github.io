@@ -1,3 +1,8 @@
+# template: copy the lines below, paste them under `pages:`, and remove the leading "# "
+#   - title:
+#     url: /
+#     icon: fas fa-
+
 # pages shown in the top navigation bar (in order)
 pages:
   - title: Home

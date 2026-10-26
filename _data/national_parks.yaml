@@ -5,6 +5,12 @@
 # coords: [latitude, longitude] for the pin. American Samoa and the Virgin Islands have none
 #   since they're off the US map; visited ones are listed in the map's corner instead.
 
+# template: copy the lines below, paste them under `parks:`, and remove the leading "# "
+#   - name: National Park
+#     visited: false
+#     states: []
+#     coords: [0.00, 0.00]
+
 parks:
 
   - name: Acadia National Park

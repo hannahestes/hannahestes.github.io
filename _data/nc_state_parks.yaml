@@ -2,6 +2,11 @@
 # visited: set to true once you've been. The "19 / 42" count on the page updates on its own.
 # coords: [latitude, longitude] for the pin.
 
+# template: copy the lines below, paste them under `parks:`, and remove the leading "# "
+#   - name:
+#     visited: false
+#     coords: [0.00, 0.00]
+
 parks:
 
   - name: Carolina Beach

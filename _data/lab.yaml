@@ -1,5 +1,9 @@
 introduction: Some happy moments with the WISER lab!
 
+# template: copy the lines below, paste them under `photos:`, and remove the leading "# "
+#   - src: assets/lab/
+#     # caption:
+
 # photos shown as small polaroids (click to enlarge). keep them small (~1200px wide jpgs in assets/lab/)
 photos:
 

@@ -1,3 +1,7 @@
+# template: copy the lines below, paste them under `categories:`, and remove the leading "# "
+#   - data-filter:
+#     category-name:
+
 categories:
 
   - data-filter: spm
@@ -44,6 +48,27 @@ under-review:
   #     the SENSE framework, providing a comprehensive view of software product manager
   #     role expectations and points of friction with software teams.
   #   category: spm
+
+# template: copy the lines below, paste them under `projects:`, and remove the leading "# "
+# (same fields work under `under-review:`; venue, year, and location can stay blank there)
+#   - title: ""
+#     system-name:
+#     venue:
+#     year:
+#     location: City, Country
+#     venue-web:
+#     status:
+#     authors: <b>Hannah Estes</b>,
+#     pdf:
+#     code:
+#     demo:
+#     slides:
+#     talk:
+#     doi:
+#     poster:
+#     abstract: >-
+#
+#     category:
 
 projects:
   - title: "Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with CoAuthor"

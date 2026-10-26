@@ -1,5 +1,9 @@
 introduction: A short collection of helpful links and advice I have collected along the way. Click any topic to open it!
 
+# template: copy the lines below, paste them under `categories:`, and remove the leading "# "
+#   - data-filter:
+#     category-name:
+
 categories:
 
   - data-filter: research
@@ -12,6 +16,13 @@ categories:
     category-name: Misc
 
 
+
+# template: copy the lines below, paste them under `links:`, and remove the leading "# "
+#   - title:
+#     summary:
+#     content: |-
+#       - <https://> :
+#     category:
 
 links:
   - title: Everything PhD

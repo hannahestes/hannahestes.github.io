@@ -34,6 +34,10 @@ research-introduction: >-
   future SPMs develop both the technical and interpersonal skills they need to thrive in
   real software teams.
 
+# template: copy the lines below, paste them under `research-interests:`, and remove the leading "# "
+#   - field:
+#     subfields:
+
 research-interests:
 
   - field: Software Engineering
