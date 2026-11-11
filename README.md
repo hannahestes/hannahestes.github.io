@@ -30,7 +30,7 @@ Almost everything on the site comes from the YAML files in `_data/`:
 | `travel.yaml` | conference trips: the travel map and the polaroids under it |
 | `national_parks.yaml` | all 63 national parks; set `visited: true` when you go |
 | `nc_state_parks.yaml` | NC state parks; set `visited: true` when you go |
-| `lab.yaml` | Lab Fun polaroids |
+| `lab.yaml` | Gallery polaroids |
 
 Keep photos small (around 1000-1200px wide JPGs); on a Mac, `sips -Z 1200 photo.jpg` shrinks one in place.
 For long text in YAML, use a folded block (`>-`).
