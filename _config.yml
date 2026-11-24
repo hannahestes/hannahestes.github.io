@@ -2,7 +2,7 @@
 title: Hannah Estes
 info: PhD CS @ NC State
 url: https://hannahestes.github.io  # used for link previews
-icon-svg: assets/img/favicon.svg  # tab icon {♥}; pink in light browsers, green in dark
+icon-svg: assets/img/favicon.svg  # tab icon {HE}: white slab-serif HE ligature on terracotta
 icon-pic: assets/img/favicon.png  # PNG fallback for browsers without SVG icons
 
 # exclude these items when generated website in _site/index.html
