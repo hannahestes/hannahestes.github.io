@@ -119,6 +119,27 @@ under-review:
       Combining the tools would broaden coverage, provided the large language model's reports are checked. 
     category: other
 
+  - title: "Information Needs in Code Review: What Can an Agent's Trajectory Answer?"
+    system-name:
+    venue: AGENT (ICSE Workshop)
+    year: 2027
+    location: Dublin, Ireland
+    venue-web: https://conf.researchr.org/home/icse-2027/agent-2027#call-Call-for-Papers
+    status:
+    authors: <b>Hannah Estes</b>, Saba Khanmohammadi, Amirali Rayegan, Rujuta Palimkar, Wesley Assunção
+    pdf:
+    code:
+    demo:
+    slides:
+    talk:
+    doi:
+    poster:
+    abstract: >-
+      Coding agents open pull requests (PRs) at scale, and many are merged with minimal human review, yet people remain accountable for what gets merged. When review is skipped or left to agents, teams lose what PRs provide beyond defect detection: understanding, rationale, and knowledge transfer.
+      Behind each agent-authored PR lies an execution trajectory recording what the agent read, changed, ran, and abandoned. Conventional review, however, surfaces only the issue, the diff, and the agent’s own description. While the raw trajectory is far too long to read alongside the PR, we argue that trajectories should be turned into review context to support human readability and involvement. We adapt CAFE(S), a framework for assessing the context provided to coding agents (i.e., clarity, actionability, fidelity, efficiency, and security), to the context provided to human reviewers. We also map reviewer information needs from prior code-review literature to identify what information a trajectory can supply and a diff alone cannot. 
+      Using this mapping, we propose a method to create short, extracted summaries in which every item cites the trajectory steps it came from. We argue that such evidence must distinguish between what the agent claims and what its recorded tool outputs show, including whether each check was part of the project’s own tests or a script the agent wrote, because passing checks alone does not establish that a patch is correct. We present a research agenda to test this evidence with human reviewers, with agent reviewers, and across reviewers who differ in how they process information and judge risk.
+    category:  other
+
 
 
 projects:
