@@ -1,15 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <!-- HE: slab-serif ligature (shared stem, H crossbar runs into the E's middle arm), traced from the he-badge. Terracotta on a transparent background -->
-    <!-- glyph drawn on a 25 x 16 grid, scaled and centered -->
-    <g fill="#B36C56" transform="translate(1 6.4) scale(1.2)">
-        <rect x="0" y="0" width="5" height="1.5"/>          <!-- H top slab serif -->
-        <rect x="0" y="14.5" width="5" height="1.5"/>     <!-- H bottom slab serif -->
-        <rect x="1" y="0" width="3" height="16"/>      <!-- H left stem -->
-        <rect x="12" y="0" width="3" height="16"/>     <!-- shared stem -->
-        <rect x="4" y="6.85" width="16.5" height="2.3"/>     <!-- crossbar / E middle arm -->
-        <rect x="12" y="0" width="13" height="2.3"/>    <!-- E top arm -->
-        <rect x="22.25" y="0" width="2.75" height="4"/>       <!-- E top serif -->
-        <rect x="12" y="13.7" width="13" height="2.3"/>   <!-- E bottom arm -->
-        <rect x="22.25" y="12" width="2.75" height="4"/>      <!-- E bottom serif -->
+    <!-- HE slab-serif monogram (H and E share a stem). Terracotta on light browser themes, green on dark (matches the site's accents) -->
+    <style>
+        .mark { fill: #B36C56; }
+        @media (prefers-color-scheme: dark) { .mark { fill: #bcdf86; } }
+    </style>
+    <g class="mark" transform="translate(1.6 8.8) scale(2)">
+        <rect x=".8" width="1.8" height="10"/><rect y="0" width="3.4" height="1"/><rect y="9" width="3.4" height="1"/><rect x=".8" y="4.3" width="11" height="1.4"/><rect x="7.6" width="1.8" height="10"/><rect x="6.8" width="7.6" height="1.4"/><rect x="6.8" y="8.6" width="7.6" height="1.4"/><rect x="13" width="1.4" height="2.6"/><rect x="13" y="7.4" width="1.4" height="2.6"/>
     </g>
 </svg>
